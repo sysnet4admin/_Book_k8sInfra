@@ -1,0 +1,71 @@
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/2.2.2.RELEASE/spring-boot-starter-parent-2.2.2.RELEASE.pom
+######### 소스 코드 작성시 스프링부트를 사용했기 때문에 스프링부트 라이브러리와 관련 파일을 다운 받습니다. 이외에도 사용한 라이브러리가 있다면 이 단계에서 다운로드 받습니다.
+[중략]
+[INFO] -------------------< Stark.Industries:echo-ip-java >--------------------
+######### pom.xml의 <groupId>:<artifactId> 형식으로 표시됩니다.
+[INFO] Building Ultron-PRJ 0.0.1-SNAPSHOT
+######### pom.xml 의 <name>.<version> 형식으로 표시됩니다.
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-maven-plugin/2.2.2.RELEASE/spring-boot-maven-plugin-2.2.2.RELEASE.pom
+######### 스프링 부트 기반 소스 코드를 빌드하는 과정을 도와주는 플러그인을 사용하기 위한 관련 파일들을 내려 받습니다. 
+[중략]
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ echo-ip-java ---
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom
+######### 메이븐으로 소스 코드를 빌드하는 과정을 도와주는 플러그인을 다운로드 받습니다. 
+################## 왜 메이븐과 스프링부트의 플러그인을 별개로 다운 받냐 라고 하시면 mvnw clean package 와 같은 메이븐의 기본 명령은 메이븐 플러그인으로 처리 되는데
+################## 각 단계별로 스프링부트의 별도 처리를 해줘야 하는 부분은 메이븐 플러그인이 처리하는 단계에서 스프링부트 플러그인이 묶여서 동작합니다. (.original 을 묶어서 단독 실행이 가능한 jar로 만들어주고 이런 것은 package 과정 중에 spring-boot-maven-plugin이 묶여서 해주는 과정입니다)
+[중략]
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ echo-ip-java ---
+######### 소스 코드 빌드 과정에서 리소스 (일반 이미지 파일이나 정적인 html 파일, 빌드된 애플리케이션 내부에서 자체적으로 사용하는 파일)를 재구성하는 플러그인을 사용하기 위한 관련 파일을 내려 받습니다.
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom
+[중략]
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+######### 여기서 1개 파일이 복사되는 것은 스프링부트 애플리케이션이 구동되는 시점에 초기 설정으로 사용하기 위해 개발자가 작성해둔 설정 파일 1개입니다..  src/main/resources/ 디렉토리 내부에 존재합니다.
+[INFO] Copying 0 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ echo-ip-java ---
+######### src 디렉터리 아래에 있는 .java 파일들을 컴파일 과정을 거쳐서 target 디렉터리의 classes 디렉터리에 생성하기 위한 플러그인과 관련 파일을 내려 받습니다. classes 디렉터리의 파일들이 나중에 패키지에 포함됩니다.
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom
+[중략]
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /root/IaC/Docker/build/Basic/target/classes
+######### 컴파일 과정을 거쳐서 classes 디렉터리에 실제로 파일을 생성합니다. src/main/java/com/stark/Industries/ 내부에 존재하는 2개의 .java 소스 파일입니다.
+[INFO]
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ echo-ip-java ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/IaC/Docker/build/Basic/src/test/resources
+######### 소스 코드를 빌드하기 전 테스트 코드를 작성해서 동작을 확인해야 하는데, 이 부분은 프로젝트 기본 생성시에는 존재하지만 테스트 코드 작성은 개발자의 영역이라 src/test 디렉터리를 삭제해 두어서 스킵됩니다.
+[INFO]
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ echo-ip-java ---
+[INFO] No sources to compile
+######### 테스트 코드를 빌드하는 과정인데 테스트 코드 부분을 삭제해서 이 부분도 컴파일할 소스코드가 없다고 넘어 갑니다.
+[INFO]
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ echo-ip-java ---
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.22.2/maven-surefire-common-2.22.2.pom
+[중략]
+[INFO] No tests to run.
+######### surefire는 실제 테스트를 수행하기 위해 사용하는 플러그인데 이 부분도 테스트와 관련된 부분은 모두 삭제해두어서 그냥 넘어가게 됩니다.
+[INFO]
+[INFO] --- maven-jar-plugin:3.1.2:jar (default-jar) @ echo-ip-java ---
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.0.0/file-management-3.0.0.pom
+######### 소스코드를 .jar 로 생성하기 위해 필요한 maven-jar-plugin 플러그인과 관련된 파일을 내려 받습니다.
+[중략]
+[INFO] Building jar: /root/IaC/Docker/build/Basic/target/app-in-host.jar
+######### 패키지 파일 생성 1단계로 현재 디렉터리에 작성한 코드와 관련된 jjar 패키지 파일을 /root/IaC/Docker/build/Basic/target/app-in-host.jar에 생성합니다. 이 jar만 가지고 실제로 구동을 하기 위해서는 
+######### pom.xml에서 외부에서 불러와서 사용하도록 설정한 라이브러리를 실행시점에 연결해주어야 합니다. 그래서 이런 과정이 필요 없게 하기 위해 아래 단계가 수행됩니다.
+[INFO]
+[INFO] --- spring-boot-maven-plugin:2.2.2.RELEASE:repackage (repackage) @ echo-ip-java ---
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-loader-tools/2.2.2.RELEASE/spring-boot-loader-tools-2.2.2.RELEASE.pom
+######### 라이브러리를 실행 시점에 연결하고 그러면 번거롭기 때문에 2단계로 라이브러리까지 모두 박아넣은 jar 패키지 파일을 만들기 위해 플러그인과 관련 파일을 다운로드 받습니다.
+[중략]
+Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/19.0/guava-19.0.jar (2.3 MB at 485 kB/s)
+[INFO] Replacing main artifact with repackaged archive
+######### 기존에 존재하던 .jar 패키지 파일은 .jar.original 로 바뀌고, 모든 라이브러리가 포함되어 단독으로 실행이 가능한 jar 파일이 생성됩니다 (그런 패키지를 fat-jar 라고 합니다)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:29 min
+[INFO] Finished at: 2020-09-27T09:48:26+09:00
+[INFO] ------------------------------------------------------------------------

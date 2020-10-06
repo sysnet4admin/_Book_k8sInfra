@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nfs-ip
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nfs-ip
+  template:
+    metadata:
+      labels:
+        app: nfs-ip
+    spec:
+      containers:
+      - name: audit-trail
+        image: sysnet4admin/audit-trail
+        volumeMounts:
+        - name: nfs-vol
+          mountPath: /audit
+      volumes:
+      - name: nfs-vol
+        nfs:
+          server: 192.168.1.10
+          path: /nfs_shared

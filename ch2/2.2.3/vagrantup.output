@@ -1,0 +1,1539 @@
+Bringing machine 'm-k8s' up with 'virtualbox' provider...
+Bringing machine 'w1-k8s' up with 'virtualbox' provider...
+Bringing machine 'w2-k8s' up with 'virtualbox' provider...
+Bringing machine 'w3-k8s' up with 'virtualbox' provider...
+==> m-k8s: Importing base box 'sysnet4admin/CentOS-k8s'...
+[KProgress: 30%[KProgress: 50%[KProgress: 70%[KProgress: 90%[K==> m-k8s: Matching MAC address for NAT networking...
+==> m-k8s: Checking if box 'sysnet4admin/CentOS-k8s' version '0.6.4' is up to date...
+==> m-k8s: Setting the name of the VM: m-k8s(github_SysNet4Admin)
+==> m-k8s: Clearing any previously set network interfaces...
+==> m-k8s: Preparing network interfaces based on configuration...
+    m-k8s: Adapter 1: nat
+    m-k8s: Adapter 2: hostonly
+==> m-k8s: Forwarding ports...
+    m-k8s: 22 (guest) => 60010 (host) (adapter 1)
+==> m-k8s: Running 'pre-boot' VM customizations...
+==> m-k8s: Booting VM...
+==> m-k8s: Waiting for machine to boot. This may take a few minutes...
+    m-k8s: SSH address: 127.0.0.1:60010
+    m-k8s: SSH username: vagrant
+    m-k8s: SSH auth method: private key
+    m-k8s: Warning: Remote connection disconnect. Retrying...
+    m-k8s: Warning: Connection aborted. Retrying...
+    m-k8s: Warning: Connection reset. Retrying...
+    m-k8s: Warning: Remote connection disconnect. Retrying...
+    m-k8s: Warning: Connection aborted. Retrying...
+    m-k8s: Warning: Connection reset. Retrying...
+    m-k8s: Warning: Remote connection disconnect. Retrying...
+    m-k8s: Warning: Connection aborted. Retrying...
+    m-k8s: 
+    m-k8s: Vagrant insecure key detected. Vagrant will automatically replace
+    m-k8s: this with a newly generated keypair for better security.
+    m-k8s: 
+    m-k8s: Inserting generated public key within guest...
+    m-k8s: Removing insecure key from the guest if it's present...
+    m-k8s: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> m-k8s: Machine booted and ready!
+==> m-k8s: Checking for guest additions in VM...
+    m-k8s: The guest additions on this VM do not match the installed version of
+    m-k8s: VirtualBox! In most cases this is fine, but in rare cases it can
+    m-k8s: prevent things such as shared folders from working properly. If you see
+    m-k8s: shared folder errors, please make sure the guest additions within the
+    m-k8s: virtual machine match the version of VirtualBox you have installed on
+    m-k8s: your host and reload your VM.
+    m-k8s: 
+    m-k8s: Guest Additions Version: 5.2.12
+    m-k8s: VirtualBox Version: 6.0
+==> m-k8s: Setting hostname...
+==> m-k8s: Configuring and enabling network interfaces...
+==> m-k8s: Running provisioner: shell...
+    m-k8s: Running: C:/Users/HOONJO~1/AppData/Local/Temp/vagrant-shell20200505-19380-q5z618.sh
+    m-k8s: Loaded plugins: fastestmirror
+    m-k8s: Determining fastest mirrors
+    m-k8s:  * base: mirror.kakao.com
+    m-k8s:  * extras: mirror.kakao.com
+    m-k8s:  * updates: mirror.kakao.com
+    m-k8s: Resolving Dependencies
+    m-k8s: --> Running transaction check
+    m-k8s: ---> Package epel-release.noarch 0:7-11 will be installed
+    m-k8s: --> Finished Dependency Resolution
+    m-k8s: 
+    m-k8s: Dependencies Resolved
+    m-k8s: 
+    m-k8s: ================================================================================
+    m-k8s:  Package                Arch             Version         Repository        Size
+    m-k8s: ================================================================================
+    m-k8s: Installing:
+    m-k8s:  epel-release           noarch           7-11            extras            15 k
+    m-k8s: 
+    m-k8s: Transaction Summary
+    m-k8s: ================================================================================
+    m-k8s: Install  1 Package
+    m-k8s: Total download size: 15 k
+    m-k8s: Installed size: 24 k
+    m-k8s: Downloading packages:
+    m-k8s: Running transaction check
+    m-k8s: Running transaction test
+    m-k8s: Transaction test succeeded
+    m-k8s: Running transaction
+    m-k8s:   Installing : epel-release-7-11.noarch                                     1/1
+    m-k8s:  
+    m-k8s:   Verifying  : epel-release-7-11.noarch                                     1/1
+    m-k8s:  
+    m-k8s: 
+    m-k8s: Installed:
+    m-k8s:   epel-release.noarch 0:7-11                                                    
+    m-k8s: Complete!
+    m-k8s: Loaded plugins: fastestmirror
+    m-k8s: Loading mirror speeds from cached hostfile
+    m-k8s:  * base: mirror.kakao.com
+    m-k8s:  * epel: mirrors.aliyun.com
+    m-k8s:  * extras: mirror.kakao.com
+    m-k8s:  * updates: mirror.kakao.com
+    m-k8s: http://fedora.cs.nctu.edu.tw/epel/7/x86_64/repodata/d4b908c8247cc45700ec1af3b56fb27b2c324897afc4f87e36308628a816a718-updateinfo.xml.bz2: [Errno 14] HTTP Error 404 - Not Found
+    m-k8s: Trying other mirror.
+    m-k8s: To address this issue please refer to the below wiki article 
+    m-k8s: 
+    m-k8s: https://wiki.centos.org/yum-errors
+    m-k8s: 
+    m-k8s: If above article doesn't help to resolve this issue please use https://bugs.centos.org/.
+    m-k8s: Resolving Dependencies
+    m-k8s: --> Running transaction check
+    m-k8s: ---> Package vim-enhanced.x86_64 2:7.4.629-6.el7 will be installed
+    m-k8s: --> Processing Dependency: vim-common = 2:7.4.629-6.el7 for package: 2:vim-enhanced-7.4.629-6.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(:MODULE_COMPAT_5.16.3) for package: 2:vim-enhanced-7.4.629-6.el7.x86_64
+    m-k8s: --> Processing Dependency: libperl.so()(64bit) for package: 2:vim-enhanced-7.4.629-6.el7.x86_64
+    m-k8s: --> Processing Dependency: libgpm.so.2()(64bit) for package: 2:vim-enhanced-7.4.629-6.el7.x86_64
+    m-k8s: --> Running transaction check
+    m-k8s: ---> Package gpm-libs.x86_64 0:1.20.7-6.el7 will be installed
+    m-k8s: ---> Package perl.x86_64 4:5.16.3-295.el7 will be installed
+    m-k8s: --> Processing Dependency: perl(Socket) >= 1.3 for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(Scalar::Util) >= 1.10 for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl-macros for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(threads::shared) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(threads) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(constant) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(Time::Local) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(Time::HiRes) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(Storable) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(Socket) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(Scalar::Util) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(Pod::Simple::XHTML) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(Pod::Simple::Search) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(Getopt::Long) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(Filter::Util::Call) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(File::Temp) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(File::Spec::Unix) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(File::Spec::Functions) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(File::Spec) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(File::Path) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(Exporter) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(Cwd) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: --> Processing Dependency: perl(Carp) for package: 4:perl-5.16.3-295.el7.x86_64
+    m-k8s: ---> Package perl-libs.x86_64 4:5.16.3-295.el7 will be installed
+    m-k8s: ---> Package vim-common.x86_64 2:7.4.629-6.el7 will be installed
+    m-k8s: --> Processing Dependency: vim-filesystem for package: 2:vim-common-7.4.629-6.el7.x86_64
+    m-k8s: --> Running transaction check
+    m-k8s: ---> Package perl-Carp.noarch 0:1.26-244.el7 will be installed
+    m-k8s: ---> Package perl-Exporter.noarch 0:5.68-3.el7 will be installed
+    m-k8s: ---> Package perl-File-Path.noarch 0:2.09-2.el7 will be installed
+    m-k8s: ---> Package perl-File-Temp.noarch 0:0.23.01-3.el7 will be installed
+    m-k8s: ---> Package perl-Filter.x86_64 0:1.49-3.el7 will be installed
+    m-k8s: ---> Package perl-Getopt-Long.noarch 0:2.40-3.el7 will be installed
+    m-k8s: --> Processing Dependency: perl(Pod::Usage) >= 1.14 for package: perl-Getopt-Long-2.40-3.el7.noarch
+    m-k8s: --> Processing Dependency: perl(Text::ParseWords) for package: perl-Getopt-Long-2.40-3.el7.noarch
+    m-k8s: ---> Package perl-PathTools.x86_64 0:3.40-5.el7 will be installed
+    m-k8s: ---> Package perl-Pod-Simple.noarch 1:3.28-4.el7 will be installed
+    m-k8s: --> Processing Dependency: perl(Pod::Escapes) >= 1.04 for package: 1:perl-Pod-Simple-3.28-4.el7.noarch
+    m-k8s: --> Processing Dependency: perl(Encode) for package: 1:perl-Pod-Simple-3.28-4.el7.noarch
+    m-k8s: ---> Package perl-Scalar-List-Utils.x86_64 0:1.27-248.el7 will be installed
+    m-k8s: ---> Package perl-Socket.x86_64 0:2.010-5.el7 will be installed
+    m-k8s: ---> Package perl-Storable.x86_64 0:2.45-3.el7 will be installed
+    m-k8s: ---> Package perl-Time-HiRes.x86_64 4:1.9725-3.el7 will be installed
+    m-k8s: ---> Package perl-Time-Local.noarch 0:1.2300-2.el7 will be installed
+    m-k8s: ---> Package perl-constant.noarch 0:1.27-2.el7 will be installed
+    m-k8s: ---> Package perl-macros.x86_64 4:5.16.3-295.el7 will be installed
+    m-k8s: ---> Package perl-threads.x86_64 0:1.87-4.el7 will be installed
+    m-k8s: ---> Package perl-threads-shared.x86_64 0:1.43-6.el7 will be installed
+    m-k8s: ---> Package vim-filesystem.x86_64 2:7.4.629-6.el7 will be installed
+    m-k8s: --> Running transaction check
+    m-k8s: ---> Package perl-Encode.x86_64 0:2.51-7.el7 will be installed
+    m-k8s: ---> Package perl-Pod-Escapes.noarch 1:1.04-295.el7 will be installed
+    m-k8s: ---> Package perl-Pod-Usage.noarch 0:1.63-3.el7 will be installed
+    m-k8s: --> Processing Dependency: perl(Pod::Text) >= 3.15 for package: perl-Pod-Usage-1.63-3.el7.noarch
+    m-k8s: --> Processing Dependency: perl-Pod-Perldoc for package: perl-Pod-Usage-1.63-3.el7.noarch
+    m-k8s: ---> Package perl-Text-ParseWords.noarch 0:3.29-4.el7 will be installed
+    m-k8s: --> Running transaction check
+    m-k8s: ---> Package perl-Pod-Perldoc.noarch 0:3.20-4.el7 will be installed
+    m-k8s: --> Processing Dependency: perl(parent) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+    m-k8s: --> Processing Dependency: perl(HTTP::Tiny) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+    m-k8s: ---> Package perl-podlators.noarch 0:2.5.1-3.el7 will be installed
+    m-k8s: --> Running transaction check
+    m-k8s: ---> Package perl-HTTP-Tiny.noarch 0:0.033-3.el7 will be installed
+    m-k8s: ---> Package perl-parent.noarch 1:0.225-244.el7 will be installed
+    m-k8s: --> Finished Dependency Resolution
+    m-k8s: 
+    m-k8s: Dependencies Resolved
+    m-k8s: 
+    m-k8s: ================================================================================
+    m-k8s:  Package                     Arch        Version                Repository
+    m-k8s:                                                                            Size
+    m-k8s: ================================================================================
+    m-k8s: Installing:
+    m-k8s:  vim-enhanced                x86_64      2:7.4.629-6.el7        base      1.1 M
+    m-k8s: Installing for dependencies:
+    m-k8s:  gpm-libs                    x86_64      1.20.7-6.el7           base       32 k
+    m-k8s:  perl                        x86_64      4:5.16.3-295.el7       base      8.0 M
+    m-k8s:  perl-Carp                   noarch      1.26-244.el7           base       19 k
+    m-k8s:  perl-Encode                 x86_64      2.51-7.el7             base      1.5 M
+    m-k8s:  perl-Exporter               noarch      5.68-3.el7             base       28 k
+    m-k8s:  perl-File-Path              noarch      2.09-2.el7             base       26 k
+    m-k8s:  perl-File-Temp              noarch      0.23.01-3.el7          base       56 k
+    m-k8s:  perl-Filter                 x86_64      1.49-3.el7             base       76 k
+    m-k8s:  perl-Getopt-Long            noarch      2.40-3.el7             base       56 k
+    m-k8s:  perl-HTTP-Tiny              noarch      0.033-3.el7            base       38 k
+    m-k8s:  perl-PathTools              x86_64      3.40-5.el7             base       82 k
+    m-k8s:  perl-Pod-Escapes            noarch      1:1.04-295.el7         base       51 k
+    m-k8s:  perl-Pod-Perldoc            noarch      3.20-4.el7             base       87 k
+    m-k8s:  perl-Pod-Simple             noarch      1:3.28-4.el7           base      216 k
+    m-k8s:  perl-Pod-Usage              noarch      1.63-3.el7             base       27 k
+    m-k8s:  perl-Scalar-List-Utils      x86_64      1.27-248.el7           base       36 k
+    m-k8s:  perl-Socket                 x86_64      2.010-5.el7            base       49 k
+    m-k8s:  perl-Storable               x86_64      2.45-3.el7             base       77 k
+    m-k8s:  perl-Text-ParseWords        noarch      3.29-4.el7             base       14 k
+    m-k8s:  perl-Time-HiRes             x86_64      4:1.9725-3.el7         base       45 k
+    m-k8s:  perl-Time-Local             noarch      1.2300-2.el7           base       24 k
+    m-k8s:  perl-constant               noarch      1.27-2.el7             base       19 k
+    m-k8s:  perl-libs                   x86_64      4:5.16.3-295.el7       base      689 k
+    m-k8s:  perl-macros                 x86_64      4:5.16.3-295.el7       base       44 k
+    m-k8s:  perl-parent                 noarch      1:0.225-244.el7        base       12 k
+    m-k8s:  perl-podlators              noarch      2.5.1-3.el7            base      112 k
+    m-k8s:  perl-threads                x86_64      1.87-4.el7             base       49 k
+    m-k8s:  perl-threads-shared         x86_64      1.43-6.el7             base       39 k
+    m-k8s:  vim-common                  x86_64      2:7.4.629-6.el7        base      5.9 M
+    m-k8s:  vim-filesystem              x86_64      2:7.4.629-6.el7        base       11 k
+    m-k8s: 
+    m-k8s: Transaction Summary
+    m-k8s: ================================================================================
+    m-k8s: Install  1 Package (+30 Dependent packages)
+    m-k8s: Total download size: 18 M
+    m-k8s: Installed size: 60 M
+    m-k8s: Downloading packages:
+    m-k8s: --------------------------------------------------------------------------------
+    m-k8s: Total                                              8.6 MB/s |  18 MB  00:02     
+    m-k8s: Running transaction check
+    m-k8s: Running transaction test
+    m-k8s: Transaction test succeeded
+    m-k8s: Running transaction
+    m-k8s:   Installing : 1:perl-parent-0.225-244.el7.noarch                          1/31
+    m-k8s:  
+    m-k8s:   Installing : perl-HTTP-Tiny-0.033-3.el7.noarch                           2/31
+    m-k8s:  
+    m-k8s:   Installing : perl-podlators-2.5.1-3.el7.noarch                           3/31
+    m-k8s:  
+    m-k8s:   Installing : perl-Pod-Perldoc-3.20-4.el7.noarch                          4/31
+    m-k8s:  
+    m-k8s:   Installing : 1:perl-Pod-Escapes-1.04-295.el7.noarch                      5/31
+    m-k8s:  
+    m-k8s:   Installing : perl-Text-ParseWords-3.29-4.el7.noarch                      6/31
+    m-k8s:  
+    m-k8s:   Installing : perl-Encode-2.51-7.el7.x86_64                               7/31
+    m-k8s:  
+    m-k8s:   Installing : perl-Pod-Usage-1.63-3.el7.noarch                            8/31
+    m-k8s:  
+    m-k8s:   Installing : 4:perl-libs-5.16.3-295.el7.x86_64                           9/31
+    m-k8s:  
+    m-k8s:   Installing : 4:perl-macros-5.16.3-295.el7.x86_64                        10/31
+    m-k8s:  
+    m-k8s:   Installing : perl-Storable-2.45-3.el7.x86_64                            11/31
+    m-k8s:  
+    m-k8s:   Installing : perl-Exporter-5.68-3.el7.noarch                            12/31
+    m-k8s:  
+    m-k8s:   Installing : perl-constant-1.27-2.el7.noarch                            13/31
+    m-k8s:  
+    m-k8s:   Installing : perl-Socket-2.010-5.el7.x86_64                             14/31
+    m-k8s:  
+    m-k8s:   Installing : perl-Time-Local-1.2300-2.el7.noarch                        15/31
+    m-k8s:  
+    m-k8s:   Installing : perl-Carp-1.26-244.el7.noarch                              16/31
+    m-k8s:  
+    m-k8s:   Installing : 4:perl-Time-HiRes-1.9725-3.el7.x86_64                      17/31
+    m-k8s:  
+    m-k8s:   Installing : perl-PathTools-3.40-5.el7.x86_64                           18/31
+    m-k8s:  
+    m-k8s:   Installing : perl-Scalar-List-Utils-1.27-248.el7.x86_64                 19/31
+    m-k8s:  
+    m-k8s:   Installing : perl-File-Temp-0.23.01-3.el7.noarch                        20/31
+    m-k8s:  
+    m-k8s:   Installing : perl-File-Path-2.09-2.el7.noarch                           21/31
+    m-k8s:  
+    m-k8s:   Installing : perl-threads-shared-1.43-6.el7.x86_64                      22/31
+    m-k8s:  
+    m-k8s:   Installing : perl-threads-1.87-4.el7.x86_64                             23/31
+    m-k8s:  
+    m-k8s:   Installing : perl-Filter-1.49-3.el7.x86_64                              24/31
+    m-k8s:  
+    m-k8s:   Installing : 1:perl-Pod-Simple-3.28-4.el7.noarch                        25/31
+    m-k8s:  
+    m-k8s:   Installing : perl-Getopt-Long-2.40-3.el7.noarch                         26/31
+    m-k8s:  
+    m-k8s:   Installing : 4:perl-5.16.3-295.el7.x86_64                               27/31
+    m-k8s:  
+    m-k8s:   Installing : gpm-libs-1.20.7-6.el7.x86_64                               28/31
+    m-k8s:  
+    m-k8s:   Installing : 2:vim-filesystem-7.4.629-6.el7.x86_64                      29/31
+    m-k8s:  
+    m-k8s:   Installing : 2:vim-common-7.4.629-6.el7.x86_64                          30/31
+    m-k8s:  
+    m-k8s:   Installing : 2:vim-enhanced-7.4.629-6.el7.x86_64                        31/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-HTTP-Tiny-0.033-3.el7.noarch                           1/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-threads-shared-1.43-6.el7.x86_64                       2/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-Storable-2.45-3.el7.x86_64                             3/31
+    m-k8s:  
+    m-k8s:   Verifying  : 1:perl-Pod-Escapes-1.04-295.el7.noarch                      4/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-Exporter-5.68-3.el7.noarch                             5/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-constant-1.27-2.el7.noarch                             6/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-PathTools-3.40-5.el7.x86_64                            7/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-Socket-2.010-5.el7.x86_64                              8/31
+    m-k8s:  
+    m-k8s:   Verifying  : 1:perl-parent-0.225-244.el7.noarch                          9/31
+    m-k8s:  
+    m-k8s:   Verifying  : 4:perl-libs-5.16.3-295.el7.x86_64                          10/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-File-Temp-0.23.01-3.el7.noarch                        11/31
+    m-k8s:  
+    m-k8s:   Verifying  : 1:perl-Pod-Simple-3.28-4.el7.noarch                        12/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-Time-Local-1.2300-2.el7.noarch                        13/31
+    m-k8s:  
+    m-k8s:   Verifying  : 4:perl-macros-5.16.3-295.el7.x86_64                        14/31
+    m-k8s:  
+    m-k8s:   Verifying  : 4:perl-5.16.3-295.el7.x86_64                               15/31
+    m-k8s:  
+    m-k8s:   Verifying  : 2:vim-enhanced-7.4.629-6.el7.x86_64                        16/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-Carp-1.26-244.el7.noarch                              17/31
+    m-k8s:  
+    m-k8s:   Verifying  : 4:perl-Time-HiRes-1.9725-3.el7.x86_64                      18/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-Scalar-List-Utils-1.27-248.el7.x86_64                 19/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-Pod-Usage-1.63-3.el7.noarch                           20/31
+    m-k8s:  
+    m-k8s:   Verifying  : 2:vim-common-7.4.629-6.el7.x86_64                          21/31
+    m-k8s:  
+    m-k8s:   Verifying  : 2:vim-filesystem-7.4.629-6.el7.x86_64                      22/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-Encode-2.51-7.el7.x86_64                              23/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-Pod-Perldoc-3.20-4.el7.noarch                         24/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-podlators-2.5.1-3.el7.noarch                          25/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-File-Path-2.09-2.el7.noarch                           26/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-threads-1.87-4.el7.x86_64                             27/31
+    m-k8s:  
+    m-k8s:   Verifying  : gpm-libs-1.20.7-6.el7.x86_64                               28/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-Filter-1.49-3.el7.x86_64                              29/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-Getopt-Long-2.40-3.el7.noarch                         30/31
+    m-k8s:  
+    m-k8s:   Verifying  : perl-Text-ParseWords-3.29-4.el7.noarch                     31/31
+    m-k8s:  
+    m-k8s: 
+    m-k8s: Installed:
+    m-k8s:   vim-enhanced.x86_64 2:7.4.629-6.el7                                           
+    m-k8s: 
+    m-k8s: Dependency Installed:
+    m-k8s:   gpm-libs.x86_64 0:1.20.7-6.el7                                                
+    m-k8s:   perl.x86_64 4:5.16.3-295.el7                                                  
+    m-k8s:   perl-Carp.noarch 0:1.26-244.el7                                               
+    m-k8s:   perl-Encode.x86_64 0:2.51-7.el7                                               
+    m-k8s:   perl-Exporter.noarch 0:5.68-3.el7                                             
+    m-k8s:   perl-File-Path.noarch 0:2.09-2.el7                                            
+    m-k8s:   perl-File-Temp.noarch 0:0.23.01-3.el7                                         
+    m-k8s:   perl-Filter.x86_64 0:1.49-3.el7                                               
+    m-k8s:   perl-Getopt-Long.noarch 0:2.40-3.el7                                          
+    m-k8s:   perl-HTTP-Tiny.noarch 0:0.033-3.el7                                           
+    m-k8s:   perl-PathTools.x86_64 0:3.40-5.el7                                            
+    m-k8s:   perl-Pod-Escapes.noarch 1:1.04-295.el7                                        
+    m-k8s:   perl-Pod-Perldoc.noarch 0:3.20-4.el7                                          
+    m-k8s:   perl-Pod-Simple.noarch 1:3.28-4.el7                                           
+    m-k8s:   perl-Pod-Usage.noarch 0:1.63-3.el7                                            
+    m-k8s:   perl-Scalar-List-Utils.x86_64 0:1.27-248.el7                                  
+    m-k8s:   perl-Socket.x86_64 0:2.010-5.el7                                              
+    m-k8s:   perl-Storable.x86_64 0:2.45-3.el7                                             
+    m-k8s:   perl-Text-ParseWords.noarch 0:3.29-4.el7                                      
+    m-k8s:   perl-Time-HiRes.x86_64 4:1.9725-3.el7                                         
+    m-k8s:   perl-Time-Local.noarch 0:1.2300-2.el7                                         
+    m-k8s:   perl-constant.noarch 0:1.27-2.el7                                             
+    m-k8s:   perl-libs.x86_64 4:5.16.3-295.el7                                             
+    m-k8s:   perl-macros.x86_64 4:5.16.3-295.el7                                           
+    m-k8s:   perl-parent.noarch 1:0.225-244.el7                                            
+    m-k8s:   perl-podlators.noarch 0:2.5.1-3.el7                                           
+    m-k8s:   perl-threads.x86_64 0:1.87-4.el7                                              
+    m-k8s:   perl-threads-shared.x86_64 0:1.43-6.el7                                       
+    m-k8s:   vim-common.x86_64 2:7.4.629-6.el7                                             
+    m-k8s:   vim-filesystem.x86_64 2:7.4.629-6.el7                                         
+    m-k8s: Complete!
+==> m-k8s: Running provisioner: file...
+    m-k8s: ping_2_nds.sh => ping_2_nds.sh
+==> m-k8s: Running provisioner: shell...
+    m-k8s: Running: C:/Users/HOONJO~1/AppData/Local/Temp/vagrant-shell20200505-19380-uk16od.sh
+==> w1-k8s: Importing base box 'sysnet4admin/CentOS-k8s'...
+[KProgress: 30%[KProgress: 50%[KProgress: 70%[KProgress: 90%[K==> w1-k8s: Matching MAC address for NAT networking...
+==> w1-k8s: Checking if box 'sysnet4admin/CentOS-k8s' version '0.6.4' is up to date...
+==> w1-k8s: Setting the name of the VM: w1-k8s(github_SysNet4Admin)
+==> w1-k8s: Clearing any previously set network interfaces...
+==> w1-k8s: Preparing network interfaces based on configuration...
+    w1-k8s: Adapter 1: nat
+    w1-k8s: Adapter 2: hostonly
+==> w1-k8s: Forwarding ports...
+    w1-k8s: 22 (guest) => 60101 (host) (adapter 1)
+==> w1-k8s: Running 'pre-boot' VM customizations...
+==> w1-k8s: Booting VM...
+==> w1-k8s: Waiting for machine to boot. This may take a few minutes...
+    w1-k8s: SSH address: 127.0.0.1:60101
+    w1-k8s: SSH username: vagrant
+    w1-k8s: SSH auth method: private key
+    w1-k8s: Warning: Connection aborted. Retrying...
+    w1-k8s: Warning: Remote connection disconnect. Retrying...
+    w1-k8s: Warning: Connection reset. Retrying...
+    w1-k8s: Warning: Connection aborted. Retrying...
+    w1-k8s: Warning: Remote connection disconnect. Retrying...
+    w1-k8s: Warning: Connection reset. Retrying...
+    w1-k8s: Warning: Connection aborted. Retrying...
+    w1-k8s: 
+    w1-k8s: Vagrant insecure key detected. Vagrant will automatically replace
+    w1-k8s: this with a newly generated keypair for better security.
+    w1-k8s: 
+    w1-k8s: Inserting generated public key within guest...
+    w1-k8s: Removing insecure key from the guest if it's present...
+    w1-k8s: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> w1-k8s: Machine booted and ready!
+==> w1-k8s: Checking for guest additions in VM...
+    w1-k8s: The guest additions on this VM do not match the installed version of
+    w1-k8s: VirtualBox! In most cases this is fine, but in rare cases it can
+    w1-k8s: prevent things such as shared folders from working properly. If you see
+    w1-k8s: shared folder errors, please make sure the guest additions within the
+    w1-k8s: virtual machine match the version of VirtualBox you have installed on
+    w1-k8s: your host and reload your VM.
+    w1-k8s: 
+    w1-k8s: Guest Additions Version: 5.2.12
+    w1-k8s: VirtualBox Version: 6.0
+==> w1-k8s: Setting hostname...
+==> w1-k8s: Configuring and enabling network interfaces...
+==> w1-k8s: Running provisioner: shell...
+    w1-k8s: Running: C:/Users/HOONJO~1/AppData/Local/Temp/vagrant-shell20200505-19380-1p07m68.sh
+    w1-k8s: Loaded plugins: fastestmirror
+    w1-k8s: Determining fastest mirrors
+    w1-k8s:  * base: mirror.kakao.com
+    w1-k8s:  * extras: mirror.kakao.com
+    w1-k8s:  * updates: mirror.kakao.com
+    w1-k8s: Resolving Dependencies
+    w1-k8s: --> Running transaction check
+    w1-k8s: ---> Package epel-release.noarch 0:7-11 will be installed
+    w1-k8s: --> Finished Dependency Resolution
+    w1-k8s: 
+    w1-k8s: Dependencies Resolved
+    w1-k8s: 
+    w1-k8s: ================================================================================
+    w1-k8s:  Package                Arch             Version         Repository        Size
+    w1-k8s: ================================================================================
+    w1-k8s: Installing:
+    w1-k8s:  epel-release           noarch           7-11            extras            15 k
+    w1-k8s: 
+    w1-k8s: Transaction Summary
+    w1-k8s: ================================================================================
+    w1-k8s: Install  1 Package
+    w1-k8s: Total download size: 15 k
+    w1-k8s: Installed size: 24 k
+    w1-k8s: Downloading packages:
+    w1-k8s: Running transaction check
+    w1-k8s: Running transaction test
+    w1-k8s: Transaction test succeeded
+    w1-k8s: Running transaction
+    w1-k8s:   Installing : epel-release-7-11.noarch                                     1/1
+    w1-k8s:  
+    w1-k8s:   Verifying  : epel-release-7-11.noarch                                     1/1
+    w1-k8s:  
+    w1-k8s: 
+    w1-k8s: Installed:
+    w1-k8s:   epel-release.noarch 0:7-11                                                    
+    w1-k8s: Complete!
+    w1-k8s: Loaded plugins: fastestmirror
+    w1-k8s: Loading mirror speeds from cached hostfile
+    w1-k8s:  * base: mirror.kakao.com
+    w1-k8s:  * epel: mirrors.aliyun.com
+    w1-k8s:  * extras: mirror.kakao.com
+    w1-k8s:  * updates: mirror.kakao.com
+    w1-k8s: http://fedora.cs.nctu.edu.tw/epel/7/x86_64/repodata/d4b908c8247cc45700ec1af3b56fb27b2c324897afc4f87e36308628a816a718-updateinfo.xml.bz2: [Errno 14] HTTP Error 404 - Not Found
+    w1-k8s: Trying other mirror.
+    w1-k8s: To address this issue please refer to the below wiki article 
+    w1-k8s: 
+    w1-k8s: https://wiki.centos.org/yum-errors
+    w1-k8s: 
+    w1-k8s: If above article doesn't help to resolve this issue please use https://bugs.centos.org/.
+    w1-k8s: Resolving Dependencies
+    w1-k8s: --> Running transaction check
+    w1-k8s: ---> Package vim-enhanced.x86_64 2:7.4.629-6.el7 will be installed
+    w1-k8s: --> Processing Dependency: vim-common = 2:7.4.629-6.el7 for package: 2:vim-enhanced-7.4.629-6.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(:MODULE_COMPAT_5.16.3) for package: 2:vim-enhanced-7.4.629-6.el7.x86_64
+    w1-k8s: --> Processing Dependency: libperl.so()(64bit) for package: 2:vim-enhanced-7.4.629-6.el7.x86_64
+    w1-k8s: --> Processing Dependency: libgpm.so.2()(64bit) for package: 2:vim-enhanced-7.4.629-6.el7.x86_64
+    w1-k8s: --> Running transaction check
+    w1-k8s: ---> Package gpm-libs.x86_64 0:1.20.7-6.el7 will be installed
+    w1-k8s: ---> Package perl.x86_64 4:5.16.3-295.el7 will be installed
+    w1-k8s: --> Processing Dependency: perl(Socket) >= 1.3 for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(Scalar::Util) >= 1.10 for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl-macros for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(threads::shared) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(threads) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(constant) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(Time::Local) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(Time::HiRes) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(Storable) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(Socket) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(Scalar::Util) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(Pod::Simple::XHTML) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(Pod::Simple::Search) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(Getopt::Long) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(Filter::Util::Call) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(File::Temp) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(File::Spec::Unix) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(File::Spec::Functions) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(File::Spec) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(File::Path) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(Exporter) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(Cwd) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: --> Processing Dependency: perl(Carp) for package: 4:perl-5.16.3-295.el7.x86_64
+    w1-k8s: ---> Package perl-libs.x86_64 4:5.16.3-295.el7 will be installed
+    w1-k8s: ---> Package vim-common.x86_64 2:7.4.629-6.el7 will be installed
+    w1-k8s: --> Processing Dependency: vim-filesystem for package: 2:vim-common-7.4.629-6.el7.x86_64
+    w1-k8s: --> Running transaction check
+    w1-k8s: ---> Package perl-Carp.noarch 0:1.26-244.el7 will be installed
+    w1-k8s: ---> Package perl-Exporter.noarch 0:5.68-3.el7 will be installed
+    w1-k8s: ---> Package perl-File-Path.noarch 0:2.09-2.el7 will be installed
+    w1-k8s: ---> Package perl-File-Temp.noarch 0:0.23.01-3.el7 will be installed
+    w1-k8s: ---> Package perl-Filter.x86_64 0:1.49-3.el7 will be installed
+    w1-k8s: ---> Package perl-Getopt-Long.noarch 0:2.40-3.el7 will be installed
+    w1-k8s: --> Processing Dependency: perl(Pod::Usage) >= 1.14 for package: perl-Getopt-Long-2.40-3.el7.noarch
+    w1-k8s: --> Processing Dependency: perl(Text::ParseWords) for package: perl-Getopt-Long-2.40-3.el7.noarch
+    w1-k8s: ---> Package perl-PathTools.x86_64 0:3.40-5.el7 will be installed
+    w1-k8s: ---> Package perl-Pod-Simple.noarch 1:3.28-4.el7 will be installed
+    w1-k8s: --> Processing Dependency: perl(Pod::Escapes) >= 1.04 for package: 1:perl-Pod-Simple-3.28-4.el7.noarch
+    w1-k8s: --> Processing Dependency: perl(Encode) for package: 1:perl-Pod-Simple-3.28-4.el7.noarch
+    w1-k8s: ---> Package perl-Scalar-List-Utils.x86_64 0:1.27-248.el7 will be installed
+    w1-k8s: ---> Package perl-Socket.x86_64 0:2.010-5.el7 will be installed
+    w1-k8s: ---> Package perl-Storable.x86_64 0:2.45-3.el7 will be installed
+    w1-k8s: ---> Package perl-Time-HiRes.x86_64 4:1.9725-3.el7 will be installed
+    w1-k8s: ---> Package perl-Time-Local.noarch 0:1.2300-2.el7 will be installed
+    w1-k8s: ---> Package perl-constant.noarch 0:1.27-2.el7 will be installed
+    w1-k8s: ---> Package perl-macros.x86_64 4:5.16.3-295.el7 will be installed
+    w1-k8s: ---> Package perl-threads.x86_64 0:1.87-4.el7 will be installed
+    w1-k8s: ---> Package perl-threads-shared.x86_64 0:1.43-6.el7 will be installed
+    w1-k8s: ---> Package vim-filesystem.x86_64 2:7.4.629-6.el7 will be installed
+    w1-k8s: --> Running transaction check
+    w1-k8s: ---> Package perl-Encode.x86_64 0:2.51-7.el7 will be installed
+    w1-k8s: ---> Package perl-Pod-Escapes.noarch 1:1.04-295.el7 will be installed
+    w1-k8s: ---> Package perl-Pod-Usage.noarch 0:1.63-3.el7 will be installed
+    w1-k8s: --> Processing Dependency: perl(Pod::Text) >= 3.15 for package: perl-Pod-Usage-1.63-3.el7.noarch
+    w1-k8s: --> Processing Dependency: perl-Pod-Perldoc for package: perl-Pod-Usage-1.63-3.el7.noarch
+    w1-k8s: ---> Package perl-Text-ParseWords.noarch 0:3.29-4.el7 will be installed
+    w1-k8s: --> Running transaction check
+    w1-k8s: ---> Package perl-Pod-Perldoc.noarch 0:3.20-4.el7 will be installed
+    w1-k8s: --> Processing Dependency: perl(parent) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+    w1-k8s: --> Processing Dependency: perl(HTTP::Tiny) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+    w1-k8s: ---> Package perl-podlators.noarch 0:2.5.1-3.el7 will be installed
+    w1-k8s: --> Running transaction check
+    w1-k8s: ---> Package perl-HTTP-Tiny.noarch 0:0.033-3.el7 will be installed
+    w1-k8s: ---> Package perl-parent.noarch 1:0.225-244.el7 will be installed
+    w1-k8s: --> Finished Dependency Resolution
+    w1-k8s: 
+    w1-k8s: Dependencies Resolved
+    w1-k8s: 
+    w1-k8s: ================================================================================
+    w1-k8s:  Package                     Arch        Version                Repository
+    w1-k8s:                                                                            Size
+    w1-k8s: ================================================================================
+    w1-k8s: Installing:
+    w1-k8s:  vim-enhanced                x86_64      2:7.4.629-6.el7        base      1.1 M
+    w1-k8s: Installing for dependencies:
+    w1-k8s:  gpm-libs                    x86_64      1.20.7-6.el7           base       32 k
+    w1-k8s:  perl                        x86_64      4:5.16.3-295.el7       base      8.0 M
+    w1-k8s:  perl-Carp                   noarch      1.26-244.el7           base       19 k
+    w1-k8s:  perl-Encode                 x86_64      2.51-7.el7             base      1.5 M
+    w1-k8s:  perl-Exporter               noarch      5.68-3.el7             base       28 k
+    w1-k8s:  perl-File-Path              noarch      2.09-2.el7             base       26 k
+    w1-k8s:  perl-File-Temp              noarch      0.23.01-3.el7          base       56 k
+    w1-k8s:  perl-Filter                 x86_64      1.49-3.el7             base       76 k
+    w1-k8s:  perl-Getopt-Long            noarch      2.40-3.el7             base       56 k
+    w1-k8s:  perl-HTTP-Tiny              noarch      0.033-3.el7            base       38 k
+    w1-k8s:  perl-PathTools              x86_64      3.40-5.el7             base       82 k
+    w1-k8s:  perl-Pod-Escapes            noarch      1:1.04-295.el7         base       51 k
+    w1-k8s:  perl-Pod-Perldoc            noarch      3.20-4.el7             base       87 k
+    w1-k8s:  perl-Pod-Simple             noarch      1:3.28-4.el7           base      216 k
+    w1-k8s:  perl-Pod-Usage              noarch      1.63-3.el7             base       27 k
+    w1-k8s:  perl-Scalar-List-Utils      x86_64      1.27-248.el7           base       36 k
+    w1-k8s:  perl-Socket                 x86_64      2.010-5.el7            base       49 k
+    w1-k8s:  perl-Storable               x86_64      2.45-3.el7             base       77 k
+    w1-k8s:  perl-Text-ParseWords        noarch      3.29-4.el7             base       14 k
+    w1-k8s:  perl-Time-HiRes             x86_64      4:1.9725-3.el7         base       45 k
+    w1-k8s:  perl-Time-Local             noarch      1.2300-2.el7           base       24 k
+    w1-k8s:  perl-constant               noarch      1.27-2.el7             base       19 k
+    w1-k8s:  perl-libs                   x86_64      4:5.16.3-295.el7       base      689 k
+    w1-k8s:  perl-macros                 x86_64      4:5.16.3-295.el7       base       44 k
+    w1-k8s:  perl-parent                 noarch      1:0.225-244.el7        base       12 k
+    w1-k8s:  perl-podlators              noarch      2.5.1-3.el7            base      112 k
+    w1-k8s:  perl-threads                x86_64      1.87-4.el7             base       49 k
+    w1-k8s:  perl-threads-shared         x86_64      1.43-6.el7             base       39 k
+    w1-k8s:  vim-common                  x86_64      2:7.4.629-6.el7        base      5.9 M
+    w1-k8s:  vim-filesystem              x86_64      2:7.4.629-6.el7        base       11 k
+    w1-k8s: 
+    w1-k8s: Transaction Summary
+    w1-k8s: ================================================================================
+    w1-k8s: Install  1 Package (+30 Dependent packages)
+    w1-k8s: Total download size: 18 M
+    w1-k8s: Installed size: 60 M
+    w1-k8s: Downloading packages:
+    w1-k8s: --------------------------------------------------------------------------------
+    w1-k8s: Total                                              8.5 MB/s |  18 MB  00:02     
+    w1-k8s: Running transaction check
+    w1-k8s: Running transaction test
+    w1-k8s: Transaction test succeeded
+    w1-k8s: Running transaction
+    w1-k8s:   Installing : 1:perl-parent-0.225-244.el7.noarch                          1/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-HTTP-Tiny-0.033-3.el7.noarch                           2/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-podlators-2.5.1-3.el7.noarch                           3/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-Pod-Perldoc-3.20-4.el7.noarch                          4/31
+    w1-k8s:  
+    w1-k8s:   Installing : 1:perl-Pod-Escapes-1.04-295.el7.noarch                      5/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-Text-ParseWords-3.29-4.el7.noarch                      6/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-Encode-2.51-7.el7.x86_64                               7/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-Pod-Usage-1.63-3.el7.noarch                            8/31
+    w1-k8s:  
+    w1-k8s:   Installing : 4:perl-libs-5.16.3-295.el7.x86_64                           9/31
+    w1-k8s:  
+    w1-k8s:   Installing : 4:perl-macros-5.16.3-295.el7.x86_64                        10/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-Storable-2.45-3.el7.x86_64                            11/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-Exporter-5.68-3.el7.noarch                            12/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-constant-1.27-2.el7.noarch                            13/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-Socket-2.010-5.el7.x86_64                             14/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-Time-Local-1.2300-2.el7.noarch                        15/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-Carp-1.26-244.el7.noarch                              16/31
+    w1-k8s:  
+    w1-k8s:   Installing : 4:perl-Time-HiRes-1.9725-3.el7.x86_64                      17/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-PathTools-3.40-5.el7.x86_64                           18/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-Scalar-List-Utils-1.27-248.el7.x86_64                 19/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-File-Temp-0.23.01-3.el7.noarch                        20/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-File-Path-2.09-2.el7.noarch                           21/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-threads-shared-1.43-6.el7.x86_64                      22/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-threads-1.87-4.el7.x86_64                             23/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-Filter-1.49-3.el7.x86_64                              24/31
+    w1-k8s:  
+    w1-k8s:   Installing : 1:perl-Pod-Simple-3.28-4.el7.noarch                        25/31
+    w1-k8s:  
+    w1-k8s:   Installing : perl-Getopt-Long-2.40-3.el7.noarch                         26/31
+    w1-k8s:  
+    w1-k8s:   Installing : 4:perl-5.16.3-295.el7.x86_64                               27/31
+    w1-k8s:  
+    w1-k8s:   Installing : gpm-libs-1.20.7-6.el7.x86_64                               28/31
+    w1-k8s:  
+    w1-k8s:   Installing : 2:vim-filesystem-7.4.629-6.el7.x86_64                      29/31
+    w1-k8s:  
+    w1-k8s:   Installing : 2:vim-common-7.4.629-6.el7.x86_64                          30/31
+    w1-k8s:  
+    w1-k8s:   Installing : 2:vim-enhanced-7.4.629-6.el7.x86_64                        31/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-HTTP-Tiny-0.033-3.el7.noarch                           1/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-threads-shared-1.43-6.el7.x86_64                       2/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-Storable-2.45-3.el7.x86_64                             3/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : 1:perl-Pod-Escapes-1.04-295.el7.noarch                      4/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-Exporter-5.68-3.el7.noarch                             5/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-constant-1.27-2.el7.noarch                             6/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-PathTools-3.40-5.el7.x86_64                            7/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-Socket-2.010-5.el7.x86_64                              8/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : 1:perl-parent-0.225-244.el7.noarch                          9/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : 4:perl-libs-5.16.3-295.el7.x86_64                          10/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-File-Temp-0.23.01-3.el7.noarch                        11/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : 1:perl-Pod-Simple-3.28-4.el7.noarch                        12/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-Time-Local-1.2300-2.el7.noarch                        13/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : 4:perl-macros-5.16.3-295.el7.x86_64                        14/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : 4:perl-5.16.3-295.el7.x86_64                               15/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : 2:vim-enhanced-7.4.629-6.el7.x86_64                        16/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-Carp-1.26-244.el7.noarch                              17/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : 4:perl-Time-HiRes-1.9725-3.el7.x86_64                      18/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-Scalar-List-Utils-1.27-248.el7.x86_64                 19/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-Pod-Usage-1.63-3.el7.noarch                           20/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : 2:vim-common-7.4.629-6.el7.x86_64                          21/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : 2:vim-filesystem-7.4.629-6.el7.x86_64                      22/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-Encode-2.51-7.el7.x86_64                              23/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-Pod-Perldoc-3.20-4.el7.noarch                         24/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-podlators-2.5.1-3.el7.noarch                          25/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-File-Path-2.09-2.el7.noarch                           26/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-threads-1.87-4.el7.x86_64                             27/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : gpm-libs-1.20.7-6.el7.x86_64                               28/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-Filter-1.49-3.el7.x86_64                              29/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-Getopt-Long-2.40-3.el7.noarch                         30/31
+    w1-k8s:  
+    w1-k8s:   Verifying  : perl-Text-ParseWords-3.29-4.el7.noarch                     31/31
+    w1-k8s:  
+    w1-k8s: 
+    w1-k8s: Installed:
+    w1-k8s:   vim-enhanced.x86_64 2:7.4.629-6.el7                                           
+    w1-k8s: 
+    w1-k8s: Dependency Installed:
+    w1-k8s:   gpm-libs.x86_64 0:1.20.7-6.el7                                                
+    w1-k8s:   perl.x86_64 4:5.16.3-295.el7                                                  
+    w1-k8s:   perl-Carp.noarch 0:1.26-244.el7                                               
+    w1-k8s:   perl-Encode.x86_64 0:2.51-7.el7                                               
+    w1-k8s:   perl-Exporter.noarch 0:5.68-3.el7                                             
+    w1-k8s:   perl-File-Path.noarch 0:2.09-2.el7                                            
+    w1-k8s:   perl-File-Temp.noarch 0:0.23.01-3.el7                                         
+    w1-k8s:   perl-Filter.x86_64 0:1.49-3.el7                                               
+    w1-k8s:   perl-Getopt-Long.noarch 0:2.40-3.el7                                          
+    w1-k8s:   perl-HTTP-Tiny.noarch 0:0.033-3.el7                                           
+    w1-k8s:   perl-PathTools.x86_64 0:3.40-5.el7                                            
+    w1-k8s:   perl-Pod-Escapes.noarch 1:1.04-295.el7                                        
+    w1-k8s:   perl-Pod-Perldoc.noarch 0:3.20-4.el7                                          
+    w1-k8s:   perl-Pod-Simple.noarch 1:3.28-4.el7                                           
+    w1-k8s:   perl-Pod-Usage.noarch 0:1.63-3.el7                                            
+    w1-k8s:   perl-Scalar-List-Utils.x86_64 0:1.27-248.el7                                  
+    w1-k8s:   perl-Socket.x86_64 0:2.010-5.el7                                              
+    w1-k8s:   perl-Storable.x86_64 0:2.45-3.el7                                             
+    w1-k8s:   perl-Text-ParseWords.noarch 0:3.29-4.el7                                      
+    w1-k8s:   perl-Time-HiRes.x86_64 4:1.9725-3.el7                                         
+    w1-k8s:   perl-Time-Local.noarch 0:1.2300-2.el7                                         
+    w1-k8s:   perl-constant.noarch 0:1.27-2.el7                                             
+    w1-k8s:   perl-libs.x86_64 4:5.16.3-295.el7                                             
+    w1-k8s:   perl-macros.x86_64 4:5.16.3-295.el7                                           
+    w1-k8s:   perl-parent.noarch 1:0.225-244.el7                                            
+    w1-k8s:   perl-podlators.noarch 0:2.5.1-3.el7                                           
+    w1-k8s:   perl-threads.x86_64 0:1.87-4.el7                                              
+    w1-k8s:   perl-threads-shared.x86_64 0:1.43-6.el7                                       
+    w1-k8s:   vim-common.x86_64 2:7.4.629-6.el7                                             
+    w1-k8s:   vim-filesystem.x86_64 2:7.4.629-6.el7                                         
+    w1-k8s: Complete!
+==> w2-k8s: Importing base box 'sysnet4admin/CentOS-k8s'...
+[KProgress: 30%[KProgress: 50%[KProgress: 70%[KProgress: 90%[K==> w2-k8s: Matching MAC address for NAT networking...
+==> w2-k8s: Checking if box 'sysnet4admin/CentOS-k8s' version '0.6.4' is up to date...
+==> w2-k8s: Setting the name of the VM: w2-k8s(github_SysNet4Admin)
+==> w2-k8s: Clearing any previously set network interfaces...
+==> w2-k8s: Preparing network interfaces based on configuration...
+    w2-k8s: Adapter 1: nat
+    w2-k8s: Adapter 2: hostonly
+==> w2-k8s: Forwarding ports...
+    w2-k8s: 22 (guest) => 60102 (host) (adapter 1)
+==> w2-k8s: Running 'pre-boot' VM customizations...
+==> w2-k8s: Booting VM...
+==> w2-k8s: Waiting for machine to boot. This may take a few minutes...
+    w2-k8s: SSH address: 127.0.0.1:60102
+    w2-k8s: SSH username: vagrant
+    w2-k8s: SSH auth method: private key
+    w2-k8s: Warning: Connection aborted. Retrying...
+    w2-k8s: Warning: Connection reset. Retrying...
+    w2-k8s: Warning: Remote connection disconnect. Retrying...
+    w2-k8s: Warning: Connection aborted. Retrying...
+    w2-k8s: Warning: Connection reset. Retrying...
+    w2-k8s: Warning: Remote connection disconnect. Retrying...
+    w2-k8s: Warning: Connection aborted. Retrying...
+    w2-k8s: Warning: Connection reset. Retrying...
+    w2-k8s: 
+    w2-k8s: Vagrant insecure key detected. Vagrant will automatically replace
+    w2-k8s: this with a newly generated keypair for better security.
+    w2-k8s: 
+    w2-k8s: Inserting generated public key within guest...
+    w2-k8s: Removing insecure key from the guest if it's present...
+    w2-k8s: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> w2-k8s: Machine booted and ready!
+==> w2-k8s: Checking for guest additions in VM...
+    w2-k8s: The guest additions on this VM do not match the installed version of
+    w2-k8s: VirtualBox! In most cases this is fine, but in rare cases it can
+    w2-k8s: prevent things such as shared folders from working properly. If you see
+    w2-k8s: shared folder errors, please make sure the guest additions within the
+    w2-k8s: virtual machine match the version of VirtualBox you have installed on
+    w2-k8s: your host and reload your VM.
+    w2-k8s: 
+    w2-k8s: Guest Additions Version: 5.2.12
+    w2-k8s: VirtualBox Version: 6.0
+==> w2-k8s: Setting hostname...
+==> w2-k8s: Configuring and enabling network interfaces...
+==> w2-k8s: Running provisioner: shell...
+    w2-k8s: Running: C:/Users/HOONJO~1/AppData/Local/Temp/vagrant-shell20200505-19380-v58q9c.sh
+    w2-k8s: Loaded plugins: fastestmirror
+    w2-k8s: Determining fastest mirrors
+    w2-k8s:  * base: ftp.kaist.ac.kr
+    w2-k8s:  * extras: ftp.kaist.ac.kr
+    w2-k8s:  * updates: ftp.kaist.ac.kr
+    w2-k8s: Resolving Dependencies
+    w2-k8s: --> Running transaction check
+    w2-k8s: ---> Package epel-release.noarch 0:7-11 will be installed
+    w2-k8s: --> Finished Dependency Resolution
+    w2-k8s: 
+    w2-k8s: Dependencies Resolved
+    w2-k8s: 
+    w2-k8s: ================================================================================
+    w2-k8s:  Package                Arch             Version         Repository        Size
+    w2-k8s: ================================================================================
+    w2-k8s: Installing:
+    w2-k8s:  epel-release           noarch           7-11            extras            15 k
+    w2-k8s: 
+    w2-k8s: Transaction Summary
+    w2-k8s: ================================================================================
+    w2-k8s: Install  1 Package
+    w2-k8s: Total download size: 15 k
+    w2-k8s: Installed size: 24 k
+    w2-k8s: Downloading packages:
+    w2-k8s: Running transaction check
+    w2-k8s: Running transaction test
+    w2-k8s: Transaction test succeeded
+    w2-k8s: Running transaction
+    w2-k8s:   Installing : epel-release-7-11.noarch                                     1/1
+    w2-k8s:  
+    w2-k8s:   Verifying  : epel-release-7-11.noarch                                     1/1
+    w2-k8s:  
+    w2-k8s: 
+    w2-k8s: Installed:
+    w2-k8s:   epel-release.noarch 0:7-11                                                    
+    w2-k8s: Complete!
+    w2-k8s: Loaded plugins: fastestmirror
+    w2-k8s: Loading mirror speeds from cached hostfile
+    w2-k8s:  * base: ftp.kaist.ac.kr
+    w2-k8s:  * epel: mirror2.totbb.net
+    w2-k8s:  * extras: ftp.kaist.ac.kr
+    w2-k8s:  * updates: ftp.kaist.ac.kr
+    w2-k8s: http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/7/x86_64/repodata/c833c311ec40ebcc39b4ddb83172fecedfa095b64d1ad94cceaca57a39765a1c-primary.sqlite.bz2: [Errno 14] HTTP Error 404 - Not Found
+    w2-k8s: Trying other mirror.
+    w2-k8s: To address this issue please refer to the below wiki article 
+    w2-k8s: 
+    w2-k8s: https://wiki.centos.org/yum-errors
+    w2-k8s: 
+    w2-k8s: If above article doesn't help to resolve this issue please use https://bugs.centos.org/.
+    w2-k8s: Resolving Dependencies
+    w2-k8s: --> Running transaction check
+    w2-k8s: ---> Package vim-enhanced.x86_64 2:7.4.629-6.el7 will be installed
+    w2-k8s: --> Processing Dependency: vim-common = 2:7.4.629-6.el7 for package: 2:vim-enhanced-7.4.629-6.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(:MODULE_COMPAT_5.16.3) for package: 2:vim-enhanced-7.4.629-6.el7.x86_64
+    w2-k8s: --> Processing Dependency: libperl.so()(64bit) for package: 2:vim-enhanced-7.4.629-6.el7.x86_64
+    w2-k8s: --> Processing Dependency: libgpm.so.2()(64bit) for package: 2:vim-enhanced-7.4.629-6.el7.x86_64
+    w2-k8s: --> Running transaction check
+    w2-k8s: ---> Package gpm-libs.x86_64 0:1.20.7-6.el7 will be installed
+    w2-k8s: ---> Package perl.x86_64 4:5.16.3-295.el7 will be installed
+    w2-k8s: --> Processing Dependency: perl(Socket) >= 1.3 for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(Scalar::Util) >= 1.10 for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl-macros for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(threads::shared) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(threads) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(constant) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(Time::Local) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(Time::HiRes) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(Storable) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(Socket) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(Scalar::Util) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(Pod::Simple::XHTML) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(Pod::Simple::Search) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(Getopt::Long) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(Filter::Util::Call) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(File::Temp) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(File::Spec::Unix) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(File::Spec::Functions) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(File::Spec) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(File::Path) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(Exporter) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(Cwd) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: --> Processing Dependency: perl(Carp) for package: 4:perl-5.16.3-295.el7.x86_64
+    w2-k8s: ---> Package perl-libs.x86_64 4:5.16.3-295.el7 will be installed
+    w2-k8s: ---> Package vim-common.x86_64 2:7.4.629-6.el7 will be installed
+    w2-k8s: --> Processing Dependency: vim-filesystem for package: 2:vim-common-7.4.629-6.el7.x86_64
+    w2-k8s: --> Running transaction check
+    w2-k8s: ---> Package perl-Carp.noarch 0:1.26-244.el7 will be installed
+    w2-k8s: ---> Package perl-Exporter.noarch 0:5.68-3.el7 will be installed
+    w2-k8s: ---> Package perl-File-Path.noarch 0:2.09-2.el7 will be installed
+    w2-k8s: ---> Package perl-File-Temp.noarch 0:0.23.01-3.el7 will be installed
+    w2-k8s: ---> Package perl-Filter.x86_64 0:1.49-3.el7 will be installed
+    w2-k8s: ---> Package perl-Getopt-Long.noarch 0:2.40-3.el7 will be installed
+    w2-k8s: --> Processing Dependency: perl(Pod::Usage) >= 1.14 for package: perl-Getopt-Long-2.40-3.el7.noarch
+    w2-k8s: --> Processing Dependency: perl(Text::ParseWords) for package: perl-Getopt-Long-2.40-3.el7.noarch
+    w2-k8s: ---> Package perl-PathTools.x86_64 0:3.40-5.el7 will be installed
+    w2-k8s: ---> Package perl-Pod-Simple.noarch 1:3.28-4.el7 will be installed
+    w2-k8s: --> Processing Dependency: perl(Pod::Escapes) >= 1.04 for package: 1:perl-Pod-Simple-3.28-4.el7.noarch
+    w2-k8s: --> Processing Dependency: perl(Encode) for package: 1:perl-Pod-Simple-3.28-4.el7.noarch
+    w2-k8s: ---> Package perl-Scalar-List-Utils.x86_64 0:1.27-248.el7 will be installed
+    w2-k8s: ---> Package perl-Socket.x86_64 0:2.010-5.el7 will be installed
+    w2-k8s: ---> Package perl-Storable.x86_64 0:2.45-3.el7 will be installed
+    w2-k8s: ---> Package perl-Time-HiRes.x86_64 4:1.9725-3.el7 will be installed
+    w2-k8s: ---> Package perl-Time-Local.noarch 0:1.2300-2.el7 will be installed
+    w2-k8s: ---> Package perl-constant.noarch 0:1.27-2.el7 will be installed
+    w2-k8s: ---> Package perl-macros.x86_64 4:5.16.3-295.el7 will be installed
+    w2-k8s: ---> Package perl-threads.x86_64 0:1.87-4.el7 will be installed
+    w2-k8s: ---> Package perl-threads-shared.x86_64 0:1.43-6.el7 will be installed
+    w2-k8s: ---> Package vim-filesystem.x86_64 2:7.4.629-6.el7 will be installed
+    w2-k8s: --> Running transaction check
+    w2-k8s: ---> Package perl-Encode.x86_64 0:2.51-7.el7 will be installed
+    w2-k8s: ---> Package perl-Pod-Escapes.noarch 1:1.04-295.el7 will be installed
+    w2-k8s: ---> Package perl-Pod-Usage.noarch 0:1.63-3.el7 will be installed
+    w2-k8s: --> Processing Dependency: perl(Pod::Text) >= 3.15 for package: perl-Pod-Usage-1.63-3.el7.noarch
+    w2-k8s: --> Processing Dependency: perl-Pod-Perldoc for package: perl-Pod-Usage-1.63-3.el7.noarch
+    w2-k8s: ---> Package perl-Text-ParseWords.noarch 0:3.29-4.el7 will be installed
+    w2-k8s: --> Running transaction check
+    w2-k8s: ---> Package perl-Pod-Perldoc.noarch 0:3.20-4.el7 will be installed
+    w2-k8s: --> Processing Dependency: perl(parent) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+    w2-k8s: --> Processing Dependency: perl(HTTP::Tiny) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+    w2-k8s: ---> Package perl-podlators.noarch 0:2.5.1-3.el7 will be installed
+    w2-k8s: --> Running transaction check
+    w2-k8s: ---> Package perl-HTTP-Tiny.noarch 0:0.033-3.el7 will be installed
+    w2-k8s: ---> Package perl-parent.noarch 1:0.225-244.el7 will be installed
+    w2-k8s: --> Finished Dependency Resolution
+    w2-k8s: 
+    w2-k8s: Dependencies Resolved
+    w2-k8s: 
+    w2-k8s: ================================================================================
+    w2-k8s:  Package                     Arch        Version                Repository
+    w2-k8s:                                                                            Size
+    w2-k8s: ================================================================================
+    w2-k8s: Installing:
+    w2-k8s:  vim-enhanced                x86_64      2:7.4.629-6.el7        base      1.1 M
+    w2-k8s: Installing for dependencies:
+    w2-k8s:  gpm-libs                    x86_64      1.20.7-6.el7           base       32 k
+    w2-k8s:  perl                        x86_64      4:5.16.3-295.el7       base      8.0 M
+    w2-k8s:  perl-Carp                   noarch      1.26-244.el7           base       19 k
+    w2-k8s:  perl-Encode                 x86_64      2.51-7.el7             base      1.5 M
+    w2-k8s:  perl-Exporter               noarch      5.68-3.el7             base       28 k
+    w2-k8s:  perl-File-Path              noarch      2.09-2.el7             base       26 k
+    w2-k8s:  perl-File-Temp              noarch      0.23.01-3.el7          base       56 k
+    w2-k8s:  perl-Filter                 x86_64      1.49-3.el7             base       76 k
+    w2-k8s:  perl-Getopt-Long            noarch      2.40-3.el7             base       56 k
+    w2-k8s:  perl-HTTP-Tiny              noarch      0.033-3.el7            base       38 k
+    w2-k8s:  perl-PathTools              x86_64      3.40-5.el7             base       82 k
+    w2-k8s:  perl-Pod-Escapes            noarch      1:1.04-295.el7         base       51 k
+    w2-k8s:  perl-Pod-Perldoc            noarch      3.20-4.el7             base       87 k
+    w2-k8s:  perl-Pod-Simple             noarch      1:3.28-4.el7           base      216 k
+    w2-k8s:  perl-Pod-Usage              noarch      1.63-3.el7             base       27 k
+    w2-k8s:  perl-Scalar-List-Utils      x86_64      1.27-248.el7           base       36 k
+    w2-k8s:  perl-Socket                 x86_64      2.010-5.el7            base       49 k
+    w2-k8s:  perl-Storable               x86_64      2.45-3.el7             base       77 k
+    w2-k8s:  perl-Text-ParseWords        noarch      3.29-4.el7             base       14 k
+    w2-k8s:  perl-Time-HiRes             x86_64      4:1.9725-3.el7         base       45 k
+    w2-k8s:  perl-Time-Local             noarch      1.2300-2.el7           base       24 k
+    w2-k8s:  perl-constant               noarch      1.27-2.el7             base       19 k
+    w2-k8s:  perl-libs                   x86_64      4:5.16.3-295.el7       base      689 k
+    w2-k8s:  perl-macros                 x86_64      4:5.16.3-295.el7       base       44 k
+    w2-k8s:  perl-parent                 noarch      1:0.225-244.el7        base       12 k
+    w2-k8s:  perl-podlators              noarch      2.5.1-3.el7            base      112 k
+    w2-k8s:  perl-threads                x86_64      1.87-4.el7             base       49 k
+    w2-k8s:  perl-threads-shared         x86_64      1.43-6.el7             base       39 k
+    w2-k8s:  vim-common                  x86_64      2:7.4.629-6.el7        base      5.9 M
+    w2-k8s:  vim-filesystem              x86_64      2:7.4.629-6.el7        base       11 k
+    w2-k8s: 
+    w2-k8s: Transaction Summary
+    w2-k8s: ================================================================================
+    w2-k8s: Install  1 Package (+30 Dependent packages)
+    w2-k8s: Total download size: 18 M
+    w2-k8s: Installed size: 60 M
+    w2-k8s: Downloading packages:
+    w2-k8s: --------------------------------------------------------------------------------
+    w2-k8s: Total                                              8.4 MB/s |  18 MB  00:02     
+    w2-k8s: Running transaction check
+    w2-k8s: Running transaction test
+    w2-k8s: Transaction test succeeded
+    w2-k8s: Running transaction
+    w2-k8s:   Installing : 1:perl-parent-0.225-244.el7.noarch                          1/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-HTTP-Tiny-0.033-3.el7.noarch                           2/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-podlators-2.5.1-3.el7.noarch                           3/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-Pod-Perldoc-3.20-4.el7.noarch                          4/31
+    w2-k8s:  
+    w2-k8s:   Installing : 1:perl-Pod-Escapes-1.04-295.el7.noarch                      5/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-Text-ParseWords-3.29-4.el7.noarch                      6/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-Encode-2.51-7.el7.x86_64                               7/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-Pod-Usage-1.63-3.el7.noarch                            8/31
+    w2-k8s:  
+    w2-k8s:   Installing : 4:perl-libs-5.16.3-295.el7.x86_64                           9/31
+    w2-k8s:  
+    w2-k8s:   Installing : 4:perl-macros-5.16.3-295.el7.x86_64                        10/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-Storable-2.45-3.el7.x86_64                            11/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-Exporter-5.68-3.el7.noarch                            12/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-constant-1.27-2.el7.noarch                            13/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-Socket-2.010-5.el7.x86_64                             14/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-Time-Local-1.2300-2.el7.noarch                        15/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-Carp-1.26-244.el7.noarch                              16/31
+    w2-k8s:  
+    w2-k8s:   Installing : 4:perl-Time-HiRes-1.9725-3.el7.x86_64                      17/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-PathTools-3.40-5.el7.x86_64                           18/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-Scalar-List-Utils-1.27-248.el7.x86_64                 19/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-File-Temp-0.23.01-3.el7.noarch                        20/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-File-Path-2.09-2.el7.noarch                           21/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-threads-shared-1.43-6.el7.x86_64                      22/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-threads-1.87-4.el7.x86_64                             23/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-Filter-1.49-3.el7.x86_64                              24/31
+    w2-k8s:  
+    w2-k8s:   Installing : 1:perl-Pod-Simple-3.28-4.el7.noarch                        25/31
+    w2-k8s:  
+    w2-k8s:   Installing : perl-Getopt-Long-2.40-3.el7.noarch                         26/31
+    w2-k8s:  
+    w2-k8s:   Installing : 4:perl-5.16.3-295.el7.x86_64                               27/31
+    w2-k8s:  
+    w2-k8s:   Installing : gpm-libs-1.20.7-6.el7.x86_64                               28/31
+    w2-k8s:  
+    w2-k8s:   Installing : 2:vim-filesystem-7.4.629-6.el7.x86_64                      29/31
+    w2-k8s:  
+    w2-k8s:   Installing : 2:vim-common-7.4.629-6.el7.x86_64                          30/31
+    w2-k8s:  
+    w2-k8s:   Installing : 2:vim-enhanced-7.4.629-6.el7.x86_64                        31/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-HTTP-Tiny-0.033-3.el7.noarch                           1/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-threads-shared-1.43-6.el7.x86_64                       2/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-Storable-2.45-3.el7.x86_64                             3/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : 1:perl-Pod-Escapes-1.04-295.el7.noarch                      4/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-Exporter-5.68-3.el7.noarch                             5/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-constant-1.27-2.el7.noarch                             6/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-PathTools-3.40-5.el7.x86_64                            7/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-Socket-2.010-5.el7.x86_64                              8/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : 1:perl-parent-0.225-244.el7.noarch                          9/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : 4:perl-libs-5.16.3-295.el7.x86_64                          10/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-File-Temp-0.23.01-3.el7.noarch                        11/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : 1:perl-Pod-Simple-3.28-4.el7.noarch                        12/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-Time-Local-1.2300-2.el7.noarch                        13/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : 4:perl-macros-5.16.3-295.el7.x86_64                        14/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : 4:perl-5.16.3-295.el7.x86_64                               15/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : 2:vim-enhanced-7.4.629-6.el7.x86_64                        16/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-Carp-1.26-244.el7.noarch                              17/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : 4:perl-Time-HiRes-1.9725-3.el7.x86_64                      18/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-Scalar-List-Utils-1.27-248.el7.x86_64                 19/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-Pod-Usage-1.63-3.el7.noarch                           20/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : 2:vim-common-7.4.629-6.el7.x86_64                          21/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : 2:vim-filesystem-7.4.629-6.el7.x86_64                      22/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-Encode-2.51-7.el7.x86_64                              23/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-Pod-Perldoc-3.20-4.el7.noarch                         24/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-podlators-2.5.1-3.el7.noarch                          25/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-File-Path-2.09-2.el7.noarch                           26/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-threads-1.87-4.el7.x86_64                             27/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : gpm-libs-1.20.7-6.el7.x86_64                               28/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-Filter-1.49-3.el7.x86_64                              29/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-Getopt-Long-2.40-3.el7.noarch                         30/31
+    w2-k8s:  
+    w2-k8s:   Verifying  : perl-Text-ParseWords-3.29-4.el7.noarch                     31/31
+    w2-k8s:  
+    w2-k8s: 
+    w2-k8s: Installed:
+    w2-k8s:   vim-enhanced.x86_64 2:7.4.629-6.el7                                           
+    w2-k8s: 
+    w2-k8s: Dependency Installed:
+    w2-k8s:   gpm-libs.x86_64 0:1.20.7-6.el7                                                
+    w2-k8s:   perl.x86_64 4:5.16.3-295.el7                                                  
+    w2-k8s:   perl-Carp.noarch 0:1.26-244.el7                                               
+    w2-k8s:   perl-Encode.x86_64 0:2.51-7.el7                                               
+    w2-k8s:   perl-Exporter.noarch 0:5.68-3.el7                                             
+    w2-k8s:   perl-File-Path.noarch 0:2.09-2.el7                                            
+    w2-k8s:   perl-File-Temp.noarch 0:0.23.01-3.el7                                         
+    w2-k8s:   perl-Filter.x86_64 0:1.49-3.el7                                               
+    w2-k8s:   perl-Getopt-Long.noarch 0:2.40-3.el7                                          
+    w2-k8s:   perl-HTTP-Tiny.noarch 0:0.033-3.el7                                           
+    w2-k8s:   perl-PathTools.x86_64 0:3.40-5.el7                                            
+    w2-k8s:   perl-Pod-Escapes.noarch 1:1.04-295.el7                                        
+    w2-k8s:   perl-Pod-Perldoc.noarch 0:3.20-4.el7                                          
+    w2-k8s:   perl-Pod-Simple.noarch 1:3.28-4.el7                                           
+    w2-k8s:   perl-Pod-Usage.noarch 0:1.63-3.el7                                            
+    w2-k8s:   perl-Scalar-List-Utils.x86_64 0:1.27-248.el7                                  
+    w2-k8s:   perl-Socket.x86_64 0:2.010-5.el7                                              
+    w2-k8s:   perl-Storable.x86_64 0:2.45-3.el7                                             
+    w2-k8s:   perl-Text-ParseWords.noarch 0:3.29-4.el7                                      
+    w2-k8s:   perl-Time-HiRes.x86_64 4:1.9725-3.el7                                         
+    w2-k8s:   perl-Time-Local.noarch 0:1.2300-2.el7                                         
+    w2-k8s:   perl-constant.noarch 0:1.27-2.el7                                             
+    w2-k8s:   perl-libs.x86_64 4:5.16.3-295.el7                                             
+    w2-k8s:   perl-macros.x86_64 4:5.16.3-295.el7                                           
+    w2-k8s:   perl-parent.noarch 1:0.225-244.el7                                            
+    w2-k8s:   perl-podlators.noarch 0:2.5.1-3.el7                                           
+    w2-k8s:   perl-threads.x86_64 0:1.87-4.el7                                              
+    w2-k8s:   perl-threads-shared.x86_64 0:1.43-6.el7                                       
+    w2-k8s:   vim-common.x86_64 2:7.4.629-6.el7                                             
+    w2-k8s:   vim-filesystem.x86_64 2:7.4.629-6.el7                                         
+    w2-k8s: Complete!
+==> w3-k8s: Importing base box 'sysnet4admin/CentOS-k8s'...
+[KProgress: 30%[KProgress: 50%[KProgress: 70%[KProgress: 90%[K==> w3-k8s: Matching MAC address for NAT networking...
+==> w3-k8s: Checking if box 'sysnet4admin/CentOS-k8s' version '0.6.4' is up to date...
+==> w3-k8s: Setting the name of the VM: w3-k8s(github_SysNet4Admin)
+==> w3-k8s: Clearing any previously set network interfaces...
+==> w3-k8s: Preparing network interfaces based on configuration...
+    w3-k8s: Adapter 1: nat
+    w3-k8s: Adapter 2: hostonly
+==> w3-k8s: Forwarding ports...
+    w3-k8s: 22 (guest) => 60103 (host) (adapter 1)
+==> w3-k8s: Running 'pre-boot' VM customizations...
+==> w3-k8s: Booting VM...
+==> w3-k8s: Waiting for machine to boot. This may take a few minutes...
+    w3-k8s: SSH address: 127.0.0.1:60103
+    w3-k8s: SSH username: vagrant
+    w3-k8s: SSH auth method: private key
+    w3-k8s: Warning: Connection aborted. Retrying...
+    w3-k8s: Warning: Remote connection disconnect. Retrying...
+    w3-k8s: Warning: Connection reset. Retrying...
+    w3-k8s: Warning: Connection aborted. Retrying...
+    w3-k8s: Warning: Connection reset. Retrying...
+    w3-k8s: Warning: Remote connection disconnect. Retrying...
+    w3-k8s: Warning: Connection aborted. Retrying...
+    w3-k8s: Warning: Connection reset. Retrying...
+    w3-k8s: 
+    w3-k8s: Vagrant insecure key detected. Vagrant will automatically replace
+    w3-k8s: this with a newly generated keypair for better security.
+    w3-k8s: 
+    w3-k8s: Inserting generated public key within guest...
+    w3-k8s: Removing insecure key from the guest if it's present...
+    w3-k8s: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> w3-k8s: Machine booted and ready!
+==> w3-k8s: Checking for guest additions in VM...
+    w3-k8s: The guest additions on this VM do not match the installed version of
+    w3-k8s: VirtualBox! In most cases this is fine, but in rare cases it can
+    w3-k8s: prevent things such as shared folders from working properly. If you see
+    w3-k8s: shared folder errors, please make sure the guest additions within the
+    w3-k8s: virtual machine match the version of VirtualBox you have installed on
+    w3-k8s: your host and reload your VM.
+    w3-k8s: 
+    w3-k8s: Guest Additions Version: 5.2.12
+    w3-k8s: VirtualBox Version: 6.0
+==> w3-k8s: Setting hostname...
+==> w3-k8s: Configuring and enabling network interfaces...
+==> w3-k8s: Running provisioner: shell...
+    w3-k8s: Running: C:/Users/HOONJO~1/AppData/Local/Temp/vagrant-shell20200505-19380-f8tr0n.sh
+    w3-k8s: Loaded plugins: fastestmirror
+    w3-k8s: Determining fastest mirrors
+    w3-k8s:  * base: mirror.kakao.com
+    w3-k8s:  * extras: mirror.kakao.com
+    w3-k8s:  * updates: mirror.kakao.com
+    w3-k8s: Resolving Dependencies
+    w3-k8s: --> Running transaction check
+    w3-k8s: ---> Package epel-release.noarch 0:7-11 will be installed
+    w3-k8s: --> Finished Dependency Resolution
+    w3-k8s: 
+    w3-k8s: Dependencies Resolved
+    w3-k8s: 
+    w3-k8s: ================================================================================
+    w3-k8s:  Package                Arch             Version         Repository        Size
+    w3-k8s: ================================================================================
+    w3-k8s: Installing:
+    w3-k8s:  epel-release           noarch           7-11            extras            15 k
+    w3-k8s: 
+    w3-k8s: Transaction Summary
+    w3-k8s: ================================================================================
+    w3-k8s: Install  1 Package
+    w3-k8s: Total download size: 15 k
+    w3-k8s: Installed size: 24 k
+    w3-k8s: Downloading packages:
+    w3-k8s: Running transaction check
+    w3-k8s: Running transaction test
+    w3-k8s: Transaction test succeeded
+    w3-k8s: Running transaction
+    w3-k8s:   Installing : epel-release-7-11.noarch                                     1/1
+    w3-k8s:  
+    w3-k8s:   Verifying  : epel-release-7-11.noarch                                     1/1
+    w3-k8s:  
+    w3-k8s: 
+    w3-k8s: Installed:
+    w3-k8s:   epel-release.noarch 0:7-11                                                    
+    w3-k8s: Complete!
+    w3-k8s: Loaded plugins: fastestmirror
+    w3-k8s: Loading mirror speeds from cached hostfile
+    w3-k8s:  * base: mirror.kakao.com
+    w3-k8s:  * epel: mirrors.aliyun.com
+    w3-k8s:  * extras: mirror.kakao.com
+    w3-k8s:  * updates: mirror.kakao.com
+    w3-k8s: http://fedora.cs.nctu.edu.tw/epel/7/x86_64/repodata/d4b908c8247cc45700ec1af3b56fb27b2c324897afc4f87e36308628a816a718-updateinfo.xml.bz2: [Errno 14] HTTP Error 404 - Not Found
+    w3-k8s: Trying other mirror.
+    w3-k8s: To address this issue please refer to the below wiki article 
+    w3-k8s: 
+    w3-k8s: https://wiki.centos.org/yum-errors
+    w3-k8s: 
+    w3-k8s: If above article doesn't help to resolve this issue please use https://bugs.centos.org/.
+    w3-k8s: Resolving Dependencies
+    w3-k8s: --> Running transaction check
+    w3-k8s: ---> Package vim-enhanced.x86_64 2:7.4.629-6.el7 will be installed
+    w3-k8s: --> Processing Dependency: vim-common = 2:7.4.629-6.el7 for package: 2:vim-enhanced-7.4.629-6.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(:MODULE_COMPAT_5.16.3) for package: 2:vim-enhanced-7.4.629-6.el7.x86_64
+    w3-k8s: --> Processing Dependency: libperl.so()(64bit) for package: 2:vim-enhanced-7.4.629-6.el7.x86_64
+    w3-k8s: --> Processing Dependency: libgpm.so.2()(64bit) for package: 2:vim-enhanced-7.4.629-6.el7.x86_64
+    w3-k8s: --> Running transaction check
+    w3-k8s: ---> Package gpm-libs.x86_64 0:1.20.7-6.el7 will be installed
+    w3-k8s: ---> Package perl.x86_64 4:5.16.3-295.el7 will be installed
+    w3-k8s: --> Processing Dependency: perl(Socket) >= 1.3 for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(Scalar::Util) >= 1.10 for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl-macros for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(threads::shared) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(threads) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(constant) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(Time::Local) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(Time::HiRes) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(Storable) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(Socket) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(Scalar::Util) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(Pod::Simple::XHTML) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(Pod::Simple::Search) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(Getopt::Long) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(Filter::Util::Call) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(File::Temp) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(File::Spec::Unix) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(File::Spec::Functions) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(File::Spec) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(File::Path) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(Exporter) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(Cwd) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: --> Processing Dependency: perl(Carp) for package: 4:perl-5.16.3-295.el7.x86_64
+    w3-k8s: ---> Package perl-libs.x86_64 4:5.16.3-295.el7 will be installed
+    w3-k8s: ---> Package vim-common.x86_64 2:7.4.629-6.el7 will be installed
+    w3-k8s: --> Processing Dependency: vim-filesystem for package: 2:vim-common-7.4.629-6.el7.x86_64
+    w3-k8s: --> Running transaction check
+    w3-k8s: ---> Package perl-Carp.noarch 0:1.26-244.el7 will be installed
+    w3-k8s: ---> Package perl-Exporter.noarch 0:5.68-3.el7 will be installed
+    w3-k8s: ---> Package perl-File-Path.noarch 0:2.09-2.el7 will be installed
+    w3-k8s: ---> Package perl-File-Temp.noarch 0:0.23.01-3.el7 will be installed
+    w3-k8s: ---> Package perl-Filter.x86_64 0:1.49-3.el7 will be installed
+    w3-k8s: ---> Package perl-Getopt-Long.noarch 0:2.40-3.el7 will be installed
+    w3-k8s: --> Processing Dependency: perl(Pod::Usage) >= 1.14 for package: perl-Getopt-Long-2.40-3.el7.noarch
+    w3-k8s: --> Processing Dependency: perl(Text::ParseWords) for package: perl-Getopt-Long-2.40-3.el7.noarch
+    w3-k8s: ---> Package perl-PathTools.x86_64 0:3.40-5.el7 will be installed
+    w3-k8s: ---> Package perl-Pod-Simple.noarch 1:3.28-4.el7 will be installed
+    w3-k8s: --> Processing Dependency: perl(Pod::Escapes) >= 1.04 for package: 1:perl-Pod-Simple-3.28-4.el7.noarch
+    w3-k8s: --> Processing Dependency: perl(Encode) for package: 1:perl-Pod-Simple-3.28-4.el7.noarch
+    w3-k8s: ---> Package perl-Scalar-List-Utils.x86_64 0:1.27-248.el7 will be installed
+    w3-k8s: ---> Package perl-Socket.x86_64 0:2.010-5.el7 will be installed
+    w3-k8s: ---> Package perl-Storable.x86_64 0:2.45-3.el7 will be installed
+    w3-k8s: ---> Package perl-Time-HiRes.x86_64 4:1.9725-3.el7 will be installed
+    w3-k8s: ---> Package perl-Time-Local.noarch 0:1.2300-2.el7 will be installed
+    w3-k8s: ---> Package perl-constant.noarch 0:1.27-2.el7 will be installed
+    w3-k8s: ---> Package perl-macros.x86_64 4:5.16.3-295.el7 will be installed
+    w3-k8s: ---> Package perl-threads.x86_64 0:1.87-4.el7 will be installed
+    w3-k8s: ---> Package perl-threads-shared.x86_64 0:1.43-6.el7 will be installed
+    w3-k8s: ---> Package vim-filesystem.x86_64 2:7.4.629-6.el7 will be installed
+    w3-k8s: --> Running transaction check
+    w3-k8s: ---> Package perl-Encode.x86_64 0:2.51-7.el7 will be installed
+    w3-k8s: ---> Package perl-Pod-Escapes.noarch 1:1.04-295.el7 will be installed
+    w3-k8s: ---> Package perl-Pod-Usage.noarch 0:1.63-3.el7 will be installed
+    w3-k8s: --> Processing Dependency: perl(Pod::Text) >= 3.15 for package: perl-Pod-Usage-1.63-3.el7.noarch
+    w3-k8s: --> Processing Dependency: perl-Pod-Perldoc for package: perl-Pod-Usage-1.63-3.el7.noarch
+    w3-k8s: ---> Package perl-Text-ParseWords.noarch 0:3.29-4.el7 will be installed
+    w3-k8s: --> Running transaction check
+    w3-k8s: ---> Package perl-Pod-Perldoc.noarch 0:3.20-4.el7 will be installed
+    w3-k8s: --> Processing Dependency: perl(parent) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+    w3-k8s: --> Processing Dependency: perl(HTTP::Tiny) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+    w3-k8s: ---> Package perl-podlators.noarch 0:2.5.1-3.el7 will be installed
+    w3-k8s: --> Running transaction check
+    w3-k8s: ---> Package perl-HTTP-Tiny.noarch 0:0.033-3.el7 will be installed
+    w3-k8s: ---> Package perl-parent.noarch 1:0.225-244.el7 will be installed
+    w3-k8s: --> Finished Dependency Resolution
+    w3-k8s: 
+    w3-k8s: Dependencies Resolved
+    w3-k8s: 
+    w3-k8s: ================================================================================
+    w3-k8s:  Package                     Arch        Version                Repository
+    w3-k8s:                                                                            Size
+    w3-k8s: ================================================================================
+    w3-k8s: Installing:
+    w3-k8s:  vim-enhanced                x86_64      2:7.4.629-6.el7        base      1.1 M
+    w3-k8s: Installing for dependencies:
+    w3-k8s:  gpm-libs                    x86_64      1.20.7-6.el7           base       32 k
+    w3-k8s:  perl                        x86_64      4:5.16.3-295.el7       base      8.0 M
+    w3-k8s:  perl-Carp                   noarch      1.26-244.el7           base       19 k
+    w3-k8s:  perl-Encode                 x86_64      2.51-7.el7             base      1.5 M
+    w3-k8s:  perl-Exporter               noarch      5.68-3.el7             base       28 k
+    w3-k8s:  perl-File-Path              noarch      2.09-2.el7             base       26 k
+    w3-k8s:  perl-File-Temp              noarch      0.23.01-3.el7          base       56 k
+    w3-k8s:  perl-Filter                 x86_64      1.49-3.el7             base       76 k
+    w3-k8s:  perl-Getopt-Long            noarch      2.40-3.el7             base       56 k
+    w3-k8s:  perl-HTTP-Tiny              noarch      0.033-3.el7            base       38 k
+    w3-k8s:  perl-PathTools              x86_64      3.40-5.el7             base       82 k
+    w3-k8s:  perl-Pod-Escapes            noarch      1:1.04-295.el7         base       51 k
+    w3-k8s:  perl-Pod-Perldoc            noarch      3.20-4.el7             base       87 k
+    w3-k8s:  perl-Pod-Simple             noarch      1:3.28-4.el7           base      216 k
+    w3-k8s:  perl-Pod-Usage              noarch      1.63-3.el7             base       27 k
+    w3-k8s:  perl-Scalar-List-Utils      x86_64      1.27-248.el7           base       36 k
+    w3-k8s:  perl-Socket                 x86_64      2.010-5.el7            base       49 k
+    w3-k8s:  perl-Storable               x86_64      2.45-3.el7             base       77 k
+    w3-k8s:  perl-Text-ParseWords        noarch      3.29-4.el7             base       14 k
+    w3-k8s:  perl-Time-HiRes             x86_64      4:1.9725-3.el7         base       45 k
+    w3-k8s:  perl-Time-Local             noarch      1.2300-2.el7           base       24 k
+    w3-k8s:  perl-constant               noarch      1.27-2.el7             base       19 k
+    w3-k8s:  perl-libs                   x86_64      4:5.16.3-295.el7       base      689 k
+    w3-k8s:  perl-macros                 x86_64      4:5.16.3-295.el7       base       44 k
+    w3-k8s:  perl-parent                 noarch      1:0.225-244.el7        base       12 k
+    w3-k8s:  perl-podlators              noarch      2.5.1-3.el7            base      112 k
+    w3-k8s:  perl-threads                x86_64      1.87-4.el7             base       49 k
+    w3-k8s:  perl-threads-shared         x86_64      1.43-6.el7             base       39 k
+    w3-k8s:  vim-common                  x86_64      2:7.4.629-6.el7        base      5.9 M
+    w3-k8s:  vim-filesystem              x86_64      2:7.4.629-6.el7        base       11 k
+    w3-k8s: 
+    w3-k8s: Transaction Summary
+    w3-k8s: ================================================================================
+    w3-k8s: Install  1 Package (+30 Dependent packages)
+    w3-k8s: Total download size: 18 M
+    w3-k8s: Installed size: 60 M
+    w3-k8s: Downloading packages:
+    w3-k8s: --------------------------------------------------------------------------------
+    w3-k8s: Total                                              8.2 MB/s |  18 MB  00:02     
+    w3-k8s: Running transaction check
+    w3-k8s: Running transaction test
+    w3-k8s: Transaction test succeeded
+    w3-k8s: Running transaction
+    w3-k8s:   Installing : 1:perl-parent-0.225-244.el7.noarch                          1/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-HTTP-Tiny-0.033-3.el7.noarch                           2/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-podlators-2.5.1-3.el7.noarch                           3/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-Pod-Perldoc-3.20-4.el7.noarch                          4/31
+    w3-k8s:  
+    w3-k8s:   Installing : 1:perl-Pod-Escapes-1.04-295.el7.noarch                      5/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-Text-ParseWords-3.29-4.el7.noarch                      6/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-Encode-2.51-7.el7.x86_64                               7/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-Pod-Usage-1.63-3.el7.noarch                            8/31
+    w3-k8s:  
+    w3-k8s:   Installing : 4:perl-libs-5.16.3-295.el7.x86_64                           9/31
+    w3-k8s:  
+    w3-k8s:   Installing : 4:perl-macros-5.16.3-295.el7.x86_64                        10/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-Storable-2.45-3.el7.x86_64                            11/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-Exporter-5.68-3.el7.noarch                            12/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-constant-1.27-2.el7.noarch                            13/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-Socket-2.010-5.el7.x86_64                             14/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-Time-Local-1.2300-2.el7.noarch                        15/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-Carp-1.26-244.el7.noarch                              16/31
+    w3-k8s:  
+    w3-k8s:   Installing : 4:perl-Time-HiRes-1.9725-3.el7.x86_64                      17/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-PathTools-3.40-5.el7.x86_64                           18/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-Scalar-List-Utils-1.27-248.el7.x86_64                 19/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-File-Temp-0.23.01-3.el7.noarch                        20/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-File-Path-2.09-2.el7.noarch                           21/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-threads-shared-1.43-6.el7.x86_64                      22/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-threads-1.87-4.el7.x86_64                             23/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-Filter-1.49-3.el7.x86_64                              24/31
+    w3-k8s:  
+    w3-k8s:   Installing : 1:perl-Pod-Simple-3.28-4.el7.noarch                        25/31
+    w3-k8s:  
+    w3-k8s:   Installing : perl-Getopt-Long-2.40-3.el7.noarch                         26/31
+    w3-k8s:  
+    w3-k8s:   Installing : 4:perl-5.16.3-295.el7.x86_64                               27/31
+    w3-k8s:  
+    w3-k8s:   Installing : gpm-libs-1.20.7-6.el7.x86_64                               28/31
+    w3-k8s:  
+    w3-k8s:   Installing : 2:vim-filesystem-7.4.629-6.el7.x86_64                      29/31
+    w3-k8s:  
+    w3-k8s:   Installing : 2:vim-common-7.4.629-6.el7.x86_64                          30/31
+    w3-k8s:  
+    w3-k8s:   Installing : 2:vim-enhanced-7.4.629-6.el7.x86_64                        31/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-HTTP-Tiny-0.033-3.el7.noarch                           1/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-threads-shared-1.43-6.el7.x86_64                       2/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-Storable-2.45-3.el7.x86_64                             3/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : 1:perl-Pod-Escapes-1.04-295.el7.noarch                      4/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-Exporter-5.68-3.el7.noarch                             5/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-constant-1.27-2.el7.noarch                             6/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-PathTools-3.40-5.el7.x86_64                            7/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-Socket-2.010-5.el7.x86_64                              8/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : 1:perl-parent-0.225-244.el7.noarch                          9/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : 4:perl-libs-5.16.3-295.el7.x86_64                          10/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-File-Temp-0.23.01-3.el7.noarch                        11/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : 1:perl-Pod-Simple-3.28-4.el7.noarch                        12/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-Time-Local-1.2300-2.el7.noarch                        13/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : 4:perl-macros-5.16.3-295.el7.x86_64                        14/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : 4:perl-5.16.3-295.el7.x86_64                               15/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : 2:vim-enhanced-7.4.629-6.el7.x86_64                        16/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-Carp-1.26-244.el7.noarch                              17/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : 4:perl-Time-HiRes-1.9725-3.el7.x86_64                      18/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-Scalar-List-Utils-1.27-248.el7.x86_64                 19/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-Pod-Usage-1.63-3.el7.noarch                           20/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : 2:vim-common-7.4.629-6.el7.x86_64                          21/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : 2:vim-filesystem-7.4.629-6.el7.x86_64                      22/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-Encode-2.51-7.el7.x86_64                              23/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-Pod-Perldoc-3.20-4.el7.noarch                         24/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-podlators-2.5.1-3.el7.noarch                          25/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-File-Path-2.09-2.el7.noarch                           26/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-threads-1.87-4.el7.x86_64                             27/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : gpm-libs-1.20.7-6.el7.x86_64                               28/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-Filter-1.49-3.el7.x86_64                              29/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-Getopt-Long-2.40-3.el7.noarch                         30/31
+    w3-k8s:  
+    w3-k8s:   Verifying  : perl-Text-ParseWords-3.29-4.el7.noarch                     31/31
+    w3-k8s:  
+    w3-k8s: 
+    w3-k8s: Installed:
+    w3-k8s:   vim-enhanced.x86_64 2:7.4.629-6.el7                                           
+    w3-k8s: 
+    w3-k8s: Dependency Installed:
+    w3-k8s:   gpm-libs.x86_64 0:1.20.7-6.el7                                                
+    w3-k8s:   perl.x86_64 4:5.16.3-295.el7                                                  
+    w3-k8s:   perl-Carp.noarch 0:1.26-244.el7                                               
+    w3-k8s:   perl-Encode.x86_64 0:2.51-7.el7                                               
+    w3-k8s:   perl-Exporter.noarch 0:5.68-3.el7                                             
+    w3-k8s:   perl-File-Path.noarch 0:2.09-2.el7                                            
+    w3-k8s:   perl-File-Temp.noarch 0:0.23.01-3.el7                                         
+    w3-k8s:   perl-Filter.x86_64 0:1.49-3.el7                                               
+    w3-k8s:   perl-Getopt-Long.noarch 0:2.40-3.el7                                          
+    w3-k8s:   perl-HTTP-Tiny.noarch 0:0.033-3.el7                                           
+    w3-k8s:   perl-PathTools.x86_64 0:3.40-5.el7                                            
+    w3-k8s:   perl-Pod-Escapes.noarch 1:1.04-295.el7                                        
+    w3-k8s:   perl-Pod-Perldoc.noarch 0:3.20-4.el7                                          
+    w3-k8s:   perl-Pod-Simple.noarch 1:3.28-4.el7                                           
+    w3-k8s:   perl-Pod-Usage.noarch 0:1.63-3.el7                                            
+    w3-k8s:   perl-Scalar-List-Utils.x86_64 0:1.27-248.el7                                  
+    w3-k8s:   perl-Socket.x86_64 0:2.010-5.el7                                              
+    w3-k8s:   perl-Storable.x86_64 0:2.45-3.el7                                             
+    w3-k8s:   perl-Text-ParseWords.noarch 0:3.29-4.el7                                      
+    w3-k8s:   perl-Time-HiRes.x86_64 4:1.9725-3.el7                                         
+    w3-k8s:   perl-Time-Local.noarch 0:1.2300-2.el7                                         
+    w3-k8s:   perl-constant.noarch 0:1.27-2.el7                                             
+    w3-k8s:   perl-libs.x86_64 4:5.16.3-295.el7                                             
+    w3-k8s:   perl-macros.x86_64 4:5.16.3-295.el7                                           
+    w3-k8s:   perl-parent.noarch 1:0.225-244.el7                                            
+    w3-k8s:   perl-podlators.noarch 0:2.5.1-3.el7                                           
+    w3-k8s:   perl-threads.x86_64 0:1.87-4.el7                                              
+    w3-k8s:   perl-threads-shared.x86_64 0:1.43-6.el7                                       
+    w3-k8s:   vim-common.x86_64 2:7.4.629-6.el7                                             
+    w3-k8s:   vim-filesystem.x86_64 2:7.4.629-6.el7                                         
+    w3-k8s: Complete!

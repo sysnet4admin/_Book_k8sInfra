@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+      - path:
+        backend:
+          serviceName: hname-svc-default
+          servicePort: 80
+      - path: /ip
+        backend:
+          serviceName: ip-svc
+          servicePort: 80
+      - path: /your-directory
+        backend:
+          serviceName: your-svc
+          servicePort: 80

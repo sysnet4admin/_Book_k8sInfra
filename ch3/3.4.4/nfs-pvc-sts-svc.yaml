@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nfs-pvc-sts-svc
+spec:
+  selector:
+    app: nfs-pvc-sts
+  ports:
+    - port: 80
+  type: LoadBalancer

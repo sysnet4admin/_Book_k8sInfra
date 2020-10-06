@@ -1,0 +1,20 @@
+c:\HashiCorp>vagrant init
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+
+c:\HashiCorp>vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'base' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+==> default: Box file was not detected as metadata. Adding it directly...
+==> default: Adding box 'base' (v0) for provider: virtualbox
+    default: Downloading: base
+    default:
+An error occurred while downloading the remote file. The error
+message, if any, is reproduced below. Please fix this error and try
+again.
+
+Couldn't open file c:/HashiCorp/base

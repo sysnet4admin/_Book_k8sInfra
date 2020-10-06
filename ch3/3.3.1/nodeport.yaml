@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: np-svc
+spec:
+  selector:
+    app: np-pods 
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30000
+  type: NodePort
