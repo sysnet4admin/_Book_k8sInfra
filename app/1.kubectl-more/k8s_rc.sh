@@ -12,31 +12,31 @@ echo "source ~/.k8s_rc " >> ~/.bashrc
 
 cat > ~/.k8s_rc <<'EOF'
 #! /usr/bin/env bash
-# HoonJo ver0.5.1
+# HoonJo ver0.6.0
 # https://github.com/sysnet4admin/IaC
-alias kc='kubectl'
-alias kcg='kubectl get'
-alias kcgp='kubectl get pods'
-alias kca='kubectl apply -f'
-alias kcc='kubectl create'
-alias kcs='kubectl scale'
-alias kce='kubectl export'
-alias kcgw='kubectl get $1 -o wide'
-kcee(){
+alias k='kubectl'
+alias kg='kubectl get'
+alias kgp='kubectl get pods'
+alias ka='kubectl apply -f'
+alias kc='kubectl create'
+alias ks='kubectl scale'
+alias ke='kubectl export'
+alias kgw='kubectl get $1 -o wide'
+kee(){
   if [ $# -eq 1 ]; then
     kubectl exec -it $(kubectl get pods | tail --lines=+2 | awk '{print $1}' | awk NR==$1) -- /bin/bash;
   else
-    echo "usage: kcee <pod number>"
+    echo "usage: kee <pod number>"
   fi
 }
-kceq(){
+keq(){
 NAMESPACE=$1
 exi_chk=($(kubectl get namespaces | tail --lines=+2 | awk '{print $1}'))
   #check to exist namespace but it is not perfect due to /^word$/ is not work
   if [[ ! "${exi_chk[@]}" =~ "$NAMESPACE" ]]; then
     echo -e "$NAMESPACE isn't a namespace. Try other as below again:\n"
     kubectl get namespaces
-    echo -e "\nusage: kceq or kceq <namespace> [-c]\n"
+    echo -e "\nusage: keq or keq <namespace> [-c]\n"
     exit 1
   elif [ $# -eq 1 ]; then
     kubectl get pods -n $NAMESPACE | tail --lines=+2 | awk '{print NR " " $1}'
@@ -70,17 +70,17 @@ exi_chk=($(kubectl get namespaces | tail --lines=+2 | awk '{print $1}'))
   else
     echo ""
     kubectl get namespace
-    echo -e "\nusage: kceq or kceq <namespace> [-c]\n"
+    echo -e "\nusage: keq or keq <namespace> [-c]\n"
   fi
 }
-kcgpww(){
+kgpww(){
 OPTION=$1
 NAMESPACE=$2
 exi_chk=($(kubectl get namespaces | tail --lines=+2 | awk '{print $1}'))
   if [[ ! "${exi_chk[@]}" =~ "$NAMESPACE" ]]; then
     echo -e "$NAMESPACE isn't a namespace. Try other as below again:\n"
     kubectl get namespaces
-    echo -e "\nusage: kcgpww -n <namespace>\n"
+    echo -e "\nusage: kgpww -n <namespace>\n"
     exit 1
   elif [ -z $OPTION ]; then
     kubectl get pods -w -o wide
@@ -92,7 +92,7 @@ exi_chk=($(kubectl get namespaces | tail --lines=+2 | awk '{print $1}'))
     esac
   fi
 }
-kcgpws(){
+kgpws(){
 OPTION=$1
 NAMESPACE=$2
 exi_chk=($(kubectl get namespaces | tail --lines=+2 | awk '{print $1}'))
@@ -100,7 +100,7 @@ CstCol_lst="NAME:.metadata.name,STATUS:.status.phase,IP:.status.podIP,NODE:.spec
   if [[ ! "${exi_chk[@]}" =~ "$NAMESPACE" ]]; then
     echo -e "$NAMESPACE isn't a namespace. Try other as below again:\n"
     kubectl get namespaces
-    echo -e "\nusage: kcgpww -n <namespace>\n"
+    echo -e "\nusage: kgpws -n <namespace>\n"
     exit 1
   elif [ -z $OPTION ]; then
     kubectl get pods --all-namespaces -o wide | head -n +1 | sort -k 8
@@ -114,14 +114,14 @@ CstCol_lst="NAME:.metadata.name,STATUS:.status.phase,IP:.status.podIP,NODE:.spec
     esac
   fi
 }
-kcl(){
+kl(){
 NAMESPACE=$1
 exi_chk=($(kubectl get namespaces | tail --lines=+2 | awk '{print $1}'))
   #check to exist namespace but it is not perfect due to /^word$/ is not work
   if [[ ! "${exi_chk[@]}" =~ "$NAMESPACE" ]]; then
     echo -e "$NAMESPACE isn't a namespace. Try other as below again:\n"
     kubectl get namespaces
-    echo -e "\nusage: kcl or kcl <namespace>\n"
+    echo -e "\nusage: kl or kl <namespace>\n"
     exit 1
   elif [ $# -eq 1 ]; then
     kubectl get pods -n $NAMESPACE | tail --lines=+2 | awk '{print NR " " $1}'
@@ -138,17 +138,17 @@ exi_chk=($(kubectl get namespaces | tail --lines=+2 | awk '{print $1}'))
   else
     echo ""
     kubectl get namespace
-    echo -e "\nusage: kcl or kcl <namespace>\n"
+    echo -e "\nusage: kl or kl <namespace>\n"
   fi
 }
-kcdp(){
+kdp(){
 NAMESPACE=$1
 exi_chk=($(kubectl get namespaces | tail --lines=+2 | awk '{print $1}'))
   #check to exist namespace but it is not perfect due to /^word$/ is not work
   if [[ ! "${exi_chk[@]}" =~ "$NAMESPACE" ]]; then
     echo -e "$NAMESPACE isn't a namespace. Try other as below again:\n"
     kubectl get namespaces
-    echo -e "\nusage: kcdp or kcdp <namespace>\n"
+    echo -e "\nusage: kdp or kdp <namespace>\n"
     exit 1
   elif [ $# -eq 1 ]; then
     kubectl get pods -n $NAMESPACE | tail --lines=+2 | awk '{print NR " " $1}'
@@ -165,7 +165,7 @@ exi_chk=($(kubectl get namespaces | tail --lines=+2 | awk '{print $1}'))
   else
     echo ""
     kubectl get namespace
-    echo -e "\nusage: kcdp or kcdp <namespace>\n"
+    echo -e "\nusage: kdp or kdp <namespace>\n"
   fi
 }
 EOF
