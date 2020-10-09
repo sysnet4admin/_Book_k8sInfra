@@ -1,0 +1,57 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  #=============#
+  # Master Node #
+  #=============#
+  M = 3 # max number of master nodes
+  N = 6 # max number of worker nodes 
+  
+  (1..M).each do |m|
+    config.vm.define "m1#{m}-k8s" do |cfg|
+      cfg.vm.box = "sysnet4admin/CentOS-k8s"
+      cfg.vm.provider "virtualbox" do |vb|
+        vb.name = "m1#{m}-k8s(github_SysNet4Admin)"
+        vb.cpus = 2
+        vb.memory = 2048 #minimum is 1500MB but ansible_memtotal_mb is less than set vaule
+        vb.customize ["modifyvm", :id, "--groups", "/k8s-MtpMST-kubespray(github_SysNet4Admin)"]
+      end
+      cfg.vm.host_name = "m1#{m}-k8s"
+      cfg.vm.network "private_network", ip: "192.168.1.1#{m}"
+      cfg.vm.network "forwarded_port", guest: 22, host: "6001#{m}", auto_correct: true, id: "ssh"
+      cfg.vm.synced_folder "../data", "/vagrant", disabled: true
+      cfg.vm.provision "file", source: "auto_pass.sh", destination: "auto_pass.sh"
+      cfg.vm.provision "shell", path: "install_pkg.sh"
+      cfg.vm.provision "shell", path: "config.sh", args: [M, N]
+      if m == 1
+        cfg.vm.provision "shell", path: "pre-kubespray.sh"
+      end
+    end 
+  end
+
+  #==============#
+  # Worker Nodes #
+  #==============#
+
+  (1..N).each do |n|
+    config.vm.define "w10#{n}-k8s" do |cfg|  
+      cfg.vm.box = "sysnet4admin/CentOS-k8s"
+      cfg.vm.provider "virtualbox" do |vb|
+        vb.name = "w10#{n}-k8s(github_SysNet4Admin)"
+        vb.cpus = 1
+        vb.memory = 1536 #minimum is 1024MB but ansible_memtotal_mb is less than set vaule
+        vb.customize ["modifyvm", :id, "--groups", "/k8s-MtpMST-kubespray(github_SysNet4Admin)"]
+      end
+      cfg.vm.host_name = "w10#{n}-k8s"
+      cfg.vm.network "private_network", ip: "192.168.1.10#{n}"
+      cfg.vm.network "forwarded_port", guest: 22, host: "6010#{n}", auto_correct: true, id: "ssh"
+      cfg.vm.synced_folder "../data", "/vagrant", disabled: true
+      cfg.vm.provision "file", source: "auto_pass.sh", destination: "auto_pass.sh"
+      cfg.vm.provision "shell", path: "install_pkg.sh"
+      cfg.vm.provision "shell", path: "config.sh", args: [M, N]
+    end
+  end
+
+end
