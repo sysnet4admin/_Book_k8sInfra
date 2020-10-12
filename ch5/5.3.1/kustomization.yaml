@@ -1,0 +1,3 @@
+resources:
+- ./base/deployment.yaml
+- ./base/lb.yaml
