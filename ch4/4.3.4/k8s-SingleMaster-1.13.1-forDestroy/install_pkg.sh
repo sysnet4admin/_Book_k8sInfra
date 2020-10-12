@@ -8,9 +8,12 @@ yum install git -y
 # install docker 
 yum install docker -y && systemctl enable --now docker
 
-# install kubernetes and kubectl will install only master node 
-if [ $2 = 'install_kubectl' ]; then
-  yum install kubectl-$1 -y
-fi
-yum install kubelet-$1 kubeadm-$1 -y 
+# install kubernetes cluster 
+yum install kubectl-$1 kubelet-$1 kubeadm-$1 -y
 systemctl enable --now kubelet
+
+# git clone _Book_k8sInfra.git 
+if [ $2 = 'Main' ]; then
+  git clone https://github.com/sysnet4admin/_Book_k8sInfra.git
+  mv /home/vagrant/_Book_k8sInfra $HOME
+fi

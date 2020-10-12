@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
       cfg.vm.network "forwarded_port", guest: 22, host: 60010, auto_correct: true, id: "ssh"
       cfg.vm.synced_folder "../data", "/vagrant", disabled: true 
       cfg.vm.provision "shell", path: "config.sh", args: N
-      cfg.vm.provision "shell", path: "install_pkg.sh", args: [ Ver, "install_kubectl" ]
+      cfg.vm.provision "shell", path: "install_pkg.sh", args: [ Ver, "Main" ]
       cfg.vm.provision "shell", path: "master_node.sh"
     end
 
