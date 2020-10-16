@@ -27,4 +27,4 @@ sudo mv auto_pass.sh /root
 sudo chmod 744 /root/auto_pass.sh
 
 # when git clone from windows '$'\r': command not found' issue happened
-sudo sed -i -e 's/\r$//' auto_pass.sh
+sudo sed -i -e 's/\r$//' /root/auto_pass.sh
