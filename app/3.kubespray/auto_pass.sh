@@ -1,4 +1,6 @@
-#/bin/sh
+#!/usr/bin/env bash
+#Auto_Pass 
+#if you want to filter only ip then [grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}']
 
 #make a directory 
 mkdir ~/.ssh
