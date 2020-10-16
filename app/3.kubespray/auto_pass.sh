@@ -10,7 +10,7 @@ readarray hosts < /etc/hosts
 
 ##1.known_hosts##
 if [ ! -f ~/.ssh/known_hosts ]; then
-  for host in ${hosts[@]}; do 
+  for host in ${hosts[@]}; do
     ssh-keyscan -t ecdsa ${host} >> ~/.ssh/known_hosts
   done
 fi
