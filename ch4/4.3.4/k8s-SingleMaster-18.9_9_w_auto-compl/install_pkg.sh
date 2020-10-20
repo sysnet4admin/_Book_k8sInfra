@@ -18,4 +18,5 @@ systemctl enable --now kubelet
 if [ $2 = 'Main' ]; then
   git clone https://github.com/sysnet4admin/_Book_k8sInfra.git
   mv /home/vagrant/_Book_k8sInfra $HOME
+  find $HOME/_Book_k8sInfra/ -regex ".*\.\(sh\)" -exec chmod 700 {} \;
 fi
