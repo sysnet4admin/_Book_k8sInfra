@@ -15,7 +15,7 @@ for i in {1..3}
 docker run -d \
   --restart=always \
   --name registry \
-  -v /root/IaC/Docker/Registry:/certs:ro \
+  -v "$(dirname "$0")":/certs:ro \
   -v /data:/var/lib/registry \
   -e REGISTRY_HTTP_ADDR=0.0.0.0:443 \
   -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/tls.crt \
