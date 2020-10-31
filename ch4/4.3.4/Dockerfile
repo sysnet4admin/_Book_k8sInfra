@@ -2,7 +2,7 @@ FROM openjdk:8 AS int-build
 LABEL description="Java Application builder"
 RUN git clone https://github.com/iac-source/inbuilder.git
 WORKDIR inbuilder
-RUN chmod 755 mvnw
+RUN chmod 700 mvnw
 RUN ./mvnw clean package
 
 FROM gcr.io/distroless/java:8
