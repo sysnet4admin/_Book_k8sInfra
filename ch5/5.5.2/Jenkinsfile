@@ -3,13 +3,13 @@ pipeline {
   stages {
     stage('build start') {
       steps {
-        slackSend(message: "Build ${env.BUILD_NUMBER} Started", color: 'good', tokenCredentialId: '7b510914-fd7e-4635-ad2a-b40fa07fe316')
+        slackSend(message: "Build ${env.BUILD_NUMBER} Started", color: 'good', tokenCredentialId: 'slack-key')
       }
     }      
     stage('git pull') {
         steps {
             // Please enter your git repository
-            git url: '<Git URL>', branch: 'main'
+            git url: 'https://github.com/seongjumoon/gitops', branch: 'main'
         }
     }
     stage('k8s deploy'){
@@ -22,7 +22,7 @@ pipeline {
     stage('send diff') {
         steps {
         slackSend(message: """${env.JOB_NAME} #${env.BUILD_NUMBER} End
-        """, color: 'good', tokenCredentialId: '7b510914-fd7e-4635-ad2a-b40fa07fe316')             
+        """, color: 'good', tokenCredentialId: 'slack-key')             
         }
     }
     
