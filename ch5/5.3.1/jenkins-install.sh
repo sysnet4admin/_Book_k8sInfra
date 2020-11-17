@@ -10,6 +10,6 @@ helm install jenkins \
 --set master.fsGroup=1000 \
 --set master.tag=2.249.3-lts-centos7 \
 --set master.serviceType=LoadBalancer \
---set master.servicePort=80\
+--set master.servicePort=80 \
 --set master.jenkinsUrl="192.168.1.10" \
 edu/jenkins

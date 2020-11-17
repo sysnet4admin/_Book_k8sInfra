@@ -1,3 +1,4 @@
+nfsdir=/nfs_shared/$1
 if [ $# -eq 0 ]; then
   echo "usage: nfs-exporter.sh <name>"; exit 0
 fi
