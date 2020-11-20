@@ -1,0 +1,1 @@
+kubectl apply -f https://raw.githubusercontent.com/IaC-Source/jenkins-builder/main/echo-ip-production.yaml
