@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-helm install dashboard \
+helm install dashboard edu/dashboard \
 --set service.type="LoadBalancer" \
---set dashboard.printName="${USERNAME}" \
---set dashboard.persistentVolume.existingClaim="dashboard" \
-edu/dashboard
+--set dashboard.printName="${USERNAME}"
