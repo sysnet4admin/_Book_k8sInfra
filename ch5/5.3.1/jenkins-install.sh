@@ -1,5 +1,5 @@
 #/bin/env bash
-helm install jenkins \
+helm install jenkins edu/jenkins \
 --set persistence.existingClaim=jenkins \
 --set master.adminPassword=admin \
 --set master.nodeSelector."kubernetes\.io/hostname"=m-k8s \
@@ -11,5 +11,4 @@ helm install jenkins \
 --set master.tag=2.249.3-lts-centos7 \
 --set master.serviceType=LoadBalancer \
 --set master.servicePort=80 \
---set master.jenkinsUrl="192.168.1.10" \
-edu/jenkins
+--set master.jenkinsUrl="192.168.1.10"
