@@ -11,5 +11,5 @@ helm install jenkins edu/jenkins \
 --set master.tag=2.249.3-lts-centos7 \
 --set master.serviceType=LoadBalancer \
 --set master.servicePort=80 \
---set master.jenkinsUrl="192.168.1.10"
+--set master.jenkinsUrl="192.168.1.10" \
 --set master.javaOpts="-DsessionTimeout=1440 -Duser.timezone=Asia/Seoul"
