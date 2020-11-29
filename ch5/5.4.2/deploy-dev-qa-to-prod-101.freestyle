@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-docker build -t 192.168.1.10:8443/echo-ip:latest .
+docker build -t 192.168.1.10:8443/echo-ip .
 docker push 192.168.1.10:8443/echo-ip
 kubectl apply -f https://raw.githubusercontent.com/IaC-Source/jenkins-builder/main/echo-ip-development.yaml
 for try in {1..30}
