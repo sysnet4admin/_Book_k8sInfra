@@ -1,4 +1,4 @@
 docker build -t 192.168.1.10:8443/echo-ip .
 docker push 192.168.1.10:8443/echo-ip
-kubectl create deployment echo-ip --image=192.168.1.10:8443/echo-ip
-kubectl expose deployment echo-ip --type=LoadBalancer --name=lb-echo-ip --port=8080
+kubectl create deployment fs-echo-ip --image=192.168.1.10:8443/echo-ip
+kubectl expose deployment fs-echo-ip --type=LoadBalancer --name=fs-echo-ip-svc --port=8080 --target-port=80
