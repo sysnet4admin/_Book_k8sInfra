@@ -8,15 +8,18 @@ jenkins:
         value: "true"
       serverUrl: "https://kubernetes.default"
       templates:
-      - name: "default"
-        label: "jenkins-jenkins-slave "
-        containers:
-        - name: "jnlp"
+      - containers:
+        - args: "^${computer.jnlpmac} ^${computer.name}"
+          name: "jnlp"
+          label: "jenkins-jenkins-slave "
           command: ""
+          image: "jenkins/inbound-agent:4.3-4"
           envVars:
           - envVar:
               key: "JENKINS_URL"
               value: "http://192.168.1.11"
+        name: "default"
+        label: "jenkins-jenkins-slave "
         volumes:
         - hostPathVolume:
             hostPath: "/usr/bin/kubectl"
