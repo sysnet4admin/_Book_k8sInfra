@@ -1,10 +1,15 @@
 jenkins:
   clouds:
-  - kubernetes:
+    kubernetes:
     - name: "kubernetes"
       namespace: "default"
+      podLabels:
+      - key: "jenkins/jenkins-jenkins-slave"
+        value: "true"
+      serverUrl: "https://kubernetes.default"
       templates:
       - name: "default"
+        label: "jenkins-jenkins-slave "
         containers:
         - name: "jnlp"
           command: ""
