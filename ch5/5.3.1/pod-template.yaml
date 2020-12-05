@@ -1,7 +1,7 @@
 jenkins:
   clouds:
   - kubernetes:
-      name: "kubernetes"
+    - name: "kubernetes"
       namespace: "default"
       templates:
       - name: "default"
@@ -25,3 +25,4 @@ jenkins:
         serviceAccount: "jenkins"
         runAsUser: "1000"
         runAsGroup: "993"
+
