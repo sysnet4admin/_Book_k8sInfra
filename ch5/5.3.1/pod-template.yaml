@@ -10,16 +10,18 @@ jenkins:
       templates:
       - containers:
         - args: "^${computer.jnlpmac} ^${computer.name}"
-          name: "jnlp"
-          label: "jenkins-jenkins-slave "
           command: ""
-          image: "jenkins/inbound-agent:4.3-4"
           envVars:
           - envVar:
               key: "JENKINS_URL"
               value: "http://192.168.1.11"
-        name: "default"
+          image: "jenkins/inbound-agent:4.3-4"
+          name: "jnlp"
         label: "jenkins-jenkins-slave "
+        name: "default"
+        runAsGroup: "993"
+        runAsUser: "1000"
+        serviceAccount: "jenkins"
         volumes:
         - hostPathVolume:
             hostPath: "/usr/bin/kubectl"
@@ -30,7 +32,3 @@ jenkins:
         - hostPathVolume:
             hostPath: "/var/run/docker.sock"
             mountPath: "/var/run/docker.sock"
-        serviceAccount: "jenkins"
-        runAsUser: "1000"
-        runAsGroup: "993"
-
