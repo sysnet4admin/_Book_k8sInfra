@@ -1,7 +1,7 @@
 #/bin/env bash
 jopt1='-DsessionTimeout=1440'
 jopt2='-Duser.timezone=Asia/Seoul'
-jopt3='-Dcasc.jenkins.config=$(dirname "$0")/pod-template.yaml'
+jopt3='-Dcasc.jenkins.config=$(dirname "$0")/jenkins-config.yaml'
 
 helm install jenkins edu/jenkins \
 --set persistence.existingClaim=jenkins \
