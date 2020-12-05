@@ -1,7 +1,7 @@
 jenkins:
   clouds:
   - kubernetes:
-    - name: "kubernetes"
+      name: "kubernetes"
       namespace: "default"
       podLabels:
       - key: "jenkins/jenkins-jenkins-slave"
