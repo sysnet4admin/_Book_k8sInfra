@@ -1,4 +1,8 @@
 #/bin/env bash
+jopt1='-DsessionTimeout=1440'
+jopt2='-Duser.timezone=Asia/Seoul'
+jopt2='-Dcasc.jenkins.config=https://raw.githubusercontent.com/sysnet4admin/_Book_k8sInfra/main/ch5/5.3.1/pod-template.yaml'
+
 helm install jenkins edu/jenkins \
 --set persistence.existingClaim=jenkins \
 --set master.adminPassword=admin \
@@ -12,4 +16,4 @@ helm install jenkins edu/jenkins \
 --set master.serviceType=LoadBalancer \
 --set master.servicePort=80 \
 --set master.jenkinsUrl="192.168.1.10" \
---set master.javaOpts="-DsessionTimeout=1440 -Duser.timezone=Asia/Seoul"
+--set master.javaOpts="$jopt1 $jopt2 $jopt3"
