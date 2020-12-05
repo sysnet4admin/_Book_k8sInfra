@@ -1,7 +1,7 @@
 #/bin/env bash
 jopt1="-DsessionTimeout=1440"
 jopt2="-Duser.timezone=Asia/Seoul"
-jopt3="-Dcasc.jenkins.config=$(dirname "$0")/jenkins-config.yaml"
+jopt3="-Dcasc.jenkins.config=https://raw.githubusercontent.com/sysnet4admin/_Book_k8sInfra/main/ch5/5.3.1/jenkins-config.yaml"
 
 helm install jenkins edu/jenkins \
 --set persistence.existingClaim=jenkins \
