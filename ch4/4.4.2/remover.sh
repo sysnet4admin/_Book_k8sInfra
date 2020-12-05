@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-certdir=/etc/docker/certs.d/192.168.1.10:8443
-rm -f tls.key tls.crt
-rm -rf /data
-rm -rf $certdir
+certs=/etc/docker/certs.d/192.168.1.10:8443
+rm -rf /registry-image
+rm -rf /etc/docker/certs
+rm -rf $certs
 
 yum -y install sshpass
 for i in {1..3}
   do
-    sshpass -p vagrant ssh -o StrictHostKeyChecking=no root@192.168.1.10$i rm -rf $certdir
+    sshpass -p vagrant ssh -o StrictHostKeyChecking=no root@192.168.1.10$i rm -rf $certs
   done
 
 yum remove sshpass -y
