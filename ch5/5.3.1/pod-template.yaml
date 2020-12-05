@@ -6,7 +6,8 @@ jenkins:
       templates:
       - name: "default"
         containers:
-        - command: ""
+        - name: "jnlp"
+          command: ""
           envVars:
           - envVar:
               key: "JENKINS_URL"
