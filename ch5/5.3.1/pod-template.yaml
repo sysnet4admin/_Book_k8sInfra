@@ -19,9 +19,6 @@ jenkins:
           name: "jnlp"
         label: "jenkins-jenkins-slave "
         name: "default"
-        runAsGroup: "993"
-        runAsUser: "1000"
-        serviceAccount: "jenkins"
         volumes:
         - hostPathVolume:
             hostPath: "/usr/bin/kubectl"
@@ -32,3 +29,6 @@ jenkins:
         - hostPathVolume:
             hostPath: "/var/run/docker.sock"
             mountPath: "/var/run/docker.sock"
+        runAsGroup: "993"
+        runAsUser: "1000"
+        serviceAccount: "jenkins"
