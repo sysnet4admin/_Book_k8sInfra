@@ -1,0 +1,24 @@
+jenkins:
+  clouds:
+  - kubernetes:
+      name: "kubernetes"
+      templates:
+      - containers:
+        - command: ""
+          envVars:
+          - envVar:
+              key: "JENKINS_URL"
+              value: "http://192.168.1.11"
+        volumes:
+        - hostPathVolume:
+            hostPath: "/usr/bin/kubectl"
+            mountPath: "/usr/bin/kubectl"
+        - hostPathVolume:
+            hostPath: "/bin/docker"
+            mountPath: "/bin/docker"
+        - hostPathVolume:
+            hostPath: "/var/run/docker.sock"
+            mountPath: "/var/run/docker.sock"
+        serviceAccount: "jenkins"
+        runAsUser: "1000"
+        runAsGroup: "993"
