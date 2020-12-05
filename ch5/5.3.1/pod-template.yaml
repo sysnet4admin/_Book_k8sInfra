@@ -2,23 +2,16 @@ jenkins:
   clouds:
   - kubernetes:
       name: "kubernetes"
-      namespace: "default"
-      podLabels:
-      - key: "jenkins/jenkins-jenkins-slave"
-        value: "true"
-      serverUrl: "https://kubernetes.default"
       templates:
-      - containers:
-        - args: "^${computer.jnlpmac} ^${computer.name}"
+      - name: "default"
+        containers:
+        - name: "jnlp"
+          image: "jenkins/inbound-agent:4.3-4"
           command: ""
           envVars:
           - envVar:
               key: "JENKINS_URL"
               value: "http://192.168.1.11"
-          image: "jenkins/inbound-agent:4.3-4"
-          name: "jnlp"
-        label: "jenkins-jenkins-slave "
-        name: "default"
         volumes:
         - hostPathVolume:
             hostPath: "/usr/bin/kubectl"
@@ -29,6 +22,8 @@ jenkins:
         - hostPathVolume:
             hostPath: "/var/run/docker.sock"
             mountPath: "/var/run/docker.sock"
-        runAsGroup: "993"
-        runAsUser: "1000"
         serviceAccount: "jenkins"
+        runAsUser: "1000"
+        runAsGroup: "993"
+  disabledAdministrativeMonitors:
+  - "hudson.model.UpdateCenter$CoreUpdateMonitor" 
