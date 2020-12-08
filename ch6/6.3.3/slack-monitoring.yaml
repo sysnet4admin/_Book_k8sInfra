@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  annotations:
+    meta.helm.sh/release-name: prometheus
+    meta.helm.sh/release-namespace: default
+  labels:
+    app: prometheus
+    app.kubernetes.io/managed-by: Helm
+    chart: prometheus-11.6.0
+    component: alertmanager
+    heritage: Helm
+    release: prometheus
+  name: prometheus-alertmanager-slack
+  namespace: default
+data:
+  alertmanager.yml: |
+    global:
+      slack_api_url: '<slackurl>'
+    receivers:
+    - name: slack-monitoring
+      slack_configs:
+      - channel: '#monitoring'
+        send_resolved: true
+    route:
+      group_wait: 10s
+      group_interval: 5m
+      receiver: slack-monitoring

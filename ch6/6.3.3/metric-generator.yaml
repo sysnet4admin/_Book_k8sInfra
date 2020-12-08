@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: metric-generator
+  name: metric-generator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: metric-generator
+  template:
+    metadata:
+      labels:
+        app: metric-generator
+      annotations:
+        prometheus.io/path: /metrics
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+    spec:
+      containers:
+      - image: sysnet4admin/metric-generator
+        name: metric-generator
+        ports:
+        - containerPort: 8080
