@@ -8,8 +8,8 @@ pipeline {
     }      
     stage('git pull') {
         steps {
-            // Please enter your git repository
-            git url: '<Git URL>', branch: 'main'
+            // Git-URL will replace by sed command before RUN
+            git url: 'Git-URL', branch: 'main'
         }
     }
     stage('k8s deploy'){
