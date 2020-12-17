@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('build start') {
       steps {
-        slackSend(message: "Build ${env.BUILD_NUMBER} Started", color: 'good', tokenCredentialId: 'slack-key')
+        slackSend(message: "Build ${env.BUILD_NUMBER} Started"
+        , color: 'good', tokenCredentialId: 'slack-key')
       }
     }      
     stage('git pull') {
@@ -18,11 +19,13 @@ pipeline {
                  configs: '*.yaml')
         }
     }
+    
     stage('send diff') {
         steps {
         slackSend(message: """${env.JOB_NAME} #${env.BUILD_NUMBER} End
         """, color: 'good', tokenCredentialId: 'slack-key')             
         }
     }
+    
   }
 }

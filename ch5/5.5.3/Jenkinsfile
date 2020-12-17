@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('build start') {
       steps {
-        slackSend(message: "Build ${env.BUILD_NUMBER} Started", color: 'good', tokenCredentialId: 'slack-key')
+        slackSend(message: "Build ${env.BUILD_NUMBER} Started"
+        , color: 'good', tokenCredentialId: 'slack-key')
       }
     }      
     stage('git pull') {
@@ -18,6 +19,7 @@ pipeline {
                  configs: '*.yaml')
         }
     }
+    
     stage('send diff') {
         steps {
         script {
@@ -25,11 +27,12 @@ pipeline {
           publisher.publishLastChanges()
           def htmlDiff = publisher.getHtmlDiff()
           writeFile file: "build-diff-${env.BUILD_NUMBER}.html", text: htmlDiff
-        }
+        }	
         slackSend(message: """${env.JOB_NAME} #${env.BUILD_NUMBER} End
         (<${env.BUILD_URL}/last-changes|Check Last changed>)
         """, color: 'good', tokenCredentialId: 'slack-key')             
         }
     }
+    
   }
 }
