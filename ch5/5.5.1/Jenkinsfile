@@ -1,16 +1,16 @@
 pipeline {
   agent any
-  stages {      
+  stages {
     stage('git pull') {
       steps {
-         // Git-URL will replace by sed command before RUN
-        git url: '<Git URL>', branch: 'main'
+        // Git-URL will replace by sed command before RUN
+        git url: 'Git-URL', branch: 'main'
       }
     }
     stage('k8s deploy'){
       steps {
         kubernetesDeploy(kubeconfigId: 'kubeconfig',
-              configs: '*.yaml')
+                         configs: '*.yaml')
       }
     }    
   }
