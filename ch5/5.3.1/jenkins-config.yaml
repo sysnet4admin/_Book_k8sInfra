@@ -45,7 +45,7 @@ jenkins:
         nodeUsageMode: NORMAL
         podRetention: "never"
         runAsGroup: "993"
-        runAsUser: "1000"
+        runAsUser: "1011"
         serviceAccount: "jenkins"
         volumes:
         - hostPathVolume:
