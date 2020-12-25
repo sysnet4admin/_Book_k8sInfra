@@ -22,6 +22,7 @@ jenkins:
       templates:
       - containers:
         - args: "^${computer.jnlpmac} ^${computer.name}"
+          command: ""
           envVars:
           - envVar:
               key: "JENKINS_URL"
