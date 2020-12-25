@@ -10,8 +10,8 @@ helm install jenkins edu/jenkins \
 --set master.tolerations[0].key=node-role.kubernetes.io/master \
 --set master.tolerations[0].effect=NoSchedule \
 --set master.tolerations[0].operator=Exists \
---set master.runAsUser=1011 \
---set master.runAsGroup=1011 \
+--set master.runAsUser=1000 \
+--set master.runAsGroup=1000 \
 --set master.tag=2.249.3-lts-centos7 \
 --set master.serviceType=LoadBalancer \
 --set master.servicePort=80 \
