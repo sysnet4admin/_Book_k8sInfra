@@ -1,4 +1,4 @@
-#/bin/env bash
+#!/usr/bin/env bash
 jkopt1="--sessionTimeout=1440"
 jkopt2="--sessionEviction=86400"
 jvopt1="-Duser.timezone=Asia/Seoul"
