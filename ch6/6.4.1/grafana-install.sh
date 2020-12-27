@@ -3,6 +3,6 @@ helm install grafana edu/grafana \
 --set persistence.enabled=true \
 --set persistence.existingClaim=grafana \
 --set service.type=LoadBalancer \
---set adminPassword="admin" \ 
---set securityContext.runAsUser=1012 \
---set securityContext.runAsGroup=1012
+--set securityContext.runAsUser=1000 \
+--set securityContext.runAsGroup=1000 \
+--set adminPassword="admin"

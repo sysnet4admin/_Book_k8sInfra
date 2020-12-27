@@ -1,0 +1,10 @@
+serverFiles:
+  alerting_rules.yml:
+    groups:
+    - name: Replicas
+      rules:
+      - alert: ReplicasChanged
+        expr: kube_deployment_status_replicas{namespace="metallb-system", deployment="controller"} == 0
+        for: 15s
+        annotations:
+          message: '[${{labels.namespace}}/{{$labels.deployment}}] ReplicaSet in Deployment have no pod.'
