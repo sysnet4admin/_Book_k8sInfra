@@ -22,4 +22,4 @@ helm upgrade prometheus edu/prometheus \
 --set alertmanager.service.type="LoadBalancer" \
 --set alertmanager.service.loadBalancerIP="192.168.1.14" \
 --set alertmanager.baseURL="http://192.168.1.14" \
--f ~/_Book_k8sInfra/ch6/6.3.3/alerting-rules.yaml
+-f ~/_Book_k8sInfra/ch6/6.5.2/alerting-rules.yaml
