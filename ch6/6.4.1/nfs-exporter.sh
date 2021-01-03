@@ -10,5 +10,5 @@ if [[ ! -d $nfsdir ]]; then
   if [[ $(systemctl is-enabled nfs) -eq "disabled" ]]; then
     systemctl enable nfs
   fi
-   systemctl restart nfs
+    systemctl restart nfs
 fi
