@@ -4,9 +4,9 @@ helm install prometheus edu/prometheus \
 --set nodeExporter.tolerations[0].key=node-role.kubernetes.io/master \
 --set nodeExporter.tolerations[0].effect=NoSchedule \
 --set nodeExporter.tolerations[0].operator=Exists \
---set alertmanager.persistentVolume.existingClaim="prometheus-alertmanager" \
 --set server.persistentVolume.existingClaim="prometheus-server" \
 --set server.securityContext.runAsGroup=1000 \
 --set server.securityContext.runAsUser=1000 \
 --set server.service.type="LoadBalancer" \
---set server.extraFlags[0]="storage.tsdb.no-lockfile" 
+--set server.extraFlags[0]="storage.tsdb.no-lockfile" \
+--set alertmanager.enabled=false
