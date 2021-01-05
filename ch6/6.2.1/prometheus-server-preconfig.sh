@@ -19,7 +19,7 @@ echo "[Step 2/4] ok"
 
 # create nfs directory & change owner
 nfsdir=/nfs_shared/prometheus/server
-echo "[Step 3/4] Task [Create NFS directory for prometheus]"
+echo "[Step 3/4] Task [Create NFS directory for prometheus-server]"
 if [ ! -e "$nfsdir"  ]; then
   ~/_Book_k8sInfra/ch6/6.2.1/nfs-exporter.sh prometheus/server
   chown 1000:1000 $nfsdir
@@ -30,11 +30,11 @@ else
 fi
 
 # create pv,pvc
-echo "[Step 4/4] Task [Create PV,PVC for prometheus]"
+echo "[Step 4/4] Task [Create PV,PVC for prometheus-server]"
 pvc=$(kubectl get pvc prometheus-server -o jsonpath={.metadata.name} 2> /dev/null)
 if [ "$pvc" == "" ]; then
-  kubectl apply -f ~/_Book_k8sInfra/ch6/6.2.1/prometheus-volume.yaml
+  kubectl apply -f ~/_Book_k8sInfra/ch6/6.2.1/prometheus-server-volume.yaml
   echo "[Step 4/4] Successfully completed"
 else
-  echo "[Step 4/4] failed: prometheus pv,pvc already exist"
+  echo "[Step 4/4] failed: prometheus-server pv,pvc already exist"
 fi
