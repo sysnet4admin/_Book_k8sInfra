@@ -23,6 +23,7 @@ echo "[Step 3/4] Task [Create NFS directory for prometheus-alertmanager]"
 if [ ! -e "$nfsdir"  ]; then
   ~/_Book_k8sInfra/ch6/6.5.2/nfs-exporter.sh prometheus/alertmanager
   chown 1000:1000 $nfsdir
+  echo "$nfsdir created"
   echo "[Step 3/4] Successfully completed"
 else
   echo "[Step 3/4] failed: $nfsdir already exists"
