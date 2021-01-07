@@ -9,3 +9,4 @@ helm install prometheus edu/prometheus \
 --set server.securityContext.runAsGroup=1000 \
 --set server.securityContext.runAsUser=1000 \
 --set server.service.type="LoadBalancer" \
+--set server.extraFlags[0]="storage.tsdb.no-lockfile" 
