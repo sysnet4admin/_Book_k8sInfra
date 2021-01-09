@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-configmap
+data:
+  nginx.conf: |
+    server {
+      listen 80;
+      location / {
+        default_type text/html;
+        return 200 'request_method : $request_method | ip_dest: $server_addr\n';
+      }
+    }
+  
+  metric-nginx.conf: |
+    server {
+      listen 80;
+      location / {
+        default_type text/html;
+        return 200 'request_method : $request_method | ip_dest: $server_addr\n';
+      }
+      
+      location = /stub_status {
+        stub_status;
+      }
+    }
