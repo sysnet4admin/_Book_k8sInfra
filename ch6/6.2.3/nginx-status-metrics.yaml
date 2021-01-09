@@ -16,21 +16,11 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: sysnet4admin/nginx-status
         ports:
         - containerPort: 80
-        volumeMounts:
-        - name: config-volume
-          mountPath: /etc/nginx/conf.d/
       - name: nginx-exporter
         image: nginx/nginx-prometheus-exporter:0.8.0
         env:
         - name: SCRAPE_URI
           value: http://localhost:80/stub_status
-      volumes:
-      - name: config-volume
-        configMap:
-          name: nginx-configmap
-          items:
-          - key: nginx.conf
-            path: nginx.conf
