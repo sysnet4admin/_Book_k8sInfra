@@ -1,10 +1,10 @@
 serverFiles:
   alerting_rules.yml:
     groups:
-    - name: Replicas
+    - name: Nodes
       rules:
-      - alert: ReplicasChanged
-        expr: kube_deployment_status_replicas{namespace="metallb-system", deployment="controller"} == 0
+      - alert: Nodes
+        expr: avg(up{job="kubernetes-nodes"}) < 1
         for: 15s
         annotations:
-          message: '[{{$labels.namespace}}/{{$labels.deployment}}] ReplicaSet in Deployment have no pod.'
+          message: 'kubernetes node down'
