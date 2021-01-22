@@ -4,7 +4,7 @@ serverFiles:
     - name: Node
       rules:
       - alert: NodeDown
-        expr: avg(up{job="kubernetes-nodes"}) < 1
+        expr: up{job="kubernetes-nodes"} == 0
         for: 15s
         annotations:
-          description: 'kubernetes node down'
+          description: 'kubernetes node {{ .Labels.instance }} down'
