@@ -1,10 +1,10 @@
 serverFiles:
   alerting_rules.yml:
     groups:
-    - name: Nodes
+    - name: Node
       rules:
-      - alert: Nodes
+      - alert: NodeDown
         expr: avg(up{job="kubernetes-nodes"}) < 1
         for: 15s
         annotations:
-          message: 'kubernetes node down'
+          description: 'kubernetes node down'

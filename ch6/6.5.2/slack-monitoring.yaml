@@ -22,6 +22,9 @@ data:
       slack_configs:
       - channel: '#monitoring'
         send_resolved: true
+        title: "[{{.Status | toUpper}}] {{ .CommonLabels.alertname }}"
+        text: >-
+          *Description:* {{ .CommonAnnotations.description }}
     route:
       group_wait: 10s
       group_interval: 1m
