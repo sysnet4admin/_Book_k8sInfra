@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
 helm upgrade prometheus edu/prometheus \
---set server.global.scrape_interval=15s \
---set server.global.evaluation_interval=15s \
 --set pushgateway.enabled=false \
 --set nodeExporter.tolerations[0].key=node-role.kubernetes.io/master \
 --set nodeExporter.tolerations[0].effect=NoSchedule \
 --set nodeExporter.tolerations[0].operator=Exists \
 --set alertmanager.persistentVolume.existingClaim="prometheus-alertmanager" \
---set server.global.scrape_interval=15s \
---set server.global.evaluation_interval=15s \
 --set server.persistentVolume.existingClaim="prometheus-server" \
 --set server.securityContext.runAsGroup=1000 \
 --set server.securityContext.runAsUser=1000 \

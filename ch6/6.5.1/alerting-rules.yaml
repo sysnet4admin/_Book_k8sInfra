@@ -5,6 +5,6 @@ serverFiles:
       rules:
       - alert: NodeDown
         expr: up{job="kubernetes-nodes"} == 0
-        for: 15s
+        for: 1m
         annotations:
-          description: 'kubernetes node {{ .Labels.instance }} down'
+          description: kubernetes node {{ .Labels.instance }} down

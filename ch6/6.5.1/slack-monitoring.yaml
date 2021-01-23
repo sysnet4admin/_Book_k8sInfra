@@ -16,13 +16,13 @@ metadata:
 data:
   alertmanager.yml: |
     global:
-      slack_api_url: '<slackurl>'
+      slack_api_url: <slackurl>
     receivers:
     - name: slack-monitoring
       slack_configs:
-      - channel: '#monitoring'
+      - channel: #monitoring
         send_resolved: true
-        title: "[{{.Status | toUpper}}] {{ .CommonLabels.alertname }}"
+        title: [{{.Status | toUpper}}] {{ .CommonLabels.alertname }}
         text: >-
           *Description:* {{ .CommonAnnotations.description }}
     route:
