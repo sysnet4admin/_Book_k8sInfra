@@ -16,7 +16,7 @@ metadata:
 data:
   alertmanager.yml: |
     global:
-      slack_api_url: <slackurl>
+      slack_api_url: Slack-URL
     receivers:
     - name: slack-notifier
       slack_configs:
