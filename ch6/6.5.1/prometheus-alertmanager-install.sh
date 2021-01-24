@@ -12,10 +12,10 @@ helm upgrade prometheus edu/prometheus \
 --set server.baseURL="http://192.168.1.12" \
 --set server.service.loadBalancerIP="192.168.1.12" \
 --set server.extraFlags[0]="storage.tsdb.no-lockfile" \
---set alertmanager.configMapOverrideName=alertmanager-slack \
+--set alertmanager.configMapOverrideName=notifier-config \
 --set alertmanager.securityContext.runAsGroup=1000 \
 --set alertmanager.securityContext.runAsUser=1000 \
 --set alertmanager.service.type="LoadBalancer" \
 --set alertmanager.service.loadBalancerIP="192.168.1.14" \
 --set alertmanager.baseURL="http://192.168.1.14" \
--f ~/_Book_k8sInfra/ch6/6.5.2/alerting-rules.yaml
+-f ~/_Book_k8sInfra/ch6/6.5.1/values.yaml
