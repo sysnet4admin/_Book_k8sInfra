@@ -66,6 +66,7 @@ jenkins:
   disabledAdministrativeMonitors:
   - "hudson.model.UpdateCenter$CoreUpdateMonitor"
   - "jenkins.diagnostics.RootUrlNotSetMonitor"
+  - "jenkins.security.UpdateSiteWarningsMonitor"  
   labelAtoms:
   - name: "master"
   markupFormatter: "plainText"
