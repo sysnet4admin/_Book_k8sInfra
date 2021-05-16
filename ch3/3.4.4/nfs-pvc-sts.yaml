@@ -4,7 +4,7 @@ metadata:
   name: nfs-pvc-sts
 spec:
   replicas: 4
-  serviceName: nfs-pvc-sts #statefulset need it
+  serviceName: sts-svc-domain #statefulset need it
   selector:
     matchLabels:
       app: nfs-pvc-sts
