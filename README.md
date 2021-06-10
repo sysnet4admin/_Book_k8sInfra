@@ -71,7 +71,7 @@
 
 ## 도서 구입 안내
 본 도서는 각 온오프라인 서점에서 만나보실 수 있습니다.
-📍 [YES24](https://bit.ly/3iq4L5W)
-📍 [알라딘](https://bit.ly/3cpo37M)
-📍 [교보문고](https://bit.ly/3g1dsC7)
-📍 [인터파크(https://bit.ly/3pydepi)
+- 📍 [YES24](https://bit.ly/3iq4L5W)
+- 📍 [알라딘](https://bit.ly/3cpo37M)
+- 📍 [교보문고](https://bit.ly/3g1dsC7)
+- 📍 [인터파크(https://bit.ly/3pydepi)
