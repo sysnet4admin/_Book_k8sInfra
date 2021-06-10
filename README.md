@@ -74,4 +74,4 @@
 - 📍 [YES24](https://bit.ly/3iq4L5W)
 - 📍 [알라딘](https://bit.ly/3cpo37M)
 - 📍 [교보문고](https://bit.ly/3g1dsC7)
-- 📍 [인터파크(https://bit.ly/3pydepi)
+- 📍 [인터파크](https://bit.ly/3pydepi)
