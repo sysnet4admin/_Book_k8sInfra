@@ -65,9 +65,9 @@
 ***
 
 ## 저자
-- [조 훈](https://github.com/sysnet4admin)
-- [심근우](https://github.com/gnu-gnu)
-- [문성주](https://github.com/seongjumoon)
+- ✔️ [조 훈](https://github.com/sysnet4admin)
+- ✔️ [심근우](https://github.com/gnu-gnu)
+- ✔️ [문성주](https://github.com/seongjumoon)
 
 ## 도서 구입 안내
 본 도서는 각 온오프라인 서점에서 만나보실 수 있습니다.
