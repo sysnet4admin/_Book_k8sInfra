@@ -64,15 +64,14 @@
 
 ***
 
-## 오탈자 제보 및 문의사항
-
-### 오탈자 제보
-[여기](mailto:help@gilbut.com?cc=pagaja@gmail.com;seongju.moon@liunx.com;geunwoo.j.shim@gmail.com&subject=[컨테이너%20인프라%20환경%20구축을%20위한%20쿠버네티스/도커%20오탈자%20제보]%20)를 눌러서 오탈자 교정에 기여해주세요.
-
 ## 저자
 - [조 훈](https://github.com/sysnet4admin)
 - [심근우](https://github.com/gnu-gnu)
 - [문성주](https://github.com/seongjumoon)
 
 ## 도서 구입 안내
-* 추후 업데이트 예정 
+본 도서는 각 온오프라인 서점에서 만나보실 수 있습니다.
+📍 [YES24](https://bit.ly/3iq4L5W)
+📍 [알라딘](https://bit.ly/3cpo37M)
+📍 [교보문고](https://bit.ly/3g1dsC7)
+📍 [인터파크(https://bit.ly/3pydepi)
