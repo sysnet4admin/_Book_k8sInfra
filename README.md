@@ -39,7 +39,7 @@
     <tr>
         <td><a href="https://github.com/sysnet4admin/_Book_k8sInfra/tree/main/ch5">ch5</a></td>
         <td>지속적인 통합과 배포 자동화, 젠킨스</td>
-        <td><a href="https://helm.sh">헬름</a>으로 쿠버네티스 환경에 <a href="https://www.jenkins.io/">젠킨스</a>를 배포하고, CI/CD를 구현할 수 있는 스크립트 제공합니다.</td>
+        <td><a href="https://helm.sh">헬름</a>으로 쿠버네티스 환경에 <a href="https://www.jenkins.io/">젠킨스</a>를 배포하고, CI/CD를 구현할 수 있는 스크립트를 제공합니다.</td>
     </tr>
     <tr>
         <td><a href="https://github.com/sysnet4admin/_Book_k8sInfra/tree/main/ch6">ch6</a></td>
@@ -57,11 +57,11 @@
     </tr>
     <tr>
         <td>C. 쿠버 대시보드 구성하기</td>
-        <td><a href="https://github.com/kubernetes/dashboard">쿠버네티스 대시보드</a>를 배포하기 위한 야믈파일을 제공합니다.</td>
+        <td><a href="https://github.com/kubernetes/dashboard">쿠버네티스 대시보드</a>를 배포하기 위한 스크립트를 제공합니다.</td>
     </tr>
     <tr>
         <td>D. 컨테이너 깊게 들여다보기</td>
-        <td>컨테이너를 깊게 들여다보기 위한 스크립트들을 제공합니다.</td>
+        <td>컨테이너를 깊게 들여다보기 위한 스크립트를 제공합니다.</td>
     </tr>
    </tbody>
 </table>
