@@ -53,7 +53,7 @@
     </tr>
     <tr>
         <td>B. Kubespray로 쿠버네티스 자동 구성하기</td>
-        <td><a href="https://github.com/kubernetes-sigs/kubespray">kubespray</a>를 통해 쿠버네티스 클러스터를 자동으로 구축하기 위한 스크립트를 제공합니다..</td>
+        <td><a href="https://github.com/kubernetes-sigs/kubespray">kubespray</a>를 통해 쿠버네티스 클러스터를 자동으로 구축하기 위한 스크립트를 제공합니다.</td>
     </tr>
     <tr>
         <td>C. 쿠버 대시보드 구성하기</td>
