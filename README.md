@@ -61,7 +61,7 @@
     </tr>
     <tr>
         <td>D. 컨테이너 깊게 들여다보기</td>
-        <td>컨테이너를 깊게 들여다보기 위한 스크립트를 제공합니다.</td>
+        <td><a href="https://github.com/opencontainers/runc">컨테이너를 깊게</a> 들여다보기 위한 스크립트를 제공합니다.</td>
     </tr>
    </tbody>
 </table>
