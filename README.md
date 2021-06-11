@@ -34,7 +34,7 @@
     <tr>
         <td><a href="https://github.com/sysnet4admin/_Book_k8sInfra/tree/main/ch4">ch4</a></td>
         <td>쿠버네티스를 이루는 컨테이너 도우미, 도커</td>
-        <td><a href="https://docker.com">도커</a>의 일반적인 사용 방법, 도커 고급 기능을 사용하기 위한 가상환경 배포 파일 및 사설 도커 레지스트리를 구성하기 위한 스크립트를 제공합니다.</td>
+        <td><a href="https://docker.com">도커</a>의 일반적인 사용 방법, 도커 고급 기능을 사용하기 위한 가상환경 배포 파일 및 사설 <a href="https://docs.docker.com/registry/">도커 레지스트리</a>를 구성하기 위한 스크립트를 제공합니다.</td>
     </tr>
     <tr>
         <td><a href="https://github.com/sysnet4admin/_Book_k8sInfra/tree/main/ch5">ch5</a></td>
