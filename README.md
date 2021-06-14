@@ -3,7 +3,7 @@
 <img src="http://image.kyobobook.co.kr/images/book/xlarge/743/x9791165215743.jpg" width="400">
 </a>
 
-이 저장소는 [컨테이너 인프라 환경 구축을 위한 쿠버네티스/도커](https://www.gilbut.co.kr/book/view?bookcode=TBD) 책에 실습을 위한 코드를 제공합니다.
+이 저장소는 [컨테이너 인프라 환경 구축을 위한 쿠버네티스/도커](http://www.yes24.com/Product/Goods/102099414) 책에 실습을 위한 코드를 제공합니다.
 
 각 챕터별로 챕터에서 사용하는 스크립트 및 코드를 제공하고 있으며, 별도로 챕터에서 깊게 다루지 않는 부분은 [다른 저장소](https://github.com/iac-source)에서 다룹니다.
 
