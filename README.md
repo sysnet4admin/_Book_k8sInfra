@@ -80,5 +80,5 @@
 - 📍 [교보문고](https://bit.ly/3g1dsC7)
 - 📍 [인터파크](https://bit.ly/3pydepi)
 
-## Useful info
+## 유용한 정보
 -  📑 [Mac 사용자를 위한 터미널(Termius) 설정법 by 라온클](https://lifeoncloud.kr/review/tip/termius/)
