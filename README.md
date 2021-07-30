@@ -69,22 +69,22 @@
 ***
 
 ## 저자
-- ✔️ [조 훈](https://github.com/sysnet4admin)
-- ✔️ [심근우](https://github.com/gnu-gnu)
-- ✔️ [문성주](https://github.com/seongjumoon)
+- ✔️   [조 훈](https://github.com/sysnet4admin)
+- ✔️   [심근우](https://github.com/gnu-gnu)
+- ✔️   [문성주](https://github.com/seongjumoon)
 
 ## 도서 구입 안내
 본 도서는 각 온오프라인 서점에서 만나보실 수 있습니다.
-- 📍[YES24](https://bit.ly/3iq4L5W)
-- 📍[알라딘](https://bit.ly/3cpo37M)
-- 📍[교보문고](https://bit.ly/3g1dsC7)
-- 📍[인터파크](https://bit.ly/3pydepi)
+- 📍  [YES24](https://bit.ly/3iq4L5W)
+- 📍  [알라딘](https://bit.ly/3cpo37M)
+- 📍  [교보문고](https://bit.ly/3g1dsC7)
+- 📍  [인터파크](https://bit.ly/3pydepi)
 
 ## 책에서 사용하는 프로그램 번들팩
 `VirtualBox 6.1.12`, `vagrant 2.2.9` 
-- 🗄️[윈도우 사용자](https://1drv.ms/u/s!AhojtZPqfyoFjEwbQj38RbKlysoz?e=1EfkYT)
-- 🗄️[맥OS 사용자](https://1drv.ms/u/s!AhojtZPqfyoFjE3zPBcjKKyjAHtV?e=ykhHAV)
+- 🗄️  [윈도우 사용자](https://1drv.ms/u/s!AhojtZPqfyoFjEwbQj38RbKlysoz?e=1EfkYT)
+- 🗄️  [맥OS 사용자](https://1drv.ms/u/s!AhojtZPqfyoFjE3zPBcjKKyjAHtV?e=ykhHAV)
 
 ## 유용한 정보
--  📑[Mac 사용자를 위한 터미널(Termius) 설정법 by 라온클](https://lifeoncloud.kr/review/tip/termius/)
--  📑[`vagrant up` 실행 시에 발생하는 에러와 해결책 사례](https://www.inflearn.com/course/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%89%BD%EA%B2%8C%EC%8B%9C%EC%9E%91/lecture/72911)
+-  📑  [Mac 사용자를 위한 터미널(Termius) 설정법 by 라온클](https://lifeoncloud.kr/review/tip/termius/)
+-  📑  [`vagrant up` 실행 시에 발생하는 에러와 해결책 사례](https://www.inflearn.com/course/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%89%BD%EA%B2%8C%EC%8B%9C%EC%9E%91/lecture/72911)
