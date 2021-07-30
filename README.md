@@ -80,6 +80,11 @@
 - 📍 [교보문고](https://bit.ly/3g1dsC7)
 - 📍 [인터파크](https://bit.ly/3pydepi)
 
+## 책에서 사용하는 프로그램 번들팩
+`VirtualBox 6.1.12`, `vagrant 2.2.9` 
+-  [윈도우사용자](https://1drv.ms/u/s!AhojtZPqfyoFjEwbQj38RbKlysoz?e=1EfkYT)
+-  [맥OS사용자](https://1drv.ms/u/s!AhojtZPqfyoFjE3zPBcjKKyjAHtV?e=ykhHAV)
+
 ## 유용한 정보
 -  📑 [Mac 사용자를 위한 터미널(Termius) 설정법 by 라온클](https://lifeoncloud.kr/review/tip/termius/)
 -  📑 [`vagrant up` 실행 시에 발생하는 에러와 해결책 사례](https://www.inflearn.com/course/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%89%BD%EA%B2%8C%EC%8B%9C%EC%9E%91/lecture/72911)
