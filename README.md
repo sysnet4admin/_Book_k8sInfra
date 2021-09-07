@@ -87,7 +87,9 @@
 
 ## 유용한 정보
 -  📑  [Mac 사용자를 위한 터미널(Termius) 설정법 by 라온클](https://lifeoncloud.kr/review/tip/termius/)
--  📑  [`vagrant up` 실행 시에 발생하는 에러와 해결책 사례](https://www.inflearn.com/course/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%89%BD%EA%B2%8C%EC%8B%9C%EC%9E%91/lecture/72911)
+-  📑  [`vagrant up` 실행 시에 발생하는 에러와 해결책 사례](https://www.inflearn.com/course/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%89%BD%EA%B2%8C%EC%8B%9C%EC%9E%91/lecture/72911?inst=cf657a9d)
+-  📑  [테인트(Taints)와 톨러레이션(Tolerations) 설명 영상](https://www.inflearn.com/course/%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4/lecture/85683?inst=f3d96ed5)
+
 
 ## 관련 문서 
 -  📜 [왜 쿠버네티스는 systemd로 cgroup을 관리하려고 할까요?](https://www.slideshare.net/JoHoon1/systemd-cgroup)
