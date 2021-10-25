@@ -1,0 +1,1 @@
+i=1; while true; do sleep 1; echo $((i++)) `curl --silent 192.168.1.11` ; done
