@@ -9,6 +9,7 @@
 하지만 만약 Best Practice적인 성격으로 2022년에 구성을 고민하신다면, 현재의 구성이 큰 도움이 될 것이라고 생각합니다. 부디 이를 통해서 금년도 쿠버네티스로의 진입이 더욱 더 수월하셨으면 합니다. 
 
 [조 훈](https://github.com/sysnet4admin), [심근우](https://github.com/gnu-gnu), [문성주](https://github.com/seongjumoon) 드림
+---
 
 ## 각 구성 요소 설명
 
@@ -117,12 +118,11 @@ fluentbit은 오픈소스 로그 포워더입니다. 적은 자원 소비로도 
 [kubespray](https://kubernetes.io/ko/docs/setup/production-environment/tools/kubespray/)
 앤서블 플레이북을 이용해서 쿠버네티스 클러스터를 프로비저닝할 수 있습니다. kubeadm 대비 여러개의 마스터노드를 설정해야할 때, 한번의 설정으로 클러스터의 컨트롤 플레인 및 워커 노드를 구성할 수 있다는 장점이 있습니다.
 
-
+---
 ## 표준 아키택처를 기반으로 작성된 책 
 
-** 컨테이너 인프라 환경 구축을 위한 쿠버네티스/도커 **
 <a href="http://www.yes24.com/Product/Goods/102099414">
-<img src="http://image.kyobobook.co.kr/images/book/xlarge/743/x9791165215743.jpg" width="200">
+<img src="http://image.kyobobook.co.kr/images/book/xlarge/743/x9791165215743.jpg" width="300">
 </a>
 
 ### 도서 구입 안내
