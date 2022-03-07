@@ -1,0 +1,1 @@
+{"dependencies":[["vagrant-scp",["= 0.1.0"]]],"checksum":"46f96a8aeb908f65374d66f5357ddd56589848b89ef0e7bc831a939c8c0a9602","vagrant_version":"2.2.17"}
