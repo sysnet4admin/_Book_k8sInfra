@@ -86,7 +86,7 @@ jenkins:
   updateCenter:
     sites:
     - id: "default"
-      url: "https://raw.githubusercontent.com/IaC-Source/Jenkins-updateCenter/main/update-center-4-k8s.json"
+      url: "https://raw.githubusercontent.com/IaC-Source/Jenkins-updateCenter/main/update-center.json"
   views:
   - all:
       name: "all"
