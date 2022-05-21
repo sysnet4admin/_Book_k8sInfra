@@ -3,7 +3,14 @@
 <img src="http://image.kyobobook.co.kr/images/book/xlarge/743/x9791165215743.jpg" width="400">
 </a>
 
-> 🔔 **_알림:_** VirtualBox 6.1.28 이후 버전에서는 Vagrant host-only network와 관련된 이슈과 맥과 리눅스에서 발생합니다. 자세한 내용은 [다음의 문서](https://github.com/sysnet4admin/_Book_k8sInfra/blob/main/docs/%EC%8B%A4%EC%8A%B5%20%EC%9D%B4%EC%8A%88%231%20-%20VritualBox%20host-only%20Network(MAC%2CLinux).pdf)를 확인하시기 바랍니다.  
+> 🔔 **_알림1:_** VirtualBox 6.1.28 이후 버전에서는 Vagrant host-only network와 관련된 이슈과 맥과 리눅스에서 
+> 발생합니다. 자세한 내용은 [다음의 문서](https://github.com/sysnet4admin/_Book_k8sInfra/blob/main/docs/%EC%8B%A4%EC%8A%B5%20%EC%9D%B4%EC%8A%88%231%20-%20VritualBox%20host-only%20Network(MAC%2CLinux).pdf)를 확인하시기 바랍니다.  
+>
+> 🔔 **_알림2:_** 현재 책의 쿠버네티스 실습 랩을 Vagrant가 아닌 이미지로 바로 구성할 수 있도록 OVA 이미지를 제공합니다. 다음의 두가지 이미지 번들 팩을 제공합니다. 
+> - [3.1.3](https://1drv.ms/u/s!AhojtZPqfyoFjG53xXMQ0yyudm9T?e=BKSKgB)에 해당 하는 이미지
+> - [4.3.4](https://1drv.ms/u/s!AhojtZPqfyoFjG-dNnxVAYfs8ahv?e=5x78J0)에 해당하는 이미지 
+> 자세한 설정법에 관련한 영상은 아래에 [유용한 정보](#유용한 정보) 부분을 참고하시기 바랍니다.   
+
 
 이 저장소는 [컨테이너 인프라 환경 구축을 위한 쿠버네티스/도커](http://www.yes24.com/Product/Goods/102099414) 책에 실습을 위한 코드를 제공합니다.
 
@@ -92,6 +99,8 @@
 -  🎬  [테인트(Taints)와 톨러레이션(Tolerations) 설명 영상](https://www.inflearn.com/course/%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4/lecture/85683?inst=f3d96ed5)
 -  🎬  [멀티 컨텍스트 랩 환경 구성 on Ubuntu 설명 영상(10:15~)](https://www.inflearn.com/course/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%89%BD%EA%B2%8C%EC%8B%9C%EC%9E%91/lecture/73341?inst=cf657a9d)
 -  🎬  [쿠버네티스 v1.24에서 발생할 컨테이너 런타임의 변경에 관해서 (dockershim vs containerd)](https://www.inflearn.com/course/%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4/lecture/106937?inst=f3d96ed5)
+-  🎬  [쿠버네티스 실습 랩을 vagrant가 아닌 이미지로 바로 구성 설치하는 법](https://www.inflearn.com/course/%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4/lecture/106937?inst=f3d96ed5)
+
 
 ## 관련 문서 
 -  📜 [왜 쿠버네티스는 systemd로 cgroup을 관리하려고 할까요?](https://www.slideshare.net/JoHoon1/systemd-cgroup)
