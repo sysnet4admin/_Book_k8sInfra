@@ -3,6 +3,7 @@ jkopt1="--sessionTimeout=1440"
 jkopt2="--sessionEviction=86400"
 jvopt1="-Duser.timezone=Asia/Seoul"
 jvopt2="-Dcasc.jenkins.config=https://raw.githubusercontent.com/sysnet4admin/_Book_k8sInfra/main/ch5/5.3.1/jenkins-config.yaml"
+jvopt3="-Dhudson.model.DownloadService.noSignatureCheck=true"
 
 helm install jenkins edu/jenkins \
 --set persistence.existingClaim=jenkins \
@@ -17,4 +18,4 @@ helm install jenkins edu/jenkins \
 --set master.serviceType=LoadBalancer \
 --set master.servicePort=80 \
 --set master.jenkinsOpts="$jkopt1 $jkopt2" \
---set master.javaOpts="$jvopt1 $jvopt2"
+--set master.javaOpts="$jvopt1 $jvopt2 $jvopt3"
