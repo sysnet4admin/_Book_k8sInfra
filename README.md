@@ -5,11 +5,6 @@
 
 > 🔔 **_알림1:_** VirtualBox 6.1.28 이후 버전에서는 Vagrant host-only network와 관련된 이슈과 맥과 리눅스에서 
 > 발생합니다. 자세한 내용은 [다음의 문서](https://github.com/sysnet4admin/_Book_k8sInfra/blob/main/docs/%EC%8B%A4%EC%8A%B5%20%EC%9D%B4%EC%8A%88%231%20-%20VritualBox%20host-only%20Network(MAC%2CLinux).pdf)를 확인하시기 바랍니다.  
->
-> 🔔 **_알림2:_** 현재 책의 쿠버네티스 실습 랩을 Vagrant가 아닌 이미지로 바로 구성할 수 있도록 OVA 이미지를 제공합니다. 다음의 두가지 이미지 번들 팩을 제공합니다. 
-> - [3.1.3](https://1drv.ms/u/s!AhojtZPqfyoFjG53xXMQ0yyudm9T?e=BKSKgB)에 해당 하는 이미지
-> - [4.3.4](https://1drv.ms/u/s!AhojtZPqfyoFjG-dNnxVAYfs8ahv?e=5x78J0)에 해당하는 이미지 </br>
-> 자세한 설정법에 관련한 영상은 아래에 [유용한 정보](#유용한-정보) 부분을 참고하시기 바랍니다.   
 
 
 이 저장소는 [컨테이너 인프라 환경 구축을 위한 쿠버네티스/도커](http://www.yes24.com/Product/Goods/102099414) 책에 실습을 위한 코드를 제공합니다.
@@ -92,6 +87,13 @@
 `VirtualBox 6.1.12`, `vagrant 2.2.9` 
 - 🗄️  [윈도우 사용자](https://1drv.ms/u/s!AhojtZPqfyoFjEwbQj38RbKlysoz?e=1EfkYT)
 - 🗄️  [맥OS 사용자](https://1drv.ms/u/s!AhojtZPqfyoFjE3zPBcjKKyjAHtV?e=ykhHAV)
+
+## 🔔 베이그런트 설치로 너무 고생하시는 분들을 위한 이미지(OVA) 파일
+현재 책의 쿠버네티스 실습 랩을 Vagrant가 아닌 이미지로 바로 구성할 수 있도록 OVA 이미지를 제공합니다. </br>
+다음의 두가지 이미지 번들 팩을 제공합니다. 
+ - [3.1.3](https://1drv.ms/u/s!AhojtZPqfyoFjG53xXMQ0yyudm9T?e=BKSKgB)에 해당 하는 이미지
+ - [4.3.4](https://1drv.ms/u/s!AhojtZPqfyoFjG-dNnxVAYfs8ahv?e=5x78J0)에 해당하는 이미지 </br>
+> 자세한 설정법에 관련한 영상은 아래에 [유용한 정보](#유용한-정보) 부분을 참고하시기 바랍니다.   
 
 ## 유용한 정보
 -  📑  [Mac 사용자를 위한 터미널(Termius) 설정법 by 라온클](https://lifeoncloud.github.io/k8s/termius/)
