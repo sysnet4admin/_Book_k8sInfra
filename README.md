@@ -85,14 +85,14 @@
 
 ## 책에서 사용하는 프로그램 번들팩
 `VirtualBox 6.1.12`, `vagrant 2.2.9` 
-- 🗄️  [윈도우 사용자](https://1drv.ms/u/s!AhojtZPqfyoFjEwbQj38RbKlysoz?e=1EfkYT)
-- 🗄️  [맥OS 사용자](https://1drv.ms/u/s!AhojtZPqfyoFjE3zPBcjKKyjAHtV?e=ykhHAV)
+- 🗄️  [윈도우 사용자](https://1drv.ms/u/s!Auu_3Z_BinL5enOZ9GNLpYpW9GI?e=Bm81j6)
+- 🗄️  [맥OS 사용자](https://1drv.ms/u/s!Auu_3Z_BinL5eYkQshnmOaaprJA?e=Z7WJwb)
 
 ## 🔔 베이그런트 설치로 너무 고생하시는 분들을 위한 이미지(OVA) 파일
 현재 책의 쿠버네티스 실습 랩을 Vagrant가 아닌 이미지로 바로 구성할 수 있도록 OVA 이미지를 제공합니다. </br>
 다음의 두가지 이미지 번들 팩을 제공합니다. 
- - [3.1.3](https://1drv.ms/u/s!AhojtZPqfyoFjG53xXMQ0yyudm9T?e=BKSKgB)에 해당 하는 이미지
- - [4.3.4](https://1drv.ms/u/s!AhojtZPqfyoFjG-dNnxVAYfs8ahv?e=5x78J0)에 해당하는 이미지 </br>
+ - [3.1.3](https://1drv.ms/u/s!Auu_3Z_BinL5dxYJfjk7c25L58Y?e=A6ql5d)에 해당 하는 이미지
+ - [4.3.4](https://1drv.ms/u/s!Auu_3Z_BinL5eJrtyjnc1mW5oa8?e=5pVpmc)에 해당하는 이미지 </br>
 > 자세한 설정법에 관련한 영상은 아래에 [유용한 정보](#유용한-정보) 부분을 참고하시기 바랍니다.   
 
 ## 유용한 정보
