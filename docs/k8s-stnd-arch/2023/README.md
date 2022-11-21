@@ -19,6 +19,20 @@
 
 ## 각 구성 요소 설명
 
+### 쿠버네티스 보안 
+**[키클락(Keycloak)](https://www.keycloak.org/) : 클러스터 인증 및 접근 관리 </br>**
+키클락은 IAM(Identity and Access Management, 신원 인증 및 접근 관리)에 도구로 싱글사인온(Single Sign-On, SSO)을 허용하는 오픈소스 도구입니다. 인터넷을 통해 접근 가능한 곳에 배포된 쿠버네티스 API나 애플리케이션은 누구나 접근 가능하기 때문에 이런 경우에 키클락을 사용하면 구글 등 특정 IdP(Identity Provider, 신원 공급자)를 사용하여 인증 후에 접근 가능하도록 관리하는 것이 가능합니다. 또한 LDAP(Lightweight Directory Access Protocol)등을 사용하여 각 사용자의 권한을 단계별로 설정하는 등 클러스터 전체의 접근 권한을 쉽게 관리할 수 있습니다.
+
+**[Kyverno](https://kyverno.io/) : 쿠버네티스 정책 관리 및 적용 </br>**
+쿠버네티스 클러스터 내부에서 수행할 수 있는 작업 범위나 허용 여부를 결정하기 위해 정의된 규칙을 정책(Policy)이라고 합니다. Kyverno는 정책을 관리하고 쿠버네티스 클러스터에 적용하는 도구입니다.  Kyverno를 통해 이미지의 특정 태그 제한, 호스트의 포트 사용 제한, 사용할 수 있는 이미지 레지스트리 제한 등을 설정할 수 있으며, 적용할 수 있는 정책은 매우 다양합니다. Kyverno 이외에도 OPA(Open Policy Agent) 등과 같은 정책과 관련된 도구가 있습니다만, 정책 적용을 위한 별도의 특화된 문법을 공부해야 하는 단점이 있습니다. Kyverno는 기본적인 쿠버네티스 YAML 문법을 그대로 활용하여 사용자에게 친숙하며, 홈페이지에서 참고하여 쓸 수 있는 수 많은 예시를 제공하고 있어 편리합니다.
+
+**[트리비(Trivy)](https://github.com/aquasecurity/trivy) : 컨테이너 이미지 취약점 검증 </br>**
+대표적인 컨테이너 이미지 취약점 검증 도구이며 취약점 검증 이외에 도커(Docker), 테라폼(Terraform)등에 대한 파일 검증도 수행이 가능합니다. NSA(National Security Agency)와  FIPS(Federal Information Processing Standards)등의 기준에 맞게 보안 검증을 진행합니다. 특히 사용법이 쉽고 간단하여 가장 널리 사용되는 취약점 검증 도구입니다. 
+
+**[Tracee)](https://github.com/aquasecurity/tracee) : 컨테이너 런타임 보안</br>**
+컨테이너 런타임에 대해서 이상 행위를 탐지하거나 추적하기 위해서 사용하는 보안 도구로서 리눅스 커널의 eBPF(Extended Berkeley Packet Filter)를 사용하여, 호스트 OS 및 애플리케이션을 추적하여 이벤트를 분석해 의심스러운 행위를 찾을 수 있습니다.  이 이벤트가 의심스러운지 판단하는 규칙을 시그니처라고 하며, 이 시그니처는 Rego, Go-Cel, Golang SDK를 통해서 작성할 수 있습니다. Tracee는 쿠버네티스에서 데몬셋으로 구성할 수 있으며, 호스트 OS에서는 Tracee를 직접 설치해서 사용할 수 있습니다.
+
+
 ### 멀티 클러스터 페더레이션
 **[Karmada](https://karmada.io/) </br>**
 Karmada는 Kubernetes Federation (v1)과 KubeFed (v2)의 명맥을 잇는 동시에 현재 KubeFed가 갖고 있는 확장성과 API 통일성 문제를 해결하기 위해 시작된 오픈소스입니다. On-prem뿐 아니라 다양한 프로바이더의 클러스터를 혼재하여 등록/관리 할 수 있고 다수의 클러스터들에 동시 배포가 가능할 뿐 만 아니라 Istio등의 서비스 메시와 함께 사용하여 각 클러스터에 트래픽을 분배하는 것도 가능합니다.
