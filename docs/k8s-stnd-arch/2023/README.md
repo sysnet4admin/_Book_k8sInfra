@@ -29,7 +29,7 @@
 **[트리비(Trivy)](https://github.com/aquasecurity/trivy) : 컨테이너 이미지 취약점 검증 </br>**
 대표적인 컨테이너 이미지 취약점 검증 도구이며 취약점 검증 이외에 도커(Docker), 테라폼(Terraform)등에 대한 파일 검증도 수행이 가능합니다. NSA(National Security Agency)와  FIPS(Federal Information Processing Standards)등의 기준에 맞게 보안 검증을 진행합니다. 특히 사용법이 쉽고 간단하여 가장 널리 사용되는 취약점 검증 도구입니다. 
 
-**[Tracee)](https://github.com/aquasecurity/tracee) : 컨테이너 런타임 보안</br>**
+**[Tracee](https://github.com/aquasecurity/tracee) : 컨테이너 런타임 보안</br>**
 컨테이너 런타임에 대해서 이상 행위를 탐지하거나 추적하기 위해서 사용하는 보안 도구로서 리눅스 커널의 eBPF(Extended Berkeley Packet Filter)를 사용하여, 호스트 OS 및 애플리케이션을 추적하여 이벤트를 분석해 의심스러운 행위를 찾을 수 있습니다.  이 이벤트가 의심스러운지 판단하는 규칙을 시그니처라고 하며, 이 시그니처는 Rego, Go-Cel, Golang SDK를 통해서 작성할 수 있습니다. Tracee는 쿠버네티스에서 데몬셋으로 구성할 수 있으며, 호스트 OS에서는 Tracee를 직접 설치해서 사용할 수 있습니다.
 
 
