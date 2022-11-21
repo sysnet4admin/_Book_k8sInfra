@@ -20,7 +20,7 @@
 ## 각 구성 요소 설명
 
 ### 멀티 클러스터 페더레이션
-**[Karmada](https://karmada.io//) </br>**
+**[Karmada](https://karmada.io/) </br>**
 Karmada는 Kubernetes Federation (v1)과 KubeFed (v2)의 명맥을 잇는 동시에 현재 KubeFed가 갖고 있는 확장성과 API 통일성 문제를 해결하기 위해 시작된 오픈소스입니다. On-prem뿐 아니라 다양한 프로바이더의 클러스터를 혼재하여 등록/관리 할 수 있고 다수의 클러스터들에 동시 배포가 가능할 뿐 만 아니라 Istio등의 서비스 메시와 함께 사용하여 각 클러스터에 트래픽을 분배하는 것도 가능합니다.
 Cluster-API는 직접 PaaS를 운영하는 주체가 아니라면 매우 제한적으로 사용되고 있어, 2023년 표준 아키텍처에는 포함하지 않았습니다.
 
