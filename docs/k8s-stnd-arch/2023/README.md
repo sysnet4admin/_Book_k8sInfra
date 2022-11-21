@@ -18,7 +18,7 @@
 ---
 
 ## 각 구성 요소 설명
-## *쿠버네티스 보안 추가* 
+### *쿠버네티스 보안 추가* 
 ### 클러스터 인증 및 접근 
 **[키클락(Keycloak)](https://www.keycloak.org/) : 클러스터 인증 및 접근 관리 </br>**
 키클락은 IAM(Identity and Access Management, 신원 인증 및 접근 관리)에 도구로 싱글사인온(Single Sign-On, SSO)을 허용하는 오픈소스 도구입니다. 인터넷을 통해 접근 가능한 곳에 배포된 쿠버네티스 API나 애플리케이션은 누구나 접근 가능하기 때문에 이런 경우에 키클락을 사용하면 구글 등 특정 IdP(Identity Provider, 신원 공급자)를 사용하여 인증 후에 접근 가능하도록 관리하는 것이 가능합니다. 또한 LDAP(Lightweight Directory Access Protocol)등을 사용하여 각 사용자의 권한을 단계별로 설정하는 등 클러스터 전체의 접근 권한을 쉽게 관리할 수 있습니다.
