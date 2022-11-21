@@ -18,7 +18,9 @@
 ---
 
 ## 각 구성 요소 설명
+
 ### *쿠버네티스 보안 추가* 
+---
 ### 클러스터 인증 및 접근 
 **[키클락(Keycloak)](https://www.keycloak.org/) : 클러스터 인증 및 접근 관리 </br>**
 키클락은 IAM(Identity and Access Management, 신원 인증 및 접근 관리)에 도구로 싱글사인온(Single Sign-On, SSO)을 허용하는 오픈소스 도구입니다. 인터넷을 통해 접근 가능한 곳에 배포된 쿠버네티스 API나 애플리케이션은 누구나 접근 가능하기 때문에 이런 경우에 키클락을 사용하면 구글 등 특정 IdP(Identity Provider, 신원 공급자)를 사용하여 인증 후에 접근 가능하도록 관리하는 것이 가능합니다. 또한 LDAP(Lightweight Directory Access Protocol)등을 사용하여 각 사용자의 권한을 단계별로 설정하는 등 클러스터 전체의 접근 권한을 쉽게 관리할 수 있습니다.
@@ -37,7 +39,7 @@
 ### 컨테이너 런타임 보안 
 **[트레이시(Tracee)](https://github.com/aquasecurity/tracee) : 컨테이너 런타임 보안</br>**
 컨테이너 런타임에 대해서 이상 행위를 탐지하거나 추적하기 위해서 사용하는 보안 도구로서 리눅스 커널의 eBPF(Extended Berkeley Packet Filter)를 사용하여, 호스트 OS 및 애플리케이션을 추적하여 이벤트를 분석해 의심스러운 행위를 찾을 수 있습니다.  이 이벤트가 의심스러운지 판단하는 규칙을 시그니처라고 하며, 이 시그니처는 Rego, Go-Cel, Golang SDK를 통해서 작성할 수 있습니다. Tracee는 쿠버네티스에서 데몬셋으로 구성할 수 있으며, 호스트 OS에서는 Tracee를 직접 설치해서 사용할 수 있습니다.
-
+---
 
 ### 멀티 클러스터 페더레이션
 **[카마다(Karmada)](https://karmada.io/) </br>**
