@@ -23,18 +23,18 @@
 **[키클락(Keycloak)](https://www.keycloak.org/) : 클러스터 인증 및 접근 관리 </br>**
 키클락은 IAM(Identity and Access Management, 신원 인증 및 접근 관리)에 도구로 싱글사인온(Single Sign-On, SSO)을 허용하는 오픈소스 도구입니다. 인터넷을 통해 접근 가능한 곳에 배포된 쿠버네티스 API나 애플리케이션은 누구나 접근 가능하기 때문에 이런 경우에 키클락을 사용하면 구글 등 특정 IdP(Identity Provider, 신원 공급자)를 사용하여 인증 후에 접근 가능하도록 관리하는 것이 가능합니다. 또한 LDAP(Lightweight Directory Access Protocol)등을 사용하여 각 사용자의 권한을 단계별로 설정하는 등 클러스터 전체의 접근 권한을 쉽게 관리할 수 있습니다.
 
-**[Kyverno](https://kyverno.io/) : 쿠버네티스 정책 관리 및 적용 </br>**
+**[키베노(Kyverno)](https://kyverno.io/) : 쿠버네티스 정책 관리 및 적용 </br>**
 쿠버네티스 클러스터 내부에서 수행할 수 있는 작업 범위나 허용 여부를 결정하기 위해 정의된 규칙을 정책(Policy)이라고 합니다. Kyverno는 정책을 관리하고 쿠버네티스 클러스터에 적용하는 도구입니다.  Kyverno를 통해 이미지의 특정 태그 제한, 호스트의 포트 사용 제한, 사용할 수 있는 이미지 레지스트리 제한 등을 설정할 수 있으며, 적용할 수 있는 정책은 매우 다양합니다. Kyverno 이외에도 OPA(Open Policy Agent) 등과 같은 정책과 관련된 도구가 있습니다만, 정책 적용을 위한 별도의 특화된 문법을 공부해야 하는 단점이 있습니다. Kyverno는 기본적인 쿠버네티스 YAML 문법을 그대로 활용하여 사용자에게 친숙하며, 홈페이지에서 참고하여 쓸 수 있는 수 많은 예시를 제공하고 있어 편리합니다.
 
 **[트리비(Trivy)](https://github.com/aquasecurity/trivy) : 컨테이너 이미지 취약점 검증 </br>**
 대표적인 컨테이너 이미지 취약점 검증 도구이며 취약점 검증 이외에 도커(Docker), 테라폼(Terraform)등에 대한 파일 검증도 수행이 가능합니다. NSA(National Security Agency)와  FIPS(Federal Information Processing Standards)등의 기준에 맞게 보안 검증을 진행합니다. 특히 사용법이 쉽고 간단하여 가장 널리 사용되는 취약점 검증 도구입니다. 
 
-**[Tracee](https://github.com/aquasecurity/tracee) : 컨테이너 런타임 보안</br>**
+**[트레이시(Tracee)](https://github.com/aquasecurity/tracee) : 컨테이너 런타임 보안</br>**
 컨테이너 런타임에 대해서 이상 행위를 탐지하거나 추적하기 위해서 사용하는 보안 도구로서 리눅스 커널의 eBPF(Extended Berkeley Packet Filter)를 사용하여, 호스트 OS 및 애플리케이션을 추적하여 이벤트를 분석해 의심스러운 행위를 찾을 수 있습니다.  이 이벤트가 의심스러운지 판단하는 규칙을 시그니처라고 하며, 이 시그니처는 Rego, Go-Cel, Golang SDK를 통해서 작성할 수 있습니다. Tracee는 쿠버네티스에서 데몬셋으로 구성할 수 있으며, 호스트 OS에서는 Tracee를 직접 설치해서 사용할 수 있습니다.
 
 
 ### 멀티 클러스터 페더레이션
-**[Karmada](https://karmada.io/) </br>**
+**[카마다(Karmada)](https://karmada.io/) </br>**
 Karmada는 Kubernetes Federation (v1)과 KubeFed (v2)의 명맥을 잇는 동시에 현재 KubeFed가 갖고 있는 확장성과 API 통일성 문제를 해결하기 위해 시작된 오픈소스입니다. On-prem뿐 아니라 다양한 프로바이더의 클러스터를 혼재하여 등록/관리 할 수 있고 다수의 클러스터들에 동시 배포가 가능할 뿐 만 아니라 Istio등의 서비스 메시와 함께 사용하여 각 클러스터에 트래픽을 분배하는 것도 가능합니다.
 Cluster-API는 직접 PaaS를 운영하는 주체가 아니라면 매우 제한적으로 사용되고 있어, 2023년 표준 아키텍처에는 포함하지 않았습니다.
 
@@ -76,7 +76,7 @@ CNI 중에 가장 쉽고 빠르게 적용할 수 있으며, 사용자 층 또한
 **[Github Actions](https://github.com/features/actions) : CI/CD </br>**
 Github Actions 는 세계에서 가장 유명한 소스 코드 저장소인 Github 에서 제공하는 CI/CD 도구입니다. Github 저장소에 보관된 소스를 바로 빌드할 수 있는 workflow를 구성할 수 있어 활용도가 높습니다. 또한 사전 구성된 workflow를 다양하게 제공하고 있습니다. Github 공개 저장소에서는 무료로 사용할 수 있으며, Github 비공개 저장소에 대해서 매월 2,000분 동안 빌드 시간을 무료로 구동할 수 있습니다.
 
-**[Jenkins](https://www.jenkins.io/) : CI/CD </br>**
+**[젠킨스(Jenkins)](https://www.jenkins.io/) : CI/CD </br>**
 젠킨스는 지속적 통합 및 배포 단계에서 가장 널리 쓰이는 오픈소스입니다. 방대한 커뮤니티에서 제공하는 다양한 플러그인으로 인해 거의 모든 언어 및 도구와 연계할 수 있습니다. 젠킨스 설치를 위한 차트 및 젠킨스에서 사용할 수 있는 쿠버네티스 플러그인도 제공하고 있어 쿠버네티스 상에서 쉽게 사용할 수 있습니다. 젠킨스 파이프라인을 사용하면 해당 CI/CD에 사용되는 스크립트를 프로젝트의 저장소에서 넣고 관리가 가능해 일련의 빌드 및 배포과정을 모두 코드로 쉽게 관리할 수 있습니다.
 
 **[깃랩(Gitlab)](https://about.gitlab.com/) : CI/CD </br>**
@@ -92,10 +92,10 @@ ArgoCD는 git을 배포의 원천으로 사용하는 GitOps CD 도구입니다. 
 시장에서 가장 많은 점유율을 가지고 있는 컨테이너 레지스트리이며, Private Docker Registry나 Cloud Provider Registry로 부터 동기화도 손쉽게 동기화할 수 있습니다. 또한 하버(Harbor) 자체를 관리할 수 있는 API를 통해서 자동화도 쉽게 구성이 가능한 장점이 있습니다. 추가로 번들(플러그인)으로 컨테이너 이미지의 취약점을 찾는 스캐너인(Trivy)나 컨테이너 이미지 무결성을 보증하기 위한 서명을 위한 도구인 (Notary)를 적용할 수 있습니다. 또한 차트 저장소(Chartmuseum)도 같이 구성하여 컨테이너 인프라에서 요구하는 것에 대한 모든 저장소를 통합할 수 있습니다.
 
 ### 컨테이너 네이티브 스토리지
-**[Rook](https://rook.io/) + [ceph](https://ceph.io/en/) : 컨테이너 네이티브 스토리지 오케스트레이션과 오브젝트 스토리지 </br>**
+**[Rook](https://rook.io/) + [Ceph](https://ceph.io/en/) : 컨테이너 네이티브 스토리지 오케스트레이션과 오브젝트 스토리지 </br>**
 Rook은 쿠버네티스 상에서 스토리지를 쓸 수 있도록 도와주는 컨테이너 네이티브 스토리지 오케스트레이션 솔루션입니다. 유사한 도구로 Longhorn이 있습니다. 두 도구는 기본적인 기능과 구조가 굉장히 유사하지만 Rook은 업계에서 가장 널리 사용되는 오픈소스 분산 스토리지 솔루션 Ceph와 함께 사용할 수 있어, 익숙함의 이점을 누릴 수 있습니다. 또한 블록스토리지만을 제공하는 Longhorn과 달리 Ceph를 사용하면 블록스토리지 뿐만 아니라 오브젝트 스토리지도 동시에 사용할 수 있습니다.
 
-**[Velero](https://velero.io/) : 클러스터 데이터 관리 도구 </br>**
+**[벨레로(Velero)](https://velero.io/) : 클러스터 데이터 관리 도구 </br>**
 쿠버네티스 클러스터의 리소스와 관련된 데이터와 볼륨을 관리할 수 있는 도구입니다. Velero를 통해 클러스터 상태 데이터 및 볼륨 스냅샷을 남길 수 있으며, 이를 오브젝트 스토리지와 연계하여 백업 및 복원할 수 있습니다. 이 기능을 통해서 클러스터의 장애 복구, 클러스터 환경의 마이그레이션(Migration) 시 유용하게 사용할 수 있습니다.
 
 
@@ -110,7 +110,7 @@ Rook은 쿠버네티스 상에서 스토리지를 쓸 수 있도록 도와주는
 
 
 ### 키 관리 서비스
-**[Vault](https://www.vaultproject.io/) </br>**
+**[볼트(Vault)](https://www.vaultproject.io/) </br>**
 Hashicorp에서 만든 오픈소스 키 관리 서비스로서, 데이터베이스 암호와 같은 민감한 정보를 시크릿에 바로 사람이 입력하는 것이 아니라, vault를 이용해 시크릿 데이터를 시스템에서 직접  통합하기 위한 목적으로 주로 사용합니다. 데이터베이스 암호 외에 타 서비스 간의 API 인증 토큰, 소프트웨어 라이선스 키와 같은 민감한 데이터를 yaml로서 바로 kubectl 명령어가 아닌 공용 시크릿 백엔드로부터 동기화하기 위해서 사용합니다. 또한 사용자의 편의에 따라서 CLI, HTTP REST API, WEB UI에서도 손쉽게 데이터를 확인 및 저장할 수 있습니다.
 
 ### 컨테이너 관리도구
@@ -147,7 +147,8 @@ Fluentbit은 오픈소스 로그 포워더입니다. 적은 자원 소비로도 
 **[kubespray](https://kubernetes.io/ko/docs/setup/production-environment/tools/kubespray/) </br>**
 앤서블 플레이북을 이용해서 쿠버네티스 클러스터를 프로비저닝할 수 있습니다. kubeadm 대비 여러개의 마스터노드를 설정해야할 때, 한번의 설정으로 클러스터의 컨트롤 플레인 및 워커 노드를 구성할 수 있다는 장점이 있습니다.
 
-**[Terraform](https://www.terraform.io/) </br>**
+**[테라폼(Terraform)](https://www.terraform.io/) </br>**
+테라폼은 클라우드 리소스를 하시코프 구성 언어(HCL)을 작성한 다음 테라폼의 프로바이더를 통해 클라우드 리소스를 코드로 관리(IaC)할 수 있습니다. 또한 다른 사람이 만든 모듈을 코드에서 가져와서 여러 배포 스택을 코드로써 효율적으로 관리할 수 있습니다. 이에 따라 클라우드 상에 쿠버네티스를 배포할때 가장 많이 사용되는 쿠버네티스 클러스터 프로비저너로 사용되고 있습니다.
 
 ---
 
