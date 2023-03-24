@@ -5,7 +5,9 @@
 
 > 🔔 **_알림1:_** VirtualBox 6.1.28 이후 버전에서는 Vagrant host-only network와 관련된 이슈과 맥과 리눅스에서 
 > 발생합니다. 자세한 내용은 [다음의 문서](https://github.com/sysnet4admin/_Book_k8sInfra/blob/main/docs/%EC%8B%A4%EC%8A%B5%20%EC%9D%B4%EC%8A%88%231%20-%20VritualBox%20host-only%20Network(MAC%2CLinux).pdf)를 확인하시기 바랍니다.  
-
+</br>
+> 🔔 **_알림2:_** MetalLB의 Docker 허브 저장소가 더이상 사용되지 않게 됨으로서, quay.io로 변경하였습니다. 
+이에 MetalLB 관련한 문제가 생기시는 경우 현재 수정된 소스를 다시 내려받으시기 바랍니다. 
 
 이 저장소는 [컨테이너 인프라 환경 구축을 위한 쿠버네티스/도커](http://www.yes24.com/Product/Goods/102099414) 책에 실습을 위한 코드를 제공합니다.
 
@@ -13,8 +15,6 @@
 
 이 저장소에서 다루는 챕터에 따라 제공되는 스크립트는 아래와 같습니다.
 
-> 🔔 **_알림2:_** MetalLB의 Docker 허브 저장소가 더이상 사용되지 않게 됨으로서, quay.io로 변경하였습니다. 
-이에 MetalLB 관련한 문제가 생기시는 경우 현재 수정된 소스를 다시 내려받으시기 바랍니다. 
 
 ***
 
