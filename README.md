@@ -12,6 +12,8 @@
 > 🔔 **_알림3:_** MetalLB의 [쿠버네티스 인증서](https://kubernetes.io/docs/setup/best-practices/certificates/)의 기본값이 1년인 관계로 OVA의 경우 사용을 못하는 경우가 발생합니다.
 > 이에 OVA를 10년으로 변경하였습니다. 그리고 만약 vagrant up으로 배포한 랩의 사용기간이 1년이 다 되어가는 경우 [인증서를 갱신](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/)하시기 바랍니다.  
 
+> 🔔 **_알림4:_** Docker 버전과 `signature key`간의 이슈로 3장 도입부 진행이 어렵습니다. [임시 해결책](https://github.com/sysnet4admin/_Book_k8sInfra/issues/33#issuecomment-1890191096)을 넣어두었으니 해당 방법으로 진행하시기 바랍니다. 
+
 이 저장소는 [컨테이너 인프라 환경 구축을 위한 쿠버네티스/도커](http://www.yes24.com/Product/Goods/102099414) 책에 실습을 위한 코드를 제공합니다.
 
 각 챕터별로 챕터에서 사용하는 스크립트 및 코드를 제공하고 있으며, 별도로 챕터에서 깊게 다루지 않는 부분은 [다른 저장소](https://github.com/iac-source)에서 다룹니다. 그리고 학습에 도움이 되실만한 문서를 디렉터리 [docs](https://github.com/sysnet4admin/_Book_k8sInfra/tree/main/docs)에 추가하였습니다. (2021.10.24)
