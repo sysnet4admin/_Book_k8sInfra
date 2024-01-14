@@ -93,8 +93,8 @@
 
 ## 책에서 사용하는 프로그램 번들팩
 `VirtualBox 6.1.12`, `vagrant 2.2.9` 
-- 🗄️  [윈도우 사용자](https://1drv.ms/u/s!Auu_3Z_BinL5enOZ9GNLpYpW9GI?e=Bm81j6)
-- 🗄️  [맥OS 사용자](https://1drv.ms/u/s!Auu_3Z_BinL5eYkQshnmOaaprJA?e=Z7WJwb)
+- 🗄️  [윈도우 사용자](https://1drv.ms/f/s!AhojtZPqfyoFnw1b6J_3q3LG1mht?e=NjuPrz)
+- 🗄️  [맥OS 사용자](https://1drv.ms/f/s!AhojtZPqfyoFnwyiOQWiKq7wSejj?e=kAbgcc)
 
 ## 🔔 베이그런트 설치로 너무 고생하시는 분들을 위한 이미지(OVA) 파일
 현재 책의 쿠버네티스 실습 랩을 Vagrant가 아닌 이미지로 바로 구성할 수 있도록 OVA 이미지를 제공합니다. </br>
