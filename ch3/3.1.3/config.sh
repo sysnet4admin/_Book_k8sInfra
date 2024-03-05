@@ -9,15 +9,15 @@ swapoff -a
 sed -i.bak -r 's/(.+ swap .+)/#\1/' /etc/fstab
 
 # kubernetes repo
-gg_pkg="packages.cloud.google.com/yum/doc" # Due to shorten addr for key
+gg_pkg="http://mirrors.aliyun.com/kubernetes/yum" # Due to shorten addr for key
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
-baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+baseurl=${gg_pkg}/repos/kubernetes-el7-x86_64
 enabled=1
 gpgcheck=0
 repo_gpgcheck=0
-gpgkey=https://${gg_pkg}/yum-key.gpg https://${gg_pkg}/rpm-package-key.gpg
+gpgkey=${gg_pkg}/doc/yum-key.gpg ${gg_pkg}/doc/rpm-package-key.gpg
 EOF
 
 # Set SELinux in permissive mode (effectively disabling it)
