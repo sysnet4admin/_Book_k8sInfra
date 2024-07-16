@@ -8,6 +8,9 @@ swapoff -a
 # sed to comment the swap partition in /etc/fstab
 sed -i.bak -r 's/(.+ swap .+)/#\1/' /etc/fstab
 
+# CentOS repo change from mirror to vault 
+sed -i 's,mirrorlist.centos.org,vault.centos.org,g' /etc/yum.repos.d/CentOS-Base.repo
+
 # kubernetes repo
 gg_pkg="http://mirrors.aliyun.com/kubernetes/yum" # Due to shorten addr for key
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
