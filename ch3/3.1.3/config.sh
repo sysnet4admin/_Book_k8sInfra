@@ -9,7 +9,10 @@ swapoff -a
 sed -i.bak -r 's/(.+ swap .+)/#\1/' /etc/fstab
 
 # CentOS repo change from mirror to vault 
-sed -i 's,mirrorlist.centos.org,vault.centos.org,g' /etc/yum.repos.d/CentOS-Base.repo
+sed -i -e 's/mirrorlist=/#mirrorlist=/g' /etc/yum.repos.d/CentOS-*
+sed -i -e 's/mirrorlist=/#mirrorlist=/g' /etc/yum.conf
+sed -E -i -e 's/#baseurl=http:\/\/mirror.centos.org\/centos\/\$releasever\/([[:alnum:]_-]*)\/\$basearch\//baseurl=https:\/\/vault.centos.org\/7.9.2009\/\1\/\$basearch\//g' /etc/yum.repos.d/CentOS-*
+sed -E -i -e 's/#baseurl=http:\/\/mirror.centos.org\/centos\/\$releasever\/([[:alnum:]_-]*)\/\$basearch\//baseurl=https:\/\/vault.centos.org\/7.9.2009\/\1\/\$basearch\//g' /etc/yum.conf
 
 # kubernetes repo
 gg_pkg="http://mirrors.aliyun.com/kubernetes/yum" # Due to shorten addr for key
