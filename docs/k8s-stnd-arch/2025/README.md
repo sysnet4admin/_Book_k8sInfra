@@ -26,7 +26,7 @@
 [조 훈](https://github.com/sysnet4admin), [심근우](https://github.com/gnu-gnu), [문성주](https://github.com/seongjumoon), [이성민](https://github.com/sungmincs) 드림
 
 ---
-### 🗑 삭제  🗑
+🗑 삭제  🗑
 ### 쿠버네티스 정책 관리
 **[키베르노(Kyverno)](https://github.com/kyverno/kyverno), 깃허브스타 5.8k, 라이선스 Apache License 2.0 </br>**
 쿠버네티스 클러스터 내부에서 수행할 수 있는 작업 범위나 허용 여부를 결정하기 위해 정의된 규칙을 생성하는 도구였으나, 쿠버네티스 v1.30에서 부터 admission control을 직접 지원할 수 있도록 하는 기능이 GA(General Availability, 안정화됨) 되었기 때문에 표준 구성에서는 큰 의미를 가지지 못하게 되었습니다. 물론 여전히 외부적인 정책을 적용할 수 있는 웹훅(WebHook)으로는 특히 뮤테이션(Mutation)의 경우에는 유용한 도구입니다. 이와 같은 변화에 대해서는 2024년 말에 KubeCon 인도에 발표한 영상 및 자료를 참고하실 수 있습니다.
