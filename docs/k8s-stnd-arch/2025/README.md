@@ -4,7 +4,7 @@
 
 2025년 쿠버네티스는 이제 완연하게 성숙한 프로젝트가 된 것 같습니다. 그리고 쿠버네티스와 밀접한 연관이 있는 클라우드 네이티브 컴퓨팅 재단(CNCF, Cloud Native Computing Foundation)에서도 성숙한 제품이라고 표현하는 졸업 프로젝트가 2024년 11월 09일 기준 총 29개가 발표되었습니다. 
 
-![2024 cncf-graduated-by-timeline](img/2024Nov09-graduated.cncf.io)
+![2024 cncf-graduated-by-timeline](img/2024Nov09-graduated.cncf.io.png)
 [그림1] ** 시간대 별 CNCF의 졸업 프로젝트 (2024년 11월 09일 기준)  
 
 이러한 제품의 높은 성숙도에도 불구하고 여전히 쿠버네티스를 원할하게 사용하기 위해서는 많은 제품들을 이해하고 선택해야 합니다.</br> </br>
