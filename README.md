@@ -1,6 +1,6 @@
 # 컨테이너 인프라 환경 구축을 위한 쿠버네티스/도커
-<a href="http://www.yes24.com/Product/Goods/102099414">
-<img src="http://image.kyobobook.co.kr/images/book/xlarge/743/x9791165215743.jpg" width="400">
+<a href="https://product.kyobobook.co.kr/detail/S000001834629">
+<img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791165215743.jpg" width="400">
 </a>
 
 > 🔔 **_알림1:_** VirtualBox 6.1.28 이후 버전에서는 Vagrant host-only network와 관련된 이슈과 맥과 리눅스에서 
