@@ -10,7 +10,7 @@
 ![2025 cncf-graduated-by-timeline](img/2025Oct28-graduated.cncf.io.png)
 [그림 1] **시간대 별 CNCF의 졸업 프로젝트 (2025년 10월 28일 기준)**
 
-<br>졸업 프로젝트 외에 쿠버네티스를 각 목적에 맞게 사용하기 위해서는 많은 제품들을 이해하고 선택해야 합니다.<br> <br>
+졸업 프로젝트 외에 쿠버네티스를 각 목적에 맞게 사용하기 위해서는 많은 제품들을 이해하고 선택해야 합니다.<br> <br>
 ![2025 cncf landscape](img/2025Dec10-landscape.cncf.io.png)
 [그림 2] **CNCF에서 제공하는 제품들 (2025년 12월 10일을 기준)**
 
