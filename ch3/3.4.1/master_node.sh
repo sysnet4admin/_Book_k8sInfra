@@ -11,4 +11,4 @@ chown $(id -u):$(id -g) $HOME/.kube/config
 
 # config for kubernetes's network 
 kubectl apply -f \
-https://raw.githubusercontent.com/sysnet4admin/IaC/master/manifests/172.16_net_calico.yaml
+https://raw.githubusercontent.com/sysnet4admin/IaC/main/k8s/CNI/archived/172.16_net_calico.yaml
