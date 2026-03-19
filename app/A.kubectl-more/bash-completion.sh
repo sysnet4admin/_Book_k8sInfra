@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Usage: 
-#1. bash <(curl -s https://raw.githubusercontent.com/sysnet4admin/IaC/master/manifests/bash-completion.sh) 
+#1. bash <(curl -s https://raw.githubusercontent.com/sysnet4admin/IaC/main/tools/bash-completion.sh) 
 
 # install bash-completion for kubectl 
 yum install bash-completion -y 

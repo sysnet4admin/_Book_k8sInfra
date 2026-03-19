@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # usage: 
 # 1. Create 
-# - bash <(curl -s  https://raw.githubusercontent.com/sysnet4admin/IaC/master/manifests/k8s_rc.sh) 
+# - bash <(curl -s  https://raw.githubusercontent.com/sysnet4admin/IaC/main/tools/k8s_rc.sh) 
 # 2. Remove 
 # - sed -i '/source/d' .bashrc
 
