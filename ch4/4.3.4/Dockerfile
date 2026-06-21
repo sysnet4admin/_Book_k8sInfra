@@ -1,4 +1,4 @@
-FROM openjdk:8 AS int-build
+FROM openjdk:8u342 AS int-build
 LABEL description="Java Application builder"
 RUN git clone https://github.com/iac-source/inbuilder.git
 WORKDIR inbuilder

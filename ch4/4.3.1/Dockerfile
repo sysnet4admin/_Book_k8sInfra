@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:8u342
 LABEL description="Echo IP Java Application"
 EXPOSE 60431
 COPY ./target/app-in-host.jar /opt/app-in-image.jar

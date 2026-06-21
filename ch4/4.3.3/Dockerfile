@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:8u342
 LABEL description="Echo IP Java Application"
 EXPOSE 60433
 RUN git clone https://github.com/iac-source/inbuilder.git
