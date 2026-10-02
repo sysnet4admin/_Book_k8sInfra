@@ -118,3 +118,13 @@
 
 ## 관련 문서 
 -  📜 [왜 쿠버네티스는 systemd로 cgroup을 관리하려고 할까요?](https://www.slideshare.net/JoHoon1/systemd-cgroup)
+
+***
+<p align="center">
+<a href="https://promo.kuberneteslab.dev/ko/">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://promo.kuberneteslab.dev/images/readme/banner-ko-dark.png">
+  <img src="https://promo.kuberneteslab.dev/images/readme/banner-ko-light.png" alt="리눅스 재단 자격증 할인 코드: CKA, CKS, MCPA 등 상시 30%, 더 큰 할인은 눌러서 확인" width="720">
+</picture>
+</a>
+</p>
