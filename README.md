@@ -18,6 +18,8 @@
 
 > 🔔 **_알림6:_** 도커허브에서 이미지를 내려받는 정책이 변경되었습니다. (기존 100/6H, 변경 10/1H). 그래서 CNI인 Calico를 quay.io에서 내려받도록 변경하였습니다. 자세한 사항은 [다음](https://inf.run/FD91H) 내용을 참고하세요  
 
+> 🔔 **_알림7:_** HCP Vagrant(이전 이름 Vagrant Cloud)가 2026년 12월 31일에 서비스를 종료함에 따라 실습에 사용하는 가상 머신 이미지(`sysnet4admin/CentOS-k8s`)를 내려받는 주소가 변경되었습니다. 저장소의 Vagrantfile에는 이미 반영했습니다. 책을 보고 Vagrantfile을 직접 작성하는 경우에는 `cfg.vm.box` 줄 바로 아래에 `cfg.vm.box_url = "https://box.kuberneteslab.dev/sysnet4admin/CentOS-k8s"`를 추가하면 됩니다(2.1.3은 `cfg` 대신 `config`). 이미 이미지를 내려받은 경우에는 그대로 사용할 수 있습니다. 자세한 사항은 [다음](https://github.com/sysnet4admin/_Book_k8sInfra/commit/4c29b0c) 내용을 참고하세요  
+
 이 저장소는 [컨테이너 인프라 환경 구축을 위한 쿠버네티스/도커](http://www.yes24.com/Product/Goods/102099414) 책에 실습을 위한 코드를 제공합니다.
 
 각 챕터별로 챕터에서 사용하는 스크립트 및 코드를 제공하고 있으며, 별도로 챕터에서 깊게 다루지 않는 부분은 [다른 저장소](https://github.com/iac-source)에서 다룹니다. 그리고 학습에 도움이 되실만한 문서를 디렉터리 [docs](https://github.com/sysnet4admin/_Book_k8sInfra/tree/main/docs)에 추가하였습니다. (2021.10.24)
