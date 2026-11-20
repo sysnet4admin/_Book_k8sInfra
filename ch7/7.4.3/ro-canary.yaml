@@ -1,0 +1,48 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: ro-canary
+spec:
+  replicas: 4
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: ro-canary
+  strategy:
+    canary:
+      steps:
+      - setWeight: 25
+      - pause: {}
+      - setWeight: 50
+      - pause: {duration: 30s}
+      - setWeight: 75
+      - pause: {duration: 30s}
+      - setWeight: 100
+      - pause: {duration: 30s}
+  template:
+    metadata:
+      labels:
+        app: ro-canary
+    spec:
+      containers:
+      - name: dashboard
+        image: sysnet4admin/dashboard:canary-v1
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            memory: 32Mi
+          limits:
+            memory: 64Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: canary
+spec:
+  selector:
+    app: ro-canary
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 3000

@@ -1,0 +1,54 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: ro-bluegreen
+spec:
+  replicas: 3
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: ro-bluegreen
+  strategy:
+    blueGreen:
+      activeService: bluegreen-active
+      previewService: bluegreen-preview
+      autoPromotionEnabled: false
+  template:
+    metadata:
+      labels:
+        app: ro-bluegreen
+    spec:
+      containers:
+      - name: dashboard
+        image: sysnet4admin/dashboard:blue
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            memory: 32Mi
+          limits:
+            memory: 64Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bluegreen-active
+spec:
+  selector:
+    app: ro-bluegreen
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bluegreen-preview
+spec:
+  selector:
+    app: ro-bluegreen
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 3000

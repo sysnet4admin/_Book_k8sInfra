@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gtw-cl-default
+  labels:
+    app: gtw-cl-default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gtw-cl-default
+  template:
+    metadata:
+      labels:
+        app: gtw-cl-default
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gtw-cl-default-svc 
+spec:
+  selector:
+    app: gtw-cl-default   
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80 
+  type: ClusterIP

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ollama-agg-gemma4-12b-qat
+spec:
+  replicas: 1
+  progressDeadlineSeconds: 3600   # 12b 이미지가 커서 기본값(600초)으로는 회선에 따라 배포 실패로 처리된다
+  selector:
+    matchLabels:
+      app: ollama-agg-gemma4-12b-qat
+  strategy:
+    type: Recreate     # 전용 노드(16GB)에 12b 모델 2개가 동시 상주할 수 없어 롤링 대신 재생성
+  template:
+    metadata:
+      labels:
+        app: ollama-agg-gemma4-12b-qat
+    spec:
+      containers:
+      - image: sysnet4admin/ollama-gemma4:12b-it-qat
+        imagePullPolicy: IfNotPresent
+        name: ollama-agg-gemma4-12b-qat
+        env:
+        - name: OLLAMA_KEEP_ALIVE    # 정제 전용 노드이므로 모델을 상주시켜 호출마다 재적재를 막는다
+          value: "-1"
+        ports:
+        - containerPort: 11434
+          protocol: TCP
+      nodeSelector:
+        kubernetes.io/hostname: w4-k8s
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ollama-agg-gemma4-12b-qat
+spec:
+  ports:
+  - port: 11434
+    protocol: TCP
+    targetPort: 11434
+  selector:
+    app: ollama-agg-gemma4-12b-qat

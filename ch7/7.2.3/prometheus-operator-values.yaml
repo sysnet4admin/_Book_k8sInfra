@@ -1,0 +1,54 @@
+defaultRules:
+  create: false
+  rules:
+    alertmanager: false
+
+alertmanager:
+  enabled: false
+
+prometheus:
+  service:
+    type: LoadBalancer
+    port: 80
+  prometheusSpec:
+    storageSpec:
+        volumeClaimTemplate:
+          spec:
+            storageClassName: "managed-nfs-storage"
+            accessModes:
+            - "ReadWriteOnce"
+            resources:
+              requests:
+                storage: "8Gi"
+    image:
+      registry: prom
+      repository: prometheus
+      tag: v3.0.1
+    version: v3.0.1
+    scrapeInterval: "15s"
+    evaluationInterval: "15s"
+
+grafana:
+  enabled: false
+
+kubeProxy:
+  enabled: false # cilium doesn't use kube-proxy, all trafic processd by eBPF/XDP.
+
+kubeApiServer:
+  enabled: false
+
+kubelet:
+  enabled: false
+
+kubeControllerManager:
+  enabled: false
+
+coreDns:
+  enabled: false
+
+kubeEtcd:
+  enabled: false
+
+kubeScheduler:
+  enabled: false
+

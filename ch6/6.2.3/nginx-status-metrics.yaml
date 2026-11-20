@@ -20,7 +20,7 @@ spec:
         ports:
         - containerPort: 80
       - name: nginx-exporter
-        image: nginx/nginx-prometheus-exporter:0.8.0
+        image: nginx/nginx-prometheus-exporter:1.4.1
         env:
         - name: SCRAPE_URI
           value: http://localhost:80/stub_status

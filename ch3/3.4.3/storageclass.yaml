@@ -1,0 +1,13 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: managed-nfs-storage
+provisioner: nfs.csi.k8s.io
+parameters:
+  server: 192.168.1.10
+  share: /nfs_shared/dynamic-vol
+  mountPermissions: "0777"
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+mountOptions:
+  - nfsvers=4.1

@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 #Auto_Pass 
 #if you want to filter only ip then [grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}']
-
-#make a directory 
-mkdir ~/.ssh
-
-#Read hosts from file 
-readarray hosts < /etc/hosts
+#Ubuntu already have ~/.ssh
+ 
+#Read hosts from file (exclude loopback entries)
+readarray hosts < <(grep -v '^\(127\.\|::1\|localhost\)' /etc/hosts)
 
 ##1.known_hosts##
 if [ ! -f ~/.ssh/known_hosts ]; then

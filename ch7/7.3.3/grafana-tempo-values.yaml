@@ -1,0 +1,24 @@
+grafana:
+  enabled: true
+  adminPassword: "admin"
+  grafana.ini:
+    auth.anonymous:
+      enabled: true
+      org_role: Admin
+  image:
+    tag: "11.4.0"
+  service:
+    type: LoadBalancer
+  persistence:
+    enabled: true
+    storageClassName: "managed-nfs-storage"
+
+tempo:
+  enabled: true
+  tempo:
+    retention: 24h
+  service:
+    type: ClusterIP
+  persistence:
+    enabled: true
+    storageClassName: "managed-nfs-storage"

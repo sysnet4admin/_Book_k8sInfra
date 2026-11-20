@@ -1,0 +1,95 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tier-ping-relay
+  namespace: default
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: tier-ping-relay
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "list"]
+- apiGroups: [""]
+  resources: ["pods/exec"]
+  verbs: ["create"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: tier-ping-relay
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: tier-ping-relay
+subjects:
+- kind: ServiceAccount
+  name: tier-ping-relay
+  namespace: default
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tier-ping-relay-script
+  namespace: default
+data:
+  check_inter_tier_ping.sh: |
+    #!/usr/bin/env bash
+
+    SRCS=(tier-internet tier-intranet)
+    DST=tier-privacy
+
+    declare -A POD_IP
+    for pod in "${SRCS[@]}" "$DST"; do
+      POD_IP[$pod]=$(kubectl get pod "$pod" -o jsonpath='{.status.podIP}')
+    done
+
+    echo "Network Probe: ICMP (ping) to tier-privacy"
+    echo "================================================================="
+    printf "  %-28s %s\n" "Pod" "IP"
+    echo "-----------------------------------------------------------------"
+    for pod in "${SRCS[@]}" "$DST"; do
+      printf "  %-28s %s\n" "$pod" "${POD_IP[$pod]}"
+    done
+    echo "================================================================="
+    echo ""
+
+    for src in "${SRCS[@]}"; do
+      if kubectl exec "$src" -- ping -c 1 -W 2 "${POD_IP[$DST]}" &>/dev/null; then
+        status="OK  "
+      else
+        status="FAIL"
+      fi
+      printf "  %-28s -> %-28s [%s]\n" "$src" "$DST" "$status"
+    done
+    echo ""
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tier-ping-relay
+  namespace: default
+spec:
+  serviceAccountName: tier-ping-relay
+  containers:
+  - name: relay
+    image: bitnami/kubectl:latest
+    command:
+    - /bin/bash
+    - -c
+    - |
+      while true; do
+        bash /scripts/check_inter_tier_ping.sh
+        sleep 5
+      done
+    volumeMounts:
+    - name: scripts
+      mountPath: /scripts
+  volumes:
+  - name: scripts
+    configMap:
+      name: tier-ping-relay-script
+      defaultMode: 0755
+  restartPolicy: Always

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ollama-gemma3-270m
+spec:
+  replicas: 1
+  progressDeadlineSeconds: 1800   # 이미지가 수 GB라 기본값(600초)으로는 회선에 따라 배포 실패로 처리된다
+  selector:
+    matchLabels:
+      app: ollama-gemma3-270m
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: ollama-gemma3-270m
+    spec:
+      containers:
+      - image: sysnet4admin/ollama-gemma3:270m
+        imagePullPolicy: IfNotPresent
+        name: ollama-gemma3-270m
+        ports:
+        - containerPort: 11434
+          protocol: TCP
+      nodeSelector:
+        kubernetes.io/hostname: w2-k8s
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ollama-gemma3-270m
+spec:
+  ports:
+  - port: 11434
+    protocol: TCP
+    targetPort: 11434
+  selector:
+    app: ollama-gemma3-270m

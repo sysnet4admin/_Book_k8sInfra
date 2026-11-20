@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gtw-cl-ip
+  labels:
+    app: gtw-cl-ip
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gtw-cl-ip
+  template:
+    metadata:
+      labels:
+        app: gtw-cl-ip
+    spec:
+      containers:
+      - name: echo-hname
+        image: sysnet4admin/echo-ip
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gtw-cl-ip-svc 
+spec:
+  selector:
+    app: gtw-cl-ip   
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80 

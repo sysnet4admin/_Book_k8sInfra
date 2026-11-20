@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    reloader.stakater.com/auto: "true" # for reloading ConfigMap  
+  labels:
+    app: configmapref
+  name: configmapref
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: configmapref
+  template:
+    metadata:
+      labels:
+        app: configmapref
+    spec:
+      containers:
+      - image: sysnet4admin/sleepy 
+        name: sleepy 
+        command: ["/bin/sh","-c"]
+        args:
+        - |
+          echo "sleepy $STATUS"
+          echo "NOTE: $NOTE"
+          sleep 3600
+        envFrom:
+        - configMapRef:
+            name: sleepy-config

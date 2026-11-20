@@ -1,36 +1,49 @@
 #!/usr/bin/env bash
 
-yum install python36 python36-pip git -y
+# avoid 'dpkg-reconfigure: unable to re-open stdin: No file or directory'
+export DEBIAN_FRONTEND=noninteractive
+
+#yum install python36 python36-pip git -y
+apt-get update && apt-get install python3-pip sshpass -y 
 
 # git clone https://github.com/kubernetes-sigs/kubespray.git
-# to avoid kubectl missing error 
-git clone -b release-2.17 https://github.com/kubernetes-sigs/kubespray.git
+# kubespray release-2.31 deploys k8s v1.35.x by default (2026-04 release).
+# kubespray lags k8s ~1 minor; book main chapters use v1.36 but appendix C
+# stays at the latest kubespray-supported version.
+git clone -b release-2.31 https://github.com/kubernetes-sigs/kubespray.git
 sudo mv kubespray /root
 
-# docker? it is not pre-requirement but if it is not exist, it will fail. 
-# TASK [download : download_container | Download image if required] 
-# <snipped>
-#fatal: [w1-k8s -> 192.168.1.11]: FAILED! => {"attempts": 4, "changed": false, "cmd": "/usr/bin/docker pull docker.io/calico/node:v3.7.3", "msg": "[Errno 2] 그런 파일이나 디렉터리가 없습니다", "rc": 2}
-#fatal: [w2-k8s -> 192.168.1.11]: FAILED! => {"attempts": 4, "changed": false, "cmd": "/usr/bin/docker pull docker.io/calico/node:v3.7.3", "msg": "[Errno 2] 그런 파일이나 디렉터리가 없습니다", "rc": 2}
-yum install docker -y
-systemctl enable --now docker
+# other ansible, jinja2 netaddr will be installed by requirement.txt (2024.01.12)
+#ansible==7.6.0
+#cryptography==41.0.4
+#jinja2==3.1.2
+#jmespath==1.0.1
+#MarkupSafe==2.1.3
+#netaddr==0.9.0
+#pbr==5.11.1
+#ruamel.yaml==0.17.35
+#ruamel.yaml.clib==0.2.8
 
-# other ansible, jinja2 netaddr will be installed by requirement.txt (2019.09.24)
-#ansible==2.7.12 
-#jinja2==2.10.1
-#netaddr==0.7.19
-#pbr==5.2.0
-#hvac==0.8.2
-#jmespath==0.1.4
-#ruamel.yaml==0.15.96
-pip3.6 install -r /root/kubespray/requirements.txt
+# WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. 
+# It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+# so stderr(2) to /dev/null 
+pip3 install --break-system-packages -r /root/kubespray/requirements.txt 2> /dev/null
+
+# Extend kubeadm controlPlane health check timeout (default 4m is too short for VirtualBox arm64)
+TMPL=/root/kubespray/roles/kubernetes/control-plane/templates/kubeadm-config.v1beta4.yaml.j2
+sed -i '/^kind: InitConfiguration/a timeouts:\n  controlPlaneComponentHealthCheck: "15m0s"' "$TMPL"
+
+# Set download_run_once and extend kubeadm_init_timeout to match the internal timeout
+mkdir -p /root/kubespray/group_vars/all
+echo "download_run_once: true" > /root/kubespray/group_vars/all/download-override.yml
+echo "kubeadm_init_timeout: 960" >> /root/kubespray/group_vars/all/download-override.yml
 
 
-cat <<EOF >  /root/ansible_hosts.ini
+cat <<EOF >  /root/kubespray/ansible_hosts.ini
 [all]
-m11-k8s ansible_host=192.168.1.11 ip=192.168.1.11
-m12-k8s ansible_host=192.168.1.12 ip=192.168.1.12
-m13-k8s ansible_host=192.168.1.13 ip=192.168.1.13
+cp11-k8s ansible_host=192.168.1.11 ip=192.168.1.11 etcd_member_name=etcd11
+cp12-k8s ansible_host=192.168.1.12 ip=192.168.1.12 etcd_member_name=etcd12
+cp13-k8s ansible_host=192.168.1.13 ip=192.168.1.13 etcd_member_name=etcd13
 w101-k8s ansible_host=192.168.1.101 ip=192.168.1.101
 w102-k8s ansible_host=192.168.1.102 ip=192.168.1.102
 w103-k8s ansible_host=192.168.1.103 ip=192.168.1.103
@@ -38,18 +51,17 @@ w104-k8s ansible_host=192.168.1.104 ip=192.168.1.104
 w105-k8s ansible_host=192.168.1.105 ip=192.168.1.105
 w106-k8s ansible_host=192.168.1.106 ip=192.168.1.106
 
+[kube_control_plane]
+cp11-k8s 
+cp12-k8s 
+cp13-k8s 
 
 [etcd]
-m11-k8s 
-m12-k8s 
-m13-k8s 
+cp11-k8s 
+cp12-k8s 
+cp13-k8s 
 
-[kube-master]
-m11-k8s 
-m12-k8s 
-m13-k8s 
-
-[kube-node]
+[kube_node]
 w101-k8s 
 w102-k8s 
 w103-k8s 
@@ -57,11 +69,10 @@ w104-k8s
 w105-k8s 
 w106-k8s 
 
-[calico-rr]
+[calico_rr]
 
-[k8s-cluster:children]
-kube-master
-etcd
-kube-node
-calico-rr
+[k8s_cluster:children]
+kube_control_plane
+kube_node
+calico_rr
 EOF

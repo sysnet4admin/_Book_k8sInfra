@@ -1,26 +1,18 @@
 #!/usr/bin/env bash
 
-# vim configuration 
-echo 'alias vi=vim' >> /etc/profile
+# avoid 'dpkg-reconfigure: unable to re-open stdin: No file or directory'
+export DEBIAN_FRONTEND=noninteractive
 
 # swapoff -a to disable swapping
 swapoff -a
 # sed to comment the swap partition in /etc/fstab
 sed -i.bak -r 's/(.+ swap .+)/#\1/' /etc/fstab
 
-# Set SELinux in permissive mode (effectively disabling it)
-setenforce 0
-sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
-
 # local small dns & vagrant cannot parse and delivery shell code.
-for (( m=1; m<=$1; m++  )); do echo "192.168.1.1$m m1$m-k8s" >> /etc/hosts; done
-for (( n=1; n<=$2; n++  )); do echo "192.168.1.10$n w10$n-k8s" >> /etc/hosts; done
-
-# config DNS  
-cat <<EOF > /etc/resolv.conf
-nameserver 1.1.1.1 #cloudflare DNS
-nameserver 8.8.8.8 #Google DNS
-EOF
+echo "127.0.0.1 localhost" > /etc/hosts
+echo "::1 localhost" >> /etc/hosts
+for (( c=1; c<=$1; c++  )); do echo "192.168.1.1$c cp1$c-k8s" >> /etc/hosts; done
+for (( w=1; w<=$2; w++  )); do echo "192.168.1.10$w w10$w-k8s" >> /etc/hosts; done
 
 # authority between all masters and workers
 sudo mv auto_pass.sh /root

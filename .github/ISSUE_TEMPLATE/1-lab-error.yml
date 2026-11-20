@@ -1,0 +1,65 @@
+name: 실습 오류
+description: 책대로 실행했는데 실습이 진행되지 않을 때
+title: "[N장 / N쪽] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        책과 같은 환경에서 다시 일어나는 문제를 받습니다. 올리기 전에 저장소를 다시 내려받아 보세요. 고친 스크립트가 이미 반영되어 있을 수 있습니다.
+  - type: dropdown
+    id: chapter
+    attributes:
+      label: 장
+      options: [2장, 3장, 4장, 5장, 6장, 7장, 부록 A, 부록 B, 부록 C]
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: 쪽 번호와 단계
+      placeholder: "예: 87쪽 2번"
+    validations:
+      required: true
+  - type: dropdown
+    id: host
+    attributes:
+      label: 호스트 환경
+      options: [Windows (x86), macOS (애플 실리콘), macOS (인텔), Linux, 기타]
+    validations:
+      required: true
+  - type: input
+    id: os-version
+    attributes:
+      label: 운영 체제 버전
+      placeholder: "예: macOS 26.7.1, Windows 11 24H2"
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: 버추얼박스와 베이그런트 버전
+      placeholder: "예: VirtualBox 7.2.8, Vagrant 2.4.9"
+  - type: textarea
+    id: command
+    attributes:
+      label: 실행한 명령
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: 오류 메시지
+      description: 출력을 잘라 내지 말고 전체를 붙여 주세요.
+      render: text
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 확인한 것
+      options:
+        - label: 책 12쪽 "이 책의 버전"과 같은 버전을 설치했습니다.
+        - label: 가상 머신을 지우고(vagrant destroy -f) 다시 만들어도 같은 문제가 생깁니다.
+        - label: 집이나 카페의 네트워크가 실습 대역(192.168.1.x)과 겹치지 않습니다.

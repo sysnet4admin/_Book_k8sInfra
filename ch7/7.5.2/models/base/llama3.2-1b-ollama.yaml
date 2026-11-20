@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ollama-llama32-1b
+spec:
+  replicas: 1
+  progressDeadlineSeconds: 1800   # 이미지가 수 GB라 기본값(600초)으로는 회선에 따라 배포 실패로 처리된다
+  selector:
+    matchLabels:
+      app: ollama-llama32-1b
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: ollama-llama32-1b
+    spec:
+      containers:
+      - image: sysnet4admin/ollama-llama3.2:1b
+        imagePullPolicy: IfNotPresent
+        name: ollama-llama32-1b
+        ports:
+        - containerPort: 11434
+          protocol: TCP
+      nodeSelector:
+        kubernetes.io/hostname: w1-k8s
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ollama-llama32-1b
+spec:
+  ports:
+  - port: 11434
+    protocol: TCP
+    targetPort: 11434
+  selector:
+    app: ollama-llama32-1b

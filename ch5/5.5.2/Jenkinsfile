@@ -7,18 +7,22 @@ pipeline {
         , color: 'good', tokenCredentialId: 'slack-key')
       }
     }      
+
     stage('git pull') {
       steps {
         // Git-URL will replace by sed command before RUN
         git url: 'Git-URL', branch: 'main'
       }
     }
+
     stage('k8s deploy'){
       steps {
-        kubernetesDeploy(kubeconfigId: 'kubeconfig',
-                         configs: '*.yaml')
+        withKubeConfig([credentialsId: 'k8s-auth', serverUrl: 'https://192.168.1.10:6443']) {
+          sh 'kubectl apply -f deployment.yaml'
+        }
       }
     }
+
     stage('deploy end') {
       steps {
         slackSend(message: """${env.JOB_NAME} #${env.BUILD_NUMBER} End

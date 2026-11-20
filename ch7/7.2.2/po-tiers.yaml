@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tier-internet
+  labels:
+    app: tier-internet
+    icmp: allow
+spec:
+  containers:
+  - image: sysnet4admin/net-tools-ifn
+    name: tier
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tier-intranet
+  labels:
+    app: tier-intranet
+    icmp: allow
+spec:
+  containers:
+  - image: sysnet4admin/net-tools-ifn
+    name: tier
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tier-privacy
+  labels:
+    app: tier-privacy
+    icmp: deny
+spec:
+  containers:
+  - image: sysnet4admin/net-tools-ifn
+    name: tier

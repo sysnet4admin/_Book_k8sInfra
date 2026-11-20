@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: nginx-to-w3-k8s
+  name: nginx-to-w3-k8s
+spec:
+  nodeName: w3-k8s
+  containers:
+  - name: nginx 
+    image: nginx

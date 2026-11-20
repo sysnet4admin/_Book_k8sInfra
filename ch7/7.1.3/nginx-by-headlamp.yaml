@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-by-headlamp
+  name: nginx-by-headlamp 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-by-headlamp
+  template:
+    metadata:
+      labels:
+        app: nginx-by-headlamp
+    spec:
+      containers:
+      - image: nginx
+        name: nginx

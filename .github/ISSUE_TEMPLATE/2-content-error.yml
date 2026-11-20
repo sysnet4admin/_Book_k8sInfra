@@ -1,0 +1,37 @@
+name: 내용 오류
+description: 책의 설명이나 코드가 사실과 다르거나 저장소 코드와 다를 때
+title: "[N장 / N쪽] "
+labels: ["issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        오탈자와 편집 오류는 길벗 1:1 문의로 알려 주세요. 여기서는 설명이 사실과 다르거나 책의 코드가 저장소와 다른 경우를 받습니다.
+  - type: dropdown
+    id: chapter
+    attributes:
+      label: 장
+      options: [1장, 2장, 3장, 4장, 5장, 6장, 7장, 부록 A, 부록 B, 부록 C]
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: 쪽 번호
+      placeholder: "예: 610쪽 노트"
+    validations:
+      required: true
+  - type: textarea
+    id: book
+    attributes:
+      label: 책의 내용
+      description: 해당 문장이나 코드를 옮겨 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: 무엇이 다른가요
+      description: 공식 문서 주소나 저장소 파일 경로처럼 확인할 수 있는 근거가 있으면 함께 적어 주세요.
+    validations:
+      required: true

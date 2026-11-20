@@ -1,3 +1,30 @@
 .vagrant/
 .DS_Store
+.git-cred/
+*VBoxHeadless*.log
+*.docx
 *.ova
+
+# AI agent files
+AGENTS.md
+CLAUDE.md
+CLAUDE.local.md
+GEMINI.md
+.claude/
+.codex/
+.gemini/
+.cursor/
+.mcp.json
+
+# ignore auto-generated files
+/ch4/4.4.2/1.harbor_pki/ca.crt
+/ch4/4.4.2/1.harbor_pki/ca.key
+/ch4/4.4.2/1.harbor_pki/server.csr
+/ch4/4.4.2/2.harbor/2-3.prepare
+/ch4/4.4.2/2.harbor/2-4.install.sh
+/ch4/4.4.2/2.harbor/LICENSE
+/ch4/4.4.2/2.harbor/common.sh
+/ch4/4.4.2/2.harbor/common/
+/ch4/4.4.2/2.harbor/docker-compose.yml
+/ch4/4.4.2/2.harbor/harbor.yml
+/ch5/5.2.2/kustomization.yaml

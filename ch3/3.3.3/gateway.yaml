@@ -1,0 +1,40 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: external
+spec:
+  gatewayClassName: nginx
+  listeners:
+  - name: http
+    port: 80
+    protocol: HTTP
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: nginx-multipath
+spec:
+  parentRefs:
+  - name: external
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /
+    backendRefs:
+    - name: gtw-cl-default-svc
+      port: 80
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /hn
+    backendRefs:
+    - name: gtw-cl-hname-svc
+      port: 80
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /ip
+    backendRefs:
+    - name: gtw-cl-ip-svc
+      port: 80

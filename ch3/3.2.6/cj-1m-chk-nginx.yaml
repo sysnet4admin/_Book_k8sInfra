@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cj-1m-chk-nginx 
+spec:
+  schedule: "*/1 * * * *"  
+  jobTemplate:             # Template for job 
+    spec:                  # same as before 
+      template:
+        spec:
+          containers:
+          - name: net-tools
+            image: sysnet4admin/net-tools
+            command: ["curlchk",  "nginx"]
+          restartPolicy: Never

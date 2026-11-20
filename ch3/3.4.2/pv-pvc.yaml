@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pv-pvc
+  labels:
+    app: pv-pvc 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pv-pvc
+  template:
+    metadata:
+      labels:
+        app: pv-pvc
+    spec:
+      containers:
+      - name: audit-trail
+        image: sysnet4admin/audit-trail
+        volumeMounts:
+        - name: pvc-vol
+          mountPath: /audit
+      volumes:
+      - name: pvc-vol
+        persistentVolumeClaim:
+          claimName: pvc-nfs 

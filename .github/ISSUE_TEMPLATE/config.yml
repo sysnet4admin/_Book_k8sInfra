@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 질문과 책 밖의 환경 문제
+    url: https://open.kakao.com/o/gxSooElb
+    about: 일반 질문이나 책과 다른 환경에서 생긴 문제는 쿠버네티스 오픈 채팅(암호 kubectl)에서 물어봐 주세요.
+  - name: 오탈자와 편집 오류
+    url: https://www.gilbut.co.kr
+    about: 오탈자나 형식 오류는 길벗 홈페이지 고객센터의 1:1 문의로 알려 주세요. 출판사가 정오표로 관리합니다.

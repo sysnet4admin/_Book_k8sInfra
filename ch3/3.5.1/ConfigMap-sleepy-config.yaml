@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: sleepy-config 
+data:
+ STATUS: "WAKE UP"
+ NOTE: "TestBed Configuration"

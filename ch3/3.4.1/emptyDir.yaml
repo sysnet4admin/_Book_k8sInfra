@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: emptydir 
+  labels:
+    app: emptydir  
+spec:
+  containers:
+  - name: web-page
+    image: nginx 
+    volumeMounts:
+    - mountPath: /usr/share/nginx/html 
+      name: empty-directory 
+  - name: html-builder 
+    image: alpine 
+    volumeMounts:
+    - mountPath: /html-dir 
+      name: empty-directory 
+    command: ["/bin/sh", "-c"]
+    args: 
+      - echo "This page created on $(date +%Y-%m-%d)" > /html-dir/index.html;
+        sleep infinity;
+  volumes:
+  - name: empty-directory 
+    emptyDir: {}

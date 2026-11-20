@@ -1,0 +1,25 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: cnp-allow-icmp-ping
+spec:
+  endpointSelector:
+    matchExpressions:
+      - key: icmp
+        operator: Exists
+  ingress:
+    - fromEndpoints:
+        - matchLabels:
+            icmp: allow
+      icmps:
+        - fields:
+          - type: 8
+            family: IPv4
+  egress:
+    - toEndpoints:
+        - matchLabels:
+            icmp: allow
+      icmps:
+        - fields:
+          - type: 8
+            family: IPv4

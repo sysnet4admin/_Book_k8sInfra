@@ -1,0 +1,590 @@
+version: 3
+hotkeys:
+  toggle-window:
+    - Ctrl-Space
+  copy-current-path: []
+  ctrl-c:
+    - Ctrl-C
+  copy:
+    - Ctrl-Shift-C
+  paste:
+    - Ctrl-Shift-V
+    - Shift-Insert
+  select-all:
+    - Ctrl-Shift-A
+  clear: []
+  zoom-in:
+    - Ctrl-=
+    - Ctrl-Shift-=
+  zoom-out:
+    - Ctrl--
+    - Ctrl-Shift--
+  reset-zoom:
+    - Ctrl-0
+  home:
+    - Home
+  end:
+    - End
+  previous-word:
+    - Ctrl-Left
+  next-word:
+    - Ctrl-Right
+  delete-previous-word:
+    - Ctrl-Backspace
+  delete-line:
+    - Ctrl-Shift-Backspace
+  delete-next-word:
+    - Ctrl-Delete
+  search:
+    - Ctrl-Shift-F
+  pane-focus-all:
+    - Ctrl-Shift-I
+  focus-all-tabs:
+    - Ctrl-Alt-Shift-I
+  scroll-to-top:
+    - Ctrl-PageUp
+  scroll-up:
+    - Alt-PageUp
+  scroll-down:
+    - Alt-PageDown
+  scroll-to-bottom:
+    - Ctrl-PageDown
+  restart-telnet-session: []
+  restart-ssh-session: []
+  launch-winscp: []
+  settings-tab: {}
+  settings:
+    - Ctrl-,
+  serial:
+    - Alt-K
+  restart-serial-session: []
+  new-tab:
+    - Ctrl-Shift-T
+  new-window:
+    - Ctrl-Shift-N
+  profile: {}
+  profile-selectors: {}
+  toggle-fullscreen:
+    - F11
+    - Alt-Enter
+  close-tab:
+    - Ctrl-Shift-W
+  reopen-tab:
+    - Ctrl-Shift-Z
+  toggle-last-tab: []
+  rename-tab:
+    - Ctrl-Shift-R
+  next-tab:
+    - Ctrl-Shift-Right
+    - Ctrl-Tab
+  previous-tab:
+    - Ctrl-Shift-Left
+    - Ctrl-Shift-Tab
+  move-tab-left:
+    - Ctrl-Shift-PageUp
+  move-tab-right:
+    - Ctrl-Shift-PageDown
+  rearrange-panes:
+    - Ctrl-Shift
+  duplicate-tab: []
+  restart-tab: []
+  explode-tab:
+    - Ctrl-Shift-.
+  combine-tabs:
+    - Ctrl-Shift-,
+  tab-1:
+    - Alt-1
+  tab-2:
+    - Alt-2
+  tab-3:
+    - Alt-3
+  tab-4:
+    - Alt-4
+  tab-5:
+    - Alt-5
+  tab-6:
+    - Alt-6
+  tab-7:
+    - Alt-7
+  tab-8:
+    - Alt-8
+  tab-9:
+    - Alt-9
+  tab-10:
+    - Alt-0
+  tab-11: []
+  tab-12: []
+  tab-13: []
+  tab-14: []
+  tab-15: []
+  tab-16: []
+  tab-17: []
+  tab-18: []
+  tab-19: []
+  tab-20: []
+  split-right:
+    - Ctrl-Shift-S
+  split-bottom:
+    - Ctrl-Shift-D
+  split-left: []
+  split-top: []
+  pane-nav-right:
+    - Ctrl-Alt-Right
+  pane-nav-down:
+    - Ctrl-Alt-Down
+  pane-nav-up:
+    - Ctrl-Alt-Up
+  pane-nav-left:
+    - Ctrl-Alt-Left
+  pane-nav-previous:
+    - Ctrl-Alt-[
+  pane-nav-next:
+    - Ctrl-Alt-]
+  pane-nav-1: []
+  pane-nav-2: []
+  pane-nav-3: []
+  pane-nav-4: []
+  pane-nav-5: []
+  pane-nav-6: []
+  pane-nav-7: []
+  pane-nav-8: []
+  pane-nav-9: []
+  pane-maximize:
+    - Ctrl-Alt-Enter
+  close-pane: []
+  pane-increase-vertical: []
+  pane-decrease-vertical: []
+  pane-increase-horizontal: []
+  pane-decrease-horizontal: []
+  switch-profile:
+    - Ctrl-Alt-T
+  profile-selector:
+    - Ctrl-Shift-E
+  command-selector:
+    - Ctrl-Shift-P
+terminal:
+  searchOptions: {}
+  colorScheme:
+    name: Jazz
+    foreground: '#3f3f3f'
+    background: '#f3f2f1'
+    cursor: '#9acf9f'
+    colors:
+      - '#282c34'
+      - '#e06c75'
+      - '#668e3d'
+      - '#c49041'
+      - '#8c71bf'
+      - '#c678dd'
+      - '#878b91'
+      - '#abb2bf'
+      - '#548962'
+      - '#d19a66'
+      - '#668e3d'
+      - '#c49041'
+      - '#8c71bf'
+      - '#c678dd'
+      - '#5e6091'
+      - '#f2f7ff'
+  customColorSchemes: []
+  fontSize: 24
+ssh:
+  knownHosts:
+    - host: 127.0.0.1
+      port: 60010
+      type: ecdsa-sha2-nistp256
+      digest: l6XikZFgOibzSygqZ6+UYHUnEmjFEFhx7PpZw0I3WaM=
+    - host: 127.0.0.1
+      port: 60101
+      type: ecdsa-sha2-nistp256
+      digest: l6XikZFgOibzSygqZ6+UYHUnEmjFEFhx7PpZw0I3WaM=
+    - host: 127.0.0.1
+      port: 60103
+      type: ecdsa-sha2-nistp256
+      digest: l6XikZFgOibzSygqZ6+UYHUnEmjFEFhx7PpZw0I3WaM=
+    - host: 127.0.0.1
+      port: 60102
+      type: ecdsa-sha2-nistp256
+      digest: l6XikZFgOibzSygqZ6+UYHUnEmjFEFhx7PpZw0I3WaM=
+    - host: 127.0.0.1
+      port: 60202
+      type: ecdsa-sha2-nistp256
+      digest: LOPOjrNToxa/TCM9COEK0R3ygL2Uv814sCuULLbyFHY=
+    - host: 127.0.0.1
+      port: 60241
+      type: ecdsa-sha2-nistp256
+      digest: LOPOjrNToxa/TCM9COEK0R3ygL2Uv814sCuULLbyFHY=
+    - host: 127.0.0.1
+      port: 60011
+      type: ecdsa-sha2-nistp256
+      digest: LOPOjrNToxa/TCM9COEK0R3ygL2Uv814sCuULLbyFHY=
+configSync:
+  parts: {}
+clickableLinks: {}
+accessibility: {}
+appearance: {}
+hacks: {}
+enableWelcomeTab: false
+pluginBlacklist: []
+profileDefaults:
+  ssh:
+    disableDynamicTitle: true
+profiles:
+  - type: ssh
+    icon: fas fa-desktop
+    options:
+      host: 127.0.0.1
+      port: 60106
+      algorithms: {}
+      auth: password
+    weight: -1
+    name: 'w106-k8s '
+    group: 쿠버스프레이-클러스터(github_SysNet4Admin)
+    color: 8cb63c
+    id: ssh:custom:w106-k8s:aa51d903-536a-4847-84a5-a90d25e91451
+  - type: ssh
+    icon: fas fa-desktop
+    options:
+      host: 127.0.0.1
+      port: 60105
+      algorithms: {}
+      auth: password
+    weight: -1
+    name: 'w105-k8s '
+    group: 쿠버스프레이-클러스터(github_SysNet4Admin)
+    color: 8cb63c
+    id: ssh:custom:w105-k8s:eb4ec64c-dc76-48cc-81c9-add97854174a
+  - type: ssh
+    icon: fas fa-desktop
+    options:
+      host: 127.0.0.1
+      port: 60104
+      algorithms: {}
+      auth: password
+    weight: -1
+    name: 'w104-k8s '
+    group: 쿠버스프레이-클러스터(github_SysNet4Admin)
+    color: 8cb63c
+    id: ssh:custom:w104-k8s:330a72e5-125c-4e07-ab61-f257897ccd47
+  - type: ssh
+    icon: fas fa-desktop
+    options:
+      host: 127.0.0.1
+      port: 60103
+      algorithms: {}
+      auth: password
+    weight: -1
+    name: 'w103-k8s '
+    group: 쿠버스프레이-클러스터(github_SysNet4Admin)
+    color: 8cb63c
+    id: ssh:custom:w103-k8s:2f69411a-5846-4aa1-8b88-d3a162b2140e
+  - type: ssh
+    icon: fas fa-desktop
+    options:
+      host: 127.0.0.1
+      port: 60102
+      algorithms: {}
+      auth: password
+    weight: -1
+    name: 'w102-k8s '
+    group: 쿠버스프레이-클러스터(github_SysNet4Admin)
+    color: 8cb63c
+    id: ssh:custom:w102-k8s:3dbc2bbe-308d-41d4-9dbb-2da6830f698b
+  - type: ssh
+    icon: fas fa-desktop
+    options:
+      host: 127.0.0.1
+      port: 60101
+      algorithms: {}
+      auth: password
+    weight: -1
+    name: 'w101-k8s '
+    group: 쿠버스프레이-클러스터(github_SysNet4Admin)
+    color: 8cb63c
+    id: ssh:custom:w101-k8s:5977eb86-4307-4ef7-8571-a8c91190f4a0
+  - type: ssh
+    icon: fas fa-desktop
+    options:
+      host: 127.0.0.1
+      port: 60011
+      algorithms: {}
+      auth: password
+    weight: -1
+    name: cp11-k8s
+    group: 쿠버스프레이-클러스터(github_SysNet4Admin)
+    color: '#23a1e0'
+    id: ssh:custom:cp11-k8s:09026986-8ab1-4c30-9c2f-a7d772879206
+  - type: ssh
+    icon: fas fa-desktop
+    options:
+      host: 127.0.0.1
+      port: 60013
+      algorithms: {}
+      auth: password
+    weight: -1
+    name: cp13-k8s
+    group: 쿠버스프레이-클러스터(github_SysNet4Admin)
+    color: '#23a1e0'
+    id: ssh:custom:cp13-k8s:22a3ef81-f1d2-4397-a4a6-108b401ef953
+  - type: ssh
+    icon: fas fa-desktop
+    options:
+      host: 127.0.0.1
+      port: 60012
+      algorithms: {}
+      auth: password
+    weight: -1
+    name: cp12-k8s
+    group: 쿠버스프레이-클러스터(github_SysNet4Admin)
+    color: '#23a1e0'
+    id: ssh:custom:cp12-k8s:9e96664c-1940-4b1e-8eb6-00d4ebc479c3
+  - type: ssh
+    icon: fas fa-desktop
+    options:
+      host: 127.0.0.1
+      port: 60241
+      algorithms:
+        hmac:
+          - hmac-sha1
+          - hmac-sha1-etm@openssh.com
+          - hmac-sha2-256
+          - hmac-sha2-256-etm@openssh.com
+          - hmac-sha2-512
+          - hmac-sha2-512-etm@openssh.com
+        kex:
+          - curve25519-sha256
+          - curve25519-sha256@libssh.org
+          - diffie-hellman-group-exchange-sha256
+          - diffie-hellman-group14-sha256
+          - diffie-hellman-group15-sha512
+          - diffie-hellman-group16-sha512
+          - diffie-hellman-group17-sha512
+          - diffie-hellman-group18-sha512
+          - ecdh-sha2-nistp256
+          - ecdh-sha2-nistp384
+          - ecdh-sha2-nistp521
+        cipher:
+          - aes128-ctr
+          - aes128-gcm
+          - aes128-gcm@openssh.com
+          - aes192-ctr
+          - aes256-ctr
+          - aes256-gcm
+          - aes256-gcm@openssh.com
+        serverHostKey:
+          - ecdsa-sha2-nistp256
+          - ecdsa-sha2-nistp384
+          - ecdsa-sha2-nistp521
+          - rsa-sha2-256
+          - rsa-sha2-512
+          - ssh-ed25519
+          - ssh-rsa
+      auth: password
+      privateKeys: []
+      forwardedPorts: []
+      scripts: []
+    weight: -1
+    name: console-k8s
+    group: 쿠버네티스-클러스터(github_SysNet4Admin)
+    color: 7d9cb7
+    id: ssh:custom:console-k8s:f5410880-b438-4112-8e62-43c44c0a4e37
+  - type: ssh
+    icon: fas fa-desktop
+    options:
+      host: 127.0.0.1
+      port: 60103
+      algorithms:
+        hmac:
+          - hmac-sha1
+          - hmac-sha1-etm@openssh.com
+          - hmac-sha2-256
+          - hmac-sha2-256-etm@openssh.com
+          - hmac-sha2-512
+          - hmac-sha2-512-etm@openssh.com
+        kex:
+          - curve25519-sha256
+          - curve25519-sha256@libssh.org
+          - diffie-hellman-group-exchange-sha256
+          - diffie-hellman-group14-sha256
+          - diffie-hellman-group15-sha512
+          - diffie-hellman-group16-sha512
+          - diffie-hellman-group17-sha512
+          - diffie-hellman-group18-sha512
+          - ecdh-sha2-nistp256
+          - ecdh-sha2-nistp384
+          - ecdh-sha2-nistp521
+        cipher:
+          - aes128-ctr
+          - aes128-gcm
+          - aes128-gcm@openssh.com
+          - aes192-ctr
+          - aes256-ctr
+          - aes256-gcm
+          - aes256-gcm@openssh.com
+        serverHostKey:
+          - ecdsa-sha2-nistp256
+          - ecdsa-sha2-nistp384
+          - ecdsa-sha2-nistp521
+          - rsa-sha2-256
+          - rsa-sha2-512
+          - ssh-ed25519
+          - ssh-rsa
+      auth: password
+      privateKeys: []
+      forwardedPorts: []
+      scripts: []
+    weight: -1
+    name: 'w3-k8s '
+    group: 쿠버네티스-클러스터(github_SysNet4Admin)
+    color: 8cb63c
+    id: ssh:custom:w3-k8s:61dc4b38-163b-4662-a778-b597bf53c62f
+  - type: ssh
+    icon: fas fa-desktop
+    options:
+      host: 127.0.0.1
+      port: 60102
+      algorithms:
+        hmac:
+          - hmac-sha1
+          - hmac-sha1-etm@openssh.com
+          - hmac-sha2-256
+          - hmac-sha2-256-etm@openssh.com
+          - hmac-sha2-512
+          - hmac-sha2-512-etm@openssh.com
+        kex:
+          - curve25519-sha256
+          - curve25519-sha256@libssh.org
+          - diffie-hellman-group-exchange-sha256
+          - diffie-hellman-group14-sha256
+          - diffie-hellman-group15-sha512
+          - diffie-hellman-group16-sha512
+          - diffie-hellman-group17-sha512
+          - diffie-hellman-group18-sha512
+          - ecdh-sha2-nistp256
+          - ecdh-sha2-nistp384
+          - ecdh-sha2-nistp521
+        cipher:
+          - aes128-ctr
+          - aes128-gcm
+          - aes128-gcm@openssh.com
+          - aes192-ctr
+          - aes256-ctr
+          - aes256-gcm
+          - aes256-gcm@openssh.com
+        serverHostKey:
+          - ecdsa-sha2-nistp256
+          - ecdsa-sha2-nistp384
+          - ecdsa-sha2-nistp521
+          - rsa-sha2-256
+          - rsa-sha2-512
+          - ssh-ed25519
+          - ssh-rsa
+      auth: password
+      privateKeys: []
+      forwardedPorts: []
+      scripts: []
+    weight: -1
+    name: w2-k8s
+    group: 쿠버네티스-클러스터(github_SysNet4Admin)
+    color: 8cb63c
+    id: ssh:custom:w2-k8s:e99677cb-7be5-4652-960c-128990b758ae
+  - type: ssh
+    icon: fas fa-desktop
+    options:
+      host: 127.0.0.1
+      port: 60101
+      algorithms:
+        hmac:
+          - hmac-sha1
+          - hmac-sha1-etm@openssh.com
+          - hmac-sha2-256
+          - hmac-sha2-256-etm@openssh.com
+          - hmac-sha2-512
+          - hmac-sha2-512-etm@openssh.com
+        kex:
+          - curve25519-sha256
+          - curve25519-sha256@libssh.org
+          - diffie-hellman-group-exchange-sha256
+          - diffie-hellman-group14-sha256
+          - diffie-hellman-group15-sha512
+          - diffie-hellman-group16-sha512
+          - diffie-hellman-group17-sha512
+          - diffie-hellman-group18-sha512
+          - ecdh-sha2-nistp256
+          - ecdh-sha2-nistp384
+          - ecdh-sha2-nistp521
+        cipher:
+          - aes128-ctr
+          - aes128-gcm
+          - aes128-gcm@openssh.com
+          - aes192-ctr
+          - aes256-ctr
+          - aes256-gcm
+          - aes256-gcm@openssh.com
+        serverHostKey:
+          - ecdsa-sha2-nistp256
+          - ecdsa-sha2-nistp384
+          - ecdsa-sha2-nistp521
+          - rsa-sha2-256
+          - rsa-sha2-512
+          - ssh-ed25519
+          - ssh-rsa
+      auth: password
+      privateKeys: []
+      forwardedPorts: []
+      scripts: []
+    weight: -1
+    name: w1-k8s
+    group: 쿠버네티스-클러스터(github_SysNet4Admin)
+    color: 8cb63c
+    id: ssh:custom:w1-k8s:247f55f0-e08e-490d-8471-3901643afd1b
+  - type: ssh
+    icon: fas fa-desktop
+    options:
+      host: 127.0.0.1
+      port: 60010
+      algorithms:
+        hmac:
+          - hmac-sha1
+          - hmac-sha1-etm@openssh.com
+          - hmac-sha2-256
+          - hmac-sha2-256-etm@openssh.com
+          - hmac-sha2-512
+          - hmac-sha2-512-etm@openssh.com
+        kex:
+          - curve25519-sha256
+          - curve25519-sha256@libssh.org
+          - diffie-hellman-group-exchange-sha256
+          - diffie-hellman-group14-sha256
+          - diffie-hellman-group15-sha512
+          - diffie-hellman-group16-sha512
+          - diffie-hellman-group17-sha512
+          - diffie-hellman-group18-sha512
+          - ecdh-sha2-nistp256
+          - ecdh-sha2-nistp384
+          - ecdh-sha2-nistp521
+        cipher:
+          - aes128-ctr
+          - aes128-gcm
+          - aes128-gcm@openssh.com
+          - aes192-ctr
+          - aes256-ctr
+          - aes256-gcm
+          - aes256-gcm@openssh.com
+        serverHostKey:
+          - ecdsa-sha2-nistp256
+          - ecdsa-sha2-nistp384
+          - ecdsa-sha2-nistp521
+          - rsa-sha2-256
+          - rsa-sha2-512
+          - ssh-ed25519
+          - ssh-rsa
+      auth: password
+      privateKeys: []
+      forwardedPorts: []
+      scripts: []
+    weight: -1
+    name: cp-k8s
+    group: 쿠버네티스-클러스터(github_SysNet4Admin)
+    color: '#23a1e0'
+    id: ssh:custom:cp-k8s:28dd4e78-6292-45b1-92ee-530469c8dd03

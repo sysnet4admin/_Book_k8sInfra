@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hpa
+  labels:
+    app: hpa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hpa
+  template:
+    metadata:
+      labels:
+        app: hpa
+    spec:
+      containers:
+      - name: hpa-cpu-memory 
+        image: sysnet4admin/hpa-cpu-memory  
+        resources:
+          requests:
+            cpu: "10m"
+            memory: "10Mi"
+          limits:
+            cpu: "20m"
+            memory: "40Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lb-hpa 
+spec:
+  selector:
+    app: hpa
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80 
+  type: LoadBalancer

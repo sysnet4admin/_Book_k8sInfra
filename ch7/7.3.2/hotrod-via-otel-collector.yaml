@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotrod
+  labels:
+    app: hotrod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hotrod
+  template:
+    metadata:
+      labels:
+        app: hotrod
+    spec:
+      containers:
+      - name: hotrod
+        image: jaegertracing/example-hotrod:1.64.0
+        env:
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: "http://otel-collector.monitoring.svc.cluster.local:4318"
+        ports:
+        - containerPort: 8080
+          name: http
+        resources:
+          requests:
+            memory: 64Mi
+          limits:
+            memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hotrod
+spec:
+  selector:
+    app: hotrod
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8080

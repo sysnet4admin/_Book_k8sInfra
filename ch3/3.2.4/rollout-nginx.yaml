@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: rollout-nginx
+  name: rollout-nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: po-nginx
+  template:
+    metadata:
+      labels:
+        app: po-nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.30.1
+        

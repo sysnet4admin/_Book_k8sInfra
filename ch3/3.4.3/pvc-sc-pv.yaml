@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pvc-sc-pv 
+  labels:
+    app: pvc-sc-pv 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pvc-sc-pv
+  template:
+    metadata:
+      labels:
+        app: pvc-sc-pv
+    spec:
+      containers:
+      - name: audit-trail 
+        image: sysnet4admin/audit-trail 
+        volumeMounts:
+        - name: pvc-vol
+          mountPath: /audit
+      volumes:
+      - name: pvc-vol
+        persistentVolumeClaim:
+          claimName: pvc-dynamic 

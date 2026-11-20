@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lb-ip
+  labels:
+    app: lb-ip
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: lb-ip
+  template:
+    metadata:
+      labels:
+        app: lb-ip
+    spec:
+      containers:
+      - name: echo-hname
+        image: sysnet4admin/echo-ip
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lb-ip-svc 
+spec:
+  selector:
+    app: lb-ip   
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80 
+  type: LoadBalancer
+

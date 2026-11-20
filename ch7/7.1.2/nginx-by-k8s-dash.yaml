@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-by-k8s-dash
+  name: nginx-by-k8s-dash
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-by-k8s-dash
+  template:
+    metadata:
+      labels:
+        app: nginx-by-k8s-dash
+    spec:
+      containers:
+      - image: nginx
+        name: nginx

@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-chk-nginx 
+spec:
+  template:
+    spec:
+      containers:
+      - name: net-tools
+        image: sysnet4admin/net-tools
+        command: ["curlchk",  "nginx"]
+      restartPolicy: Never

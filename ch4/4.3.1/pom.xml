@@ -5,19 +5,17 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
+        <version>3.2.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>Stark.Industries</groupId>
     <artifactId>echo-ip-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Ultron-PRJ</name>
-    <description>Echo IP by Java application for Container Book</description>
-
+    <name>echo-ip-java</name>
+    <description>Ultron-PRJ</description>
     <properties>
-        <java.version>1.8</java.version>
-     </properties>
-
+        <java.version>21</java.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -28,14 +26,9 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
     </dependencies>
+
 
     <build>
         <finalName>app-in-host</finalName>

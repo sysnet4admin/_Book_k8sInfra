@@ -1,125 +1,106 @@
-# 컨테이너 인프라 환경 구축을 위한 쿠버네티스/도커
-<a href="https://product.kyobobook.co.kr/detail/S000001834629">
-<img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791165215743.jpg" width="400">
+<div align="center">
+
+# 요즘 개발자를 위한 쿠버네티스/도커
+
+<a href="https://product.kyobobook.co.kr/detail/S000221973541">
+<img src="https://contents.kyobobook.co.kr/pdt/9791140721351.jpg" width="360">
 </a>
 
-> 🔔 **_알림1:_** VirtualBox 6.1.28 이후 버전에서는 Vagrant host-only network와 관련된 이슈과 맥과 리눅스에서 
-> 발생합니다. 자세한 내용은 [다음의 문서](https://github.com/sysnet4admin/_Book_k8sInfra/blob/main/docs/%EC%8B%A4%EC%8A%B5%20%EC%9D%B4%EC%8A%88%231%20-%20VritualBox%20host-only%20Network(MAC%2CLinux).pdf)를 확인하시기 바랍니다.  
+<br/>
+<br/>
 
-> 🔔 **_알림2:_** MetalLB의 [Docker 허브 저장소](https://hub.docker.com/u/metallb)가 더이상 사용되지 않게 됨으로서, quay.io로 변경하였습니다. 
-> 이에 MetalLB 관련한 문제가 생기시는 경우 현재 수정된 소스를 다시 내려받으시기 바랍니다. 
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Harbor](https://img.shields.io/badge/Harbor-60B932?style=flat-square&logo=harbor&logoColor=white)
+![Helm](https://img.shields.io/badge/Helm-0F1689?style=flat-square&logo=helm&logoColor=white)
+![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=flat-square&logo=jenkins&logoColor=white)
+![Vagrant](https://img.shields.io/badge/Vagrant-1868F2?style=flat-square&logo=vagrant&logoColor=white)
+<br/>
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white)
+![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-425CC7?style=flat-square&logo=opentelemetry&logoColor=white)
+![Argo](https://img.shields.io/badge/Argo_CD_%2F_Rollouts-EF7B4D?style=flat-square&logo=argo&logoColor=white)
+![Cilium](https://img.shields.io/badge/Cilium-8061A9?style=flat-square&logo=cilium&logoColor=white)
+![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
 
-> 🔔 **_알림3:_** MetalLB의 [쿠버네티스 인증서](https://kubernetes.io/docs/setup/best-practices/certificates/)의 기본값이 1년인 관계로 OVA의 경우 사용을 못하는 경우가 발생합니다.
-> 이에 OVA를 10년으로 변경하였습니다. 그리고 만약 vagrant up으로 배포한 랩의 사용기간이 1년이 다 되어가는 경우 [인증서를 갱신](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/)하시기 바랍니다.  
+</div>
 
-> 🔔 **_알림4:_** 3장 도입부의 Docker 버전과 `signature key`간의 이슈가 해결되었습니다. 자세한 사항은 [다음](https://github.com/sysnet4admin/_Book_k8sInfra/issues/33#issuecomment-1890823571) 내용을 참고하세요  
+> 🔔 **알림1(진행 중):** macOS 26.7 이상을 비롯한 일부 버전에서는 책대로 설치한 베이그런트(Vagrant) 2.4.9로 가상 머신을 만들면 SSH 포트가 Vagrantfile에 지정한 번호(cp-k8s는 60010)가 아닌 다른 번호(2250 등)로 바뀌어서 타비(Tabby)로 가상 머신에 접속되지 않습니다(윈도와 리눅스에는 영향이 없습니다). 해결 방법 2가지와 함께 지킬 사항, 진행 상황은 [이슈 #48](../../issues/48)에서 확인하실 수 있습니다.
 
-> 🔔 **_알림5:_** 구글이 호스트하고 있던 쿠버네티스 저장소(Repository)가 종료됨에 따라 이를 제공하는 주소가 변경되었습니다. 자세한 사항은 [다음](https://www.inflearn.com/news/1198141) 내용을 참고하세요  
+이 저장소는 [요즘 개발자를 위한 쿠버네티스/도커](https://product.kyobobook.co.kr/detail/S000221973541) 책의 실습을 위한 코드를 제공합니다.
 
-> 🔔 **_알림6:_** 도커허브에서 이미지를 내려받는 정책이 변경되었습니다. (기존 100/6H, 변경 10/1H). 그래서 CNI인 Calico를 quay.io에서 내려받도록 변경하였습니다. 자세한 사항은 [다음](https://inf.run/FD91H) 내용을 참고하세요  
+베이그런트로 만든 가상 머신 위에 쿠버네티스 클러스터를 직접 구성하고, 도커와 하버, 젠킨스, 프로메테우스와 그라파나 제품군을 실습합니다. 7장에서는 오퍼레이터 패턴, 오픈텔레메트리, 아르고 CD와 아르고 롤아웃, 소형 LLM까지 다룹니다.
 
-> 🔔 **_알림7:_** HCP Vagrant(이전 이름 Vagrant Cloud)가 2026년 12월 31일에 서비스를 종료함에 따라 실습에 사용하는 가상 머신 이미지(`sysnet4admin/CentOS-k8s`)를 내려받는 주소가 변경되었습니다. 저장소의 Vagrantfile에는 이미 반영했습니다. 책을 보고 Vagrantfile을 직접 작성하는 경우에는 `cfg.vm.box` 줄 바로 아래에 `cfg.vm.box_url = "https://box.kuberneteslab.dev/sysnet4admin/CentOS-k8s"`를 추가하면 됩니다(2.1.3은 `cfg` 대신 `config`). 이미 이미지를 내려받은 경우에는 그대로 사용할 수 있습니다. 자세한 사항은 [다음](https://github.com/sysnet4admin/_Book_k8sInfra/commit/4c29b0c) 내용을 참고하세요  
+---
 
-이 저장소는 [컨테이너 인프라 환경 구축을 위한 쿠버네티스/도커](http://www.yes24.com/Product/Goods/102099414) 책에 실습을 위한 코드를 제공합니다.
+## 제공되는 장별 실습 코드
 
-각 챕터별로 챕터에서 사용하는 스크립트 및 코드를 제공하고 있으며, 별도로 챕터에서 깊게 다루지 않는 부분은 [다른 저장소](https://github.com/iac-source)에서 다룹니다. 그리고 학습에 도움이 되실만한 문서를 디렉터리 [docs](https://github.com/sysnet4admin/_Book_k8sInfra/tree/main/docs)에 추가하였습니다. (2021.10.24)
+| 경로 | 장 | 실습 내용 |
+|------|----|-----------|
+| [ch2](ch2/) | <small>테스트 환경 구성하기</small> | <small>가상 머신을 만드는 Vagrantfile과 프로비저닝 스크립트, macOS용 버추얼박스, 베이그런트, 타비 설치 파일</small> |
+| [ch3](ch3/) | <small>컨테이너를 다루는 표준 아키텍처, 쿠버네티스</small> | <small>쿠버네티스 클러스터 구성 파일과 워크로드, 서비스(노드포트, 로드밸런서, 게이트웨이), 스토리지, HPA 실습 파일</small> |
+| [ch4](ch4/) | <small>쿠버네티스를 이루는 컨테이너 도우미, 도커와 하버</small> | <small>네 가지 방법으로 이미지를 빌드하는 예제, 하버 레지스트리 구성 스크립트, 3장에서 사용한 이미지의 소스</small> |
+| [ch5](ch5/) | <small>지속적인 통합과 배포 자동화, 젠킨스</small> | <small>커스터마이즈와 헬름 예제, 헬름으로 젠킨스를 설치하는 스크립트, Freestyle과 깃옵스 실습 파일</small> |
+| [ch6](ch6/) | <small>안정적인 운영을 완성하는 모니터링, 프로메테우스와 그라파나 제품군</small> | <small>프로메테우스, 그라파나, 얼럿매니저 설치 스크립트와 대시보드, 로키, 템포, 파이로스코프 실습 파일</small> |
+| [ch7](ch7/) | <small>컨테이너 인프라의 활용을 확장하는 도구들, 종합</small> | <small>7장용 클러스터 구성 파일, 헤드램프, 실리움 네트워크 정책, 프로메테우스 오퍼레이터, 오픈텔레메트리 콜렉터, 아르고 CD와 아르고 롤아웃, 소형 LLM 실습 파일</small> |
+| [app/A.console-k8s](app/A.console-k8s/) | <small>부록 A. 쿠버네티스 콘솔 노드</small> | <small>클러스터 밖에서 kubectl로 명령을 내리는 콘솔 노드</small> |
+| [app/B.DeepDiveContainer](app/B.DeepDiveContainer/) | <small>부록 B. 컨테이너 좀 더 깊게 들여다보기</small> | <small>runC로 컨테이너를 만들기 위한 네트워크 구성 스크립트와 설정 파일</small> |
+| [app/C.kubespray](app/C.kubespray/) | <small>부록 C. kubespray로 멀티 컨트롤 플레인 구성하기</small> | <small>가상 머신 9대를 만드는 Vagrantfile과 kubespray 실행 준비 스크립트, 타비 설정 파일</small> |
+| [docs](docs/) | <small>참고 문서</small> | <small>[쿠버네티스 표준 아키텍처](docs/k8s-stnd-arch/)(연도별), 쿠버네티스 문제 해결 순서도 등 학습에 참고가 될 만한 문서</small> |
 
-이 저장소에서 다루는 챕터에 따라 제공되는 스크립트는 아래와 같습니다.
+### 실습 코드를 다시 내려받으려면
 
+실습하다가 파일을 바꾸거나 지워서 처음 상태로 되돌리고 싶다면 cp-k8s에서 다음 명령을 실행합니다. 깃허브에 저장된 코드와 같은 내용으로 다시 내려받습니다.
 
-***
+```bash
+root@cp-k8s:~# rerepo-book-k8sinfra
+```
 
-## 제공되는 스크립트
-<table>
-    <thead>
-        <tr>
-            <th>경로</th>
-            <th>챕터 이름</th>
-            <th>사용 목적 및 제공 스크립트</th>
-        </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td><a href="https://github.com/sysnet4admin/_Book_k8sInfra/tree/main/ch2">ch2</a></td>
-        <td>테스트 환경 구성하기</td>
-        <td><a href="https://www.vagrantup.com/">베이그런트</a>를 이용해서 가상 테스트 환경을 자동으로 배포하기 위한 Vagrantfile과 프로비저닝 스크립트를 제공합니다.</td>
-    </tr>
-    <tr>
-        <td><a href="https://github.com/sysnet4admin/_Book_k8sInfra/tree/main/ch3">ch3</a></td>
-        <td>쿠버네티스로 알아보는 현대적인 인프라 환경</td>
-        <td><a href="https://kubernetes.io">쿠버네티스</a>의 다양한 오브젝트를 구성하기 위한 야믈 파일과 쿠버네티스를 실습하기 위한 가상환경 배포 파일, 동작 테스트를 위한 스크립트를 제공합니다.</td>
-    </tr>
-    <tr>
-        <td><a href="https://github.com/sysnet4admin/_Book_k8sInfra/tree/main/ch4">ch4</a></td>
-        <td>쿠버네티스를 이루는 컨테이너 도우미, 도커</td>
-        <td><a href="https://docker.com">도커</a>의 일반적인 사용 방법, 도커 고급 기능을 사용하기 위한 가상환경 배포 파일 및 사설 <a href="https://docs.docker.com/registry/">도커 레지스트리</a>를 구성하기 위한 스크립트를 제공합니다.</td>
-    </tr>
-    <tr>
-        <td><a href="https://github.com/sysnet4admin/_Book_k8sInfra/tree/main/ch5">ch5</a></td>
-        <td>지속적인 통합과 배포 자동화, 젠킨스</td>
-        <td><a href="https://helm.sh">헬름</a>으로 쿠버네티스 환경에 <a href="https://www.jenkins.io/">젠킨스</a>를 배포하고, CI/CD를 구현할 수 있는 스크립트를 제공합니다.</td>
-    </tr>
-    <tr>
-        <td><a href="https://github.com/sysnet4admin/_Book_k8sInfra/tree/main/ch6">ch6</a></td>
-        <td>안정적인 운영을 완성하는 모니터링, 프로메테우스와 그라파나</td>
-        <td><a href="https://helm.sh">헬름</a>으로 쿠버네티스 환경에 <a href="https://prometheus.io/">프로메테우스</a>와 <a href="https://grafana.com/">그라파나</a>를 배포하고 모니터링할 수 있는 스크립트를 제공합니다.</td>
-    </tr>
-    <tr>
-        <td rowspan="4"><a href="https://github.com/sysnet4admin/_Book_k8sInfra/tree/main/app">app</a></td>
-        <td>A. Kubectl을 더 쉽게 사용하기</td>
-        <td><a href="https://kubernetes.io/ko/docs/reference/kubectl/overview/">kubectl</a>을 쉽게 사용할 수 있도록 구성된 스크립트를 제공합니다.</td>
-    </tr>
-    <tr>
-        <td>B. Kubespray로 쿠버네티스 자동 구성하기</td>
-        <td><a href="https://github.com/kubernetes-sigs/kubespray">kubespray</a>를 통해 쿠버네티스 클러스터를 자동으로 구축하기 위한 스크립트를 제공합니다.</td>
-    </tr>
-    <tr>
-        <td>C. 쿠버 대시보드 구성하기</td>
-        <td><a href="https://github.com/kubernetes/dashboard">쿠버네티스 대시보드</a>를 배포하기 위한 스크립트를 제공합니다.</td>
-    </tr>
-    <tr>
-        <td>D. 컨테이너 깊게 들여다보기</td>
-        <td><a href="https://github.com/opencontainers/runc">컨테이너를 깊게</a> 들여다보기 위한 스크립트를 제공합니다.</td>
-    </tr>
-   </tbody>
-</table>
-
-***
-
-## 저자
-- ✔️   [조 훈](https://github.com/sysnet4admin)
-- ✔️   [심근우](https://github.com/gnu-gnu)
-- ✔️   [문성주](https://github.com/seongjumoon)
-
-## 도서 구입 안내
-본 도서는 각 온오프라인 서점에서 만나보실 수 있습니다.
-- 📍  [YES24](https://bit.ly/3iq4L5W)
-- 📍  [알라딘](https://bit.ly/3cpo37M)
-- 📍  [교보문고](https://bit.ly/3g1dsC7)
-
-## 책에서 사용하는 프로그램 번들팩
-`VirtualBox 6.1.12`, `vagrant 2.2.9` 
-- 🗄️  [윈도우 사용자](https://1drv.ms/f/s!AgCLAIU_47PVhVKg9aAmX87p_Zho)
-- 🗄️  [맥OS 사용자](https://1drv.ms/f/s!AgCLAIU_47PVhVHaQWjq29B8VVt4)
+---
 
 ## 🔔 베이그런트 설치로 너무 고생하시는 분들을 위한 이미지(OVA) 파일
-현재 책의 쿠버네티스 실습 랩을 Vagrant가 아닌 이미지로 바로 구성할 수 있도록 OVA 이미지를 제공합니다. </br>
-다음의 두가지 이미지 번들 팩을 제공합니다. 
- - [3.1.3](https://1drv.ms/f/s!AgCLAIU_47PVhU--Y8kbfIuABW9i)에 해당 하는 이미지
- - [4.3.4](https://1drv.ms/f/s!AgCLAIU_47PVhVAVyaX58v-QV44U)에 해당하는 이미지 </br>
-> 자세한 설정법에 관련한 영상은 아래에 [유용한 정보](#유용한-정보) 부분을 참고하시기 바랍니다.   
+
+현재 책의 쿠버네티스 실습 랩을 Vagrant가 아닌 이미지로 바로 구성할 수 있도록 OVA 이미지를 제공합니다.
+
+> 자세한 설정법에 관련한 영상은 아래에 [유용한 정보](#유용한-정보) 부분을 참고하시기 바랍니다.
+
+| 실습 환경 | 애플 실리콘 맥(arm64) | 윈도, 인텔 맥(x86) |
+|-----------|----------------------|--------------------|
+| 3~6장(`ch3/3.1.3`) | 준비 중 | 준비 중 |
+| 7장(`ch7/7.1.1`) | 준비 중 | 준비 중 |
 
 ## 유용한 정보
--  📑  [Mac 및 Windows 사용자를 위한 터미널 프로그램인 타비(Tabby) 추천 및 설정법](https://youtu.be/4MhZxSS3Xm8)
--  🎬  [`vagrant up` 실행 시에 발생하는 에러와 해결책 사례](https://www.inflearn.com/course/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%89%BD%EA%B2%8C%EC%8B%9C%EC%9E%91/lecture/72911?inst=cf657a9d)
--  🎬  [테인트(Taints)와 톨러레이션(Tolerations) 설명 영상](https://www.inflearn.com/course/%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4/lecture/85683?inst=f3d96ed5)
--  🎬  [멀티 컨텍스트 랩 환경 구성 on Ubuntu 설명 영상(10:15~)](https://www.inflearn.com/course/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%89%BD%EA%B2%8C%EC%8B%9C%EC%9E%91/lecture/73341?inst=cf657a9d)
--  🎬  [쿠버네티스 v1.24에서 발생할 컨테이너 런타임의 변경에 관해서 (dockershim vs containerd)](https://www.inflearn.com/course/%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4/lecture/106937?inst=f3d96ed5)
--  🎬  [쿠버네티스 실습 랩을 vagrant가 아닌 이미지로 바로 구성 설치하는 법](https://youtu.be/KxhSWf0ObEU)
--  🎬  [슈퍼푸티 터미널을 생산성 있게 꾸미기](https://youtu.be/kv87ynbJlmk)
 
-## 관련 문서 
--  📜 [왜 쿠버네티스는 systemd로 cgroup을 관리하려고 할까요?](https://www.slideshare.net/JoHoon1/systemd-cgroup)
+- 🎬 [Mac 및 Windows 사용자를 위한 터미널 프로그램인 타비(Tabby) 추천 및 설정법](https://youtu.be/4MhZxSS3Xm8)
+- 🎬 [`vagrant up` 실행 시에 발생하는 에러와 해결책 사례](https://www.inflearn.com/course/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%89%BD%EA%B2%8C%EC%8B%9C%EC%9E%91/lecture/72911?inst=cf657a9d)
+- 🎬 [테인트(Taints)와 톨러레이션(Tolerations) 설명 영상](https://www.inflearn.com/course/%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4/lecture/85683?inst=f3d96ed5)
+- 🎬 [쿠버네티스 실습 랩을 vagrant가 아닌 이미지로 바로 구성 설치하는 법](https://youtu.be/KxhSWf0ObEU)
+- 📜 [깃옵스(GitOps)를 여행하려는 입문자를 위한 안내서](https://yozm.wishket.com/magazine/detail/2010/) (5.5절)
+- 📜 [비용&보안 두 마리 토끼 잡는 디스트로리스 이미지 이용법](https://yozm.wishket.com/magazine/detail/2527/) (4.4.3절)
+
+## 문의
+
+- 책대로 실습했는데 진행되지 않거나 책의 설명, 코드가 저장소와 다르다면 [이슈](../../issues/new/choose)로 알려 주세요.
+- 일반 질문은 [쿠버네티스 오픈 채팅](https://open.kakao.com/o/gxSooElb)(암호: kubectl)에서, 오탈자는 [길벗](https://www.gilbut.co.kr) 고객센터의 1:1 문의로 알려 주세요.
+
+## 📌 정오표 (오류 수정 및 추가 정보 제공)
+
+본 도서의 쇄별 정정 사항은 [Releases](../../releases)에서 확인하실 수 있습니다.
+
+## 저자
+
+- ✔️ [조훈](https://github.com/sysnet4admin)
+- ✔️ [심근우](https://github.com/gnu-gnu)
+- ✔️ [문성주](https://github.com/seongjumoon)
+- ✔️ [이성민](https://github.com/sungmincs)
+
+## 도서 구입 안내
+
+본 도서는 각 온오프라인 서점에서 만나보실 수 있습니다. (ISBN 979-11-407-2135-1)
+
+- 📍 [교보문고](https://product.kyobobook.co.kr/detail/S000221973541)
+- 📍 [예스24](https://www.yes24.com/product/goods/201050615)
+- 📍 [알라딘](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=407128509)
 
 ***
 <p align="center">
