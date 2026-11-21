@@ -27,7 +27,8 @@ if [ -d ~/gitops ]; then
 fi
 
 echo "[1/5] Clone $GIT_URL into ~/gitops."
-if ! git clone "$GIT_URL" ~/gitops; then
+# GIT_TERMINAL_PROMPT=0: 사용자 이름이 틀려 저장소가 없을 때 git이 Username을 묻지 않고 바로 아래 안내로 넘어가게 한다.
+if ! GIT_TERMINAL_PROMPT=0 git clone "$GIT_URL" ~/gitops; then
   echo ""
   echo "Clone failed: $GIT_URL"
   echo "  - Check the GitHub username: $GH_USER"
