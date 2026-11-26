@@ -102,10 +102,10 @@ OVA에 들어 있는 쿠버네티스 인증서는 2036년 11월까지 사용할 
 
 ## 저자
 
-- ✔️ [조훈](https://github.com/sysnet4admin)
-- ✔️ [심근우](https://github.com/gnu-gnu)
-- ✔️ [문성주](https://github.com/seongjumoon)
-- ✔️ [이성민](https://github.com/sungmincs)
+- ✔️ 조훈: [GitHub](https://github.com/sysnet4admin), [LinkedIn](https://www.linkedin.com/in/hoonjo/), [YouTube](https://www.youtube.com/@kuberneteslab), [kuberneteslab.dev](https://kuberneteslab.dev/)
+- ✔️ 심근우: [GitHub](https://github.com/gnu-gnu), [LinkedIn](https://www.linkedin.com/in/gnu-shim/)
+- ✔️ 문성주: [GitHub](https://github.com/seongjumoon), [LinkedIn](https://www.linkedin.com/in/seongjuishere/)
+- ✔️ 이성민: [GitHub](https://github.com/sungmincs), [LinkedIn](https://www.linkedin.com/in/sungmincs/)
 
 ## 도서 구입 안내
 

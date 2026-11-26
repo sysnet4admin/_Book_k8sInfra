@@ -17,7 +17,7 @@
 
 부디 이를 통해서 금년도 쿠버네티스로의 진입이 더욱 더 수월하셨으면 합니다.
 
-[조 훈](https://github.com/sysnet4admin), [심근우](https://github.com/gnu-gnu), [문성주](https://github.com/seongjumoon), [이성민](https://github.com/dmxlsj) 드림
+[조 훈](https://github.com/sysnet4admin), [심근우](https://github.com/gnu-gnu), [문성주](https://github.com/seongjumoon), [이성민](https://github.com/sungmincs) 드림
 
 ---
 
